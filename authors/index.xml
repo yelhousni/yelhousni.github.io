@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors | Homepage</title>
+    <link>/authors/</link>
+      <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Authors</title>
+      <link>/authors/</link>
+    </image>
+    
+    <item>
+      <title></title>
+      <link>/authors/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/authors/admin/</guid>
+      <description>&lt;p&gt;Youssef El Housni is a cryptogrpahy engineer at &lt;a href=&#34;https://www.ey.com/en_us/blockchain&#34; target=&#34;_blank&#34;&gt;EY Blockchain Hub&lt;/a&gt; and a PhD student in &lt;a href=&#34;https://www.polytechnique.edu&#34; target=&#34;_blank&#34;&gt;Ecole Polytechnique&lt;/a&gt;. My work at EY focuses on developing cryptographic tools to address privacy and scalability issues in Ethereum blockchain. These tools include mainly zero-knowledge proofs, universal accumulators and proxy-reencryption schemes. My PhD research, under the supervision of &lt;a href=&#34;http://pages.saclay.inria.fr/daniel.augot/index-eng.html&#34; target=&#34;_blank&#34;&gt;Daniel Augot&lt;/a&gt; and &lt;a href=&#34;https://www.lix.polytechnique.fr/Labo/Francois.Morain/english-index.html&#34; target=&#34;_blank&#34;&gt;François Morain&lt;/a&gt; in project-team &lt;a href=&#34;https://team.inria.fr/grace/&#34; target=&#34;_blank&#34;&gt;GRACE&lt;/a&gt;/&lt;a href=&#34;https://www.lix.polytechnique.fr&#34; target=&#34;_blank&#34;&gt;LIX&lt;/a&gt;, focuses on pairing-based zero-knowledge proofs and friendly related cryptographic primitives.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
