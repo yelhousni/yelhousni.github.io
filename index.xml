@@ -19,9 +19,11 @@
       <guid>/post/s2pc/</guid>
       <description>
 
-&lt;p&gt;Not to toot my own horn here but when I was in high school I used to be quite popular :). I was moreover one of the least shy people I know but when it came to girls, I was interested in, I suddenly turn to this timid shell of a person. This awkward version of a popular guy is not uncommon and the fear of rejection is the reason that rattles us to the core. I still remember this girl from my high school I’ve never talked to, because of that fear — let’s call her &lt;em&gt;Lalla Salma&lt;/em&gt; in the sequel (Any resemblance to actual persons, living or dead, is purely coincidental). No matter how much courage I’ve summoned and how firmly I’ve convinced myself I don’t care about the outcome, hearing no from &lt;em&gt;Lalla Salma&lt;/em&gt; would have hurt. A graceful no hurts a great deal less but a cruel no in public drives a knife through the male psyche.
-Growing up, I became a cryptographer and figured out a mathematical way to deal with such a situation. How can you make secure advances to &lt;em&gt;Lalla Salma&lt;/em&gt; ? Is there a way to securely guess the outcome ? or simply put, how can you avoid a dismissive no in public ? The solution uses &lt;a href=&#34;https://en.wikipedia.org/wiki/Garbled_circuit&#34; target=&#34;_blank&#34;&gt;Yao’s Garbled circuits&lt;/a&gt; for secure two-party computation (S2PC).
-Given private inputs $x$ and $y$ and a public function $f$, this method enables two parties to securely compute the outcome $f(x,y)$ without revealing the secrets $x$ and $y$. A circuit is just a way to represent a computation consisting of just operations on bits, like AND, OR, NOT and a garbled circuit is a way to “encrypt a computation” that reveals only the output of the computation, but reveals nothing about the inputs or any intermediate values. Our situation makes the basic way to understand how the protocol works. Let the secret $x$ be 1 if I am interested in &lt;em&gt;Lalla Salma&lt;/em&gt; and 0 otherwise. Similarly, her secret $y$ is either 1 or 0. We want to securely compute a function that outputs 1 if we both are interested in each other and 0 otherwise — no one should be able to guess the inputs. A simple function would be an AND gate.&lt;/p&gt;
+&lt;p&gt;Not to toot my own horn here but when I was in high school I used to be quite popular :). I was moreover one of the least shy people I know but when it came to girls, I was interested in, I suddenly turn to this timid shell of a person. This awkward version of a popular guy is not uncommon and the fear of rejection is the reason that rattles us to the core. I still remember this girl from my high school I’ve never talked to, because of that fear — let’s call her &lt;em&gt;Lalla Salma&lt;/em&gt; in the sequel (Any resemblance to actual persons, living or dead, is purely coincidental). No matter how much courage I’ve summoned and how firmly I’ve convinced myself I don’t care about the outcome, hearing no from &lt;em&gt;Lalla Salma&lt;/em&gt; would have hurt. A graceful no hurts a great deal less but a cruel no in public drives a knife through the male psyche.&lt;/p&gt;
+
+&lt;p&gt;Growing up, I became a cryptographer and figured out a mathematical way to deal with such a situation. How can you make secure advances to &lt;em&gt;Lalla Salma&lt;/em&gt; ? Is there a way to securely guess the outcome ? or simply put, how can you avoid a dismissive no in public ? The solution uses &lt;a href=&#34;https://en.wikipedia.org/wiki/Garbled_circuit&#34; target=&#34;_blank&#34;&gt;Yao’s Garbled circuits&lt;/a&gt; for secure two-party computation (S2PC).&lt;/p&gt;
+
+&lt;p&gt;Given private inputs $x$ and $y$ and a public function $f$, this method enables two parties to securely compute the outcome $f(x,y)$ without revealing the secrets $x$ and $y$. A circuit is just a way to represent a computation consisting of just operations on bits, like AND, OR, NOT and a garbled circuit is a way to “encrypt a computation” that reveals only the output of the computation, but reveals nothing about the inputs or any intermediate values. Our situation makes the basic way to understand how the protocol works. Let the secret $x$ be 1 if I am interested in &lt;em&gt;Lalla Salma&lt;/em&gt; and 0 otherwise. Similarly, her secret $y$ is either 1 or 0. We want to securely compute a function that outputs 1 if we both are interested in each other and 0 otherwise — no one should be able to guess the inputs. A simple function would be an AND gate.&lt;/p&gt;
 
 
 
@@ -82,13 +84,15 @@ Given private inputs $x$ and $y$ and a public function $f$, this method enables 
 &lt;li&gt;Alice generates random $x_0, x_1$ and sends them to Bob&lt;/li&gt;
 &lt;li&gt;Bob chooses a random $k$, computes $v=y_x+k^e$ and sends $v$ to Alice.&lt;/li&gt;
 &lt;li&gt;Alice computes $k_0=(v-x_0)^d$ and $k_1=(v-x_1)^d$, and sends $m_0&amp;rsquo;=m_0+k_0$ and $m_1&amp;rsquo;=m_1+k_1$ to Bob&lt;/li&gt;
-&lt;li&gt;Bob computes $m_x=m_x&amp;rsquo;-k$ and learns nothing about $m_1-x&amp;rsquo;$&lt;/li&gt;
+&lt;li&gt;Bob computes $m_x=m_x&amp;rsquo;-k$ and learns nothing about $m&amp;rsquo; _{1-x}$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Now, using 1–2 OT protocol, &lt;em&gt;Lalla Salma&lt;/em&gt; can have her input key without me knowing anything about her secret bit. At this point, we can decrypt the GCT row corresponding to our secrets and reveal securely the output value. If it is a 0, none is able to tell who rejected the other and if it is a 1… Jackpot!
-By and large, this is how we can do secure two-party computation. So, dear &lt;em&gt;Lalla Salma&lt;/em&gt;, if by any chance you’re reading my post, here is my secret key ;)&lt;/p&gt;
+&lt;p&gt;Now, using 1–2 OT protocol, &lt;em&gt;Lalla Salma&lt;/em&gt; can have her input key without me knowing anything about her secret bit. At this point, we can decrypt the GCT row corresponding to our secrets and reveal securely the output value. If it is a 0, none is able to tell who rejected the other and if it is a 1… Jackpot!&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;$0x3361736861206c6d616c69696969696b$&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;By and large, this is how we can do secure two-party computation. So, dear &lt;em&gt;Lalla Salma&lt;/em&gt;, if by any chance you’re reading my post, here is my secret key ;)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;0x3361736861206c6d616c69696969696b
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

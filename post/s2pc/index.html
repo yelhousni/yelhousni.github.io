@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="Not to toot my own horn here but when I was in high school I used to be quite popular :). I was moreover one of the least shy people I know but when it came to girls, I was interested in, I suddenly turn to this timid shell of a person. This awkward version of a popular guy is not uncommon and the fear of rejection is the reason that rattles us to the core.">
+  <meta name="description" content="From my Medium blog - medium.com/@youssef.housni21">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/s2pc/">
@@ -114,7 +114,7 @@
   <meta property="og:site_name" content="Homepage">
   <meta property="og:url" content="/post/s2pc/">
   <meta property="og:title" content="Secure Two-Party Computation (S2PC) | Homepage">
-  <meta property="og:description" content="Not to toot my own horn here but when I was in high school I used to be quite popular :). I was moreover one of the least shy people I know but when it came to girls, I was interested in, I suddenly turn to this timid shell of a person. This awkward version of a popular guy is not uncommon and the fear of rejection is the reason that rattles us to the core."><meta property="og:image" content="/img/s2pc.jpg">
+  <meta property="og:description" content="From my Medium blog - medium.com/@youssef.housni21"><meta property="og:image" content="/img/s2pc.jpg">
   <meta property="twitter:image" content="/img/s2pc.jpg"><meta property="og:locale" content="en-us">
   
     
@@ -166,7 +166,7 @@
       "url": "/img/icon-512.png"
     }
   },
-  "description": "Not to toot my own horn here but when I was in high school I used to be quite popular :). I was moreover one of the least shy people I know but when it came to girls, I was interested in, I suddenly turn to this timid shell of a person. This awkward version of a popular guy is not uncommon and the fear of rejection is the reason that rattles us to the core."
+  "description": "From my Medium blog - medium.com/@youssef.housni21"
 }
 </script>
 
@@ -534,9 +534,11 @@
     <div class="article-style">
       
 
-<p>Not to toot my own horn here but when I was in high school I used to be quite popular :). I was moreover one of the least shy people I know but when it came to girls, I was interested in, I suddenly turn to this timid shell of a person. This awkward version of a popular guy is not uncommon and the fear of rejection is the reason that rattles us to the core. I still remember this girl from my high school I’ve never talked to, because of that fear — let’s call her <em>Lalla Salma</em> in the sequel (Any resemblance to actual persons, living or dead, is purely coincidental). No matter how much courage I’ve summoned and how firmly I’ve convinced myself I don’t care about the outcome, hearing no from <em>Lalla Salma</em> would have hurt. A graceful no hurts a great deal less but a cruel no in public drives a knife through the male psyche.
-Growing up, I became a cryptographer and figured out a mathematical way to deal with such a situation. How can you make secure advances to <em>Lalla Salma</em> ? Is there a way to securely guess the outcome ? or simply put, how can you avoid a dismissive no in public ? The solution uses <a href="https://en.wikipedia.org/wiki/Garbled_circuit" target="_blank">Yao’s Garbled circuits</a> for secure two-party computation (S2PC).
-Given private inputs $x$ and $y$ and a public function $f$, this method enables two parties to securely compute the outcome $f(x,y)$ without revealing the secrets $x$ and $y$. A circuit is just a way to represent a computation consisting of just operations on bits, like AND, OR, NOT and a garbled circuit is a way to “encrypt a computation” that reveals only the output of the computation, but reveals nothing about the inputs or any intermediate values. Our situation makes the basic way to understand how the protocol works. Let the secret $x$ be 1 if I am interested in <em>Lalla Salma</em> and 0 otherwise. Similarly, her secret $y$ is either 1 or 0. We want to securely compute a function that outputs 1 if we both are interested in each other and 0 otherwise — no one should be able to guess the inputs. A simple function would be an AND gate.</p>
+<p>Not to toot my own horn here but when I was in high school I used to be quite popular :). I was moreover one of the least shy people I know but when it came to girls, I was interested in, I suddenly turn to this timid shell of a person. This awkward version of a popular guy is not uncommon and the fear of rejection is the reason that rattles us to the core. I still remember this girl from my high school I’ve never talked to, because of that fear — let’s call her <em>Lalla Salma</em> in the sequel (Any resemblance to actual persons, living or dead, is purely coincidental). No matter how much courage I’ve summoned and how firmly I’ve convinced myself I don’t care about the outcome, hearing no from <em>Lalla Salma</em> would have hurt. A graceful no hurts a great deal less but a cruel no in public drives a knife through the male psyche.</p>
+
+<p>Growing up, I became a cryptographer and figured out a mathematical way to deal with such a situation. How can you make secure advances to <em>Lalla Salma</em> ? Is there a way to securely guess the outcome ? or simply put, how can you avoid a dismissive no in public ? The solution uses <a href="https://en.wikipedia.org/wiki/Garbled_circuit" target="_blank">Yao’s Garbled circuits</a> for secure two-party computation (S2PC).</p>
+
+<p>Given private inputs $x$ and $y$ and a public function $f$, this method enables two parties to securely compute the outcome $f(x,y)$ without revealing the secrets $x$ and $y$. A circuit is just a way to represent a computation consisting of just operations on bits, like AND, OR, NOT and a garbled circuit is a way to “encrypt a computation” that reveals only the output of the computation, but reveals nothing about the inputs or any intermediate values. Our situation makes the basic way to understand how the protocol works. Let the secret $x$ be 1 if I am interested in <em>Lalla Salma</em> and 0 otherwise. Similarly, her secret $y$ is either 1 or 0. We want to securely compute a function that outputs 1 if we both are interested in each other and 0 otherwise — no one should be able to guess the inputs. A simple function would be an AND gate.</p>
 
 
 
@@ -597,13 +599,15 @@ Given private inputs $x$ and $y$ and a public function $f$, this method enables 
 <li>Alice generates random $x_0, x_1$ and sends them to Bob</li>
 <li>Bob chooses a random $k$, computes $v=y_x+k^e$ and sends $v$ to Alice.</li>
 <li>Alice computes $k_0=(v-x_0)^d$ and $k_1=(v-x_1)^d$, and sends $m_0&rsquo;=m_0+k_0$ and $m_1&rsquo;=m_1+k_1$ to Bob</li>
-<li>Bob computes $m_x=m_x&rsquo;-k$ and learns nothing about $m_1-x&rsquo;$</li>
+<li>Bob computes $m_x=m_x&rsquo;-k$ and learns nothing about $m&rsquo; _{1-x}$</li>
 </ul>
 
-<p>Now, using 1–2 OT protocol, <em>Lalla Salma</em> can have her input key without me knowing anything about her secret bit. At this point, we can decrypt the GCT row corresponding to our secrets and reveal securely the output value. If it is a 0, none is able to tell who rejected the other and if it is a 1… Jackpot!
-By and large, this is how we can do secure two-party computation. So, dear <em>Lalla Salma</em>, if by any chance you’re reading my post, here is my secret key ;)</p>
+<p>Now, using 1–2 OT protocol, <em>Lalla Salma</em> can have her input key without me knowing anything about her secret bit. At this point, we can decrypt the GCT row corresponding to our secrets and reveal securely the output value. If it is a 0, none is able to tell who rejected the other and if it is a 1… Jackpot!</p>
 
-<p><strong>$0x3361736861206c6d616c69696969696b$</strong></p>
+<p>By and large, this is how we can do secure two-party computation. So, dear <em>Lalla Salma</em>, if by any chance you’re reading my post, here is my secret key ;)</p>
+
+<pre><code>0x3361736861206c6d616c69696969696b
+</code></pre>
 
     </div>
 
