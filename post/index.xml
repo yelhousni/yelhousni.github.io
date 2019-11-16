@@ -5,12 +5,42 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 06 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 03 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Encryption using elliptic curves</title>
+      <link>/post/encryption_ec/</link>
+      <pubDate>Thu, 03 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/post/encryption_ec/</guid>
+      <description>&lt;p&gt;In my first post, we’ve seen that elliptic curves cryptography (ECC) was first introduced as a better alternative to public-key cryptography based on multiplicative groups of finite fields. In fact, ECC requires smaller keys compared to its finite field analog to provide equivalent security. Finite fields cryptosystems rely on the “hardness” of the discrete logarithm problem (DLP) to build cryptographic tools such as encryption (ElGamal), key exchange (Diffie-Hellman DH) and digital signature algorithms(DSA). Analogously, one expects to have ElGamal, DH and DSA counterparts thanks to the “hardness” of the equivalent elliptic curves discrete logarithm problem (ECDLP). However, it seems that only ECDH and ECDSA are popular. So, is there an ElGamal version for elliptic curves? Is direct encryption even possible with elliptic curves?&lt;/p&gt;
+
+&lt;p&gt;The use of elliptic curves in cryptography was suggested independently by Neal Koblitz and Victor S. Miller in 1985. The main reason was that previous asymmetric approaches were subject to subexponential-time index calculus algorithms that solve the underlying hard problems, whereas no subexponential-time algorithms are known for the discrete logarithm problem in a (suitably chosen) elliptic curve. Moreover, for the most part the best available algorithms are ones that have nothing to do with the specific structure of the elliptic curve group, but rather would work with essentially the same running time on any group. Such algorithms are said to be “generic”. In his &lt;a href=&#34;https://www.ams.org/journals/mcom/1987-48-177/S0025-5718-1987-0866109-5/S0025-5718-1987-0866109-5.pdf&#34; target=&#34;_blank&#34;&gt;paper&lt;/a&gt;, Koblitz suggested an encryption algorithm similar to ElGamal but it needed an invertible function to map plaintexts to points on an elliptic curve which made the scheme a bit impractical. The algorithm works as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We set up an elliptic curve $E$ over a finite field $\mathbb{F}_p$ and a point $P$ of order $N$.&lt;/li&gt;
+&lt;li&gt;We need a public known invertible function $f$ that maps messages $m$ to points $P_m$ on $E$.&lt;/li&gt;
+&lt;li&gt;We choose a random secret key $x \in [1,N-1]$ and publish the point $Y=xP$ as public key.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Encryption&lt;/em&gt;: We choose a random integer $k \in [1,N-1]$, then calculate $C_1=kP$, $C_2=kY$ and $P_m=f(m)$. The ciphertext is the tuple $(C_1, C_2+P_m)$.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Decryption&lt;/em&gt;: From the ciphertext $(C, D)$ we calculate $C&amp;rsquo;=xC$ and retrieve the point $P_m$ with $P_m=D-C&amp;rsquo;$ ($=k(xP)+P_m-x(kP)$). Finally, we recover the message $m$ with $f^{-1}(P_m)$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Basically, this is how we can do encryption on the elliptic curve but for real-world encryption this is somehow impractical because of the required invertible point mapping. One way to do it is interpreting the message as the $X$ coordinate of a curve point and computing a matching $Y$ coordinate. This has two drawbacks:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;First, only about half of the $X$ values can be the first coordinate of a curve point and&lt;/li&gt;
+&lt;li&gt;second, one needs to compute a modular quadratic residue ($Y^2=X^3+aX+b$) to find the $Y$. This is not trivial and requires using &lt;a href=&#34;https://en.wikipedia.org/wiki/Tonelli–Shanks_algorithm&#34; target=&#34;_blank&#34;&gt;Tonelli-Shanks algorithm&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, for things to work, some variability (some bits which can be adjusted until a possible $X$ is reached) would be needed and since the size of the message would be severely limited (no bigger than $p$) this is hardly worthwhile.&lt;/p&gt;
+
+&lt;p&gt;For these reasons, direct encryption using elliptic curve is not practical but one can use hybrid encryption instead. That is, using ECDH to produce a shared secret value that will be used as a secret for some symmetric encryption algorithm (e.g. AES). This is called Elliptic Curve Integrated Encryption Scheme (ECIES).&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Apple primes</title>
