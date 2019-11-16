@@ -5,12 +5,102 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 22 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 06 Nov 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Apple primes</title>
+      <link>/post/apple_primes/</link>
+      <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>/post/apple_primes/</guid>
+      <description>
+
+&lt;p&gt;What does this title mean?&lt;/p&gt;
+
+&lt;p&gt;Well, last week (October 30th, 2018), Apple published a &lt;a href=&#34;https://support.apple.com/fr-fr/HT209192&#34; target=&#34;_blank&#34;&gt;security update for iOS 12.1&lt;/a&gt; and &lt;a href=&#34;https://support.apple.com/fr-fr/HT209193&#34; target=&#34;_blank&#34;&gt;macOS Mojave 10.14.1&lt;/a&gt; that addresses an issue existing in the method for determining prime numbers. This method was implemented in Apple’s crytptographic library CoreCrypto which is used in many different cryptographic applications. Martin Albrecht, Jake Massimo and Kenny Paterson of Royal Holloway and Juraj Somorovsky of Ruhr University were issued the CVE-2018–4398 for discovering the pitfall. The full academic paper can be found &lt;a href=&#34;https://eprint.iacr.org/2018/749.pdf&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. According to the paper, an attacker may be able to exploit a weakness in the primality test to incorrectly identify prime numbers.&lt;/p&gt;
+
+&lt;p&gt;So what are prime numbers and why they are used in cryptography? How to efficiently test the primality of a number? and what would be the impact if composite numbers are incorrectly declared primes (Apple primes)?&lt;/p&gt;
+
+&lt;h2 id=&#34;prime-numbers&#34;&gt;Prime numbers&lt;/h2&gt;
+
+&lt;p&gt;A prime number is a positive integer that has exactly two positive integer factors, 1 and itself. For example, if we list the factors of 28, we have 1, 2, 4, 7, 14, and 28. That’s six factors. If we list the factors of 29, we only have 1 and 29. That’s two factors. So we say that 29 is a prime number, but 28 isn’t. Primes are central in number theory because of the fundamental theorem of arithmetic: every natural number greater than 1 is either a prime itself or can be factorized as a product of primes that is unique up to their order.&lt;/p&gt;
+
+&lt;p&gt;There are infinitely many primes (Euclid gave a simple proof by contradiction or you can check more recent proofs using &lt;a href=&#34;https://en.wikipedia.org/wiki/Proof_of_the_Euler_product_formula_for_the_Riemann_zeta_function&#34; target=&#34;_blank&#34;&gt;Euler product for the Riemann zeta function&lt;/a&gt; or the irrationality of &lt;a href=&#34;https://en.wikipedia.org/wiki/Leibniz_formula_for_π&#34; target=&#34;_blank&#34;&gt;$\pi$ and Leibniz formula&lt;/a&gt;) but no known simple formula separates them from composite numbers.&lt;/p&gt;
+
+&lt;p&gt;A deterministic straightforward method to check if an integer $p$ is prime is to test whether $p$ is a multiple of any integer between $2$ and $\sqrt{p}$, but this method or any deterministic approach remains very slow when dealing with big numbers.&lt;/p&gt;
+
+&lt;h2 id=&#34;primality-tests&#34;&gt;Primality tests&lt;/h2&gt;
+
+&lt;p&gt;Many popular primality tests are probabilistic tests because they provide provable bounds on the probability being fooled by a composite number. These tests use, apart from the tested number, some other numbers (witnesses) which are chosen at random; the usual randomized primality tests never report a prime number as composite, but it is possible for a composite number to be reported as prime. The probability of error can be reduced by repeating the test with several independently chosen values of witnesses .
+The basic structure of randomized primality tests is as follows:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Randomly pick a number .&lt;/li&gt;
+&lt;li&gt;Check some equality (corresponding to the chosen test) involving and the given number . If the equality fails to hold true, then is a composite number and the test stops.&lt;/li&gt;
+&lt;li&gt;Repeat from step 1 until the required accuracy is achieved.
+After one or more iterations, if is not found to be a composite number, then it can be declared probably prime.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;fermat-primality-test&#34;&gt;Fermat Primality Test&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fermat&amp;rsquo;s Little Theorem&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If $p$ is as prime number and $a$ is a positive integer less than $p$, then the remainder of $a^{p-1}$ devising by $p$ is $1$ i.e. $a^{p-1} \equiv 1 \pmod p$&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Test Algorithm&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If $p$ is the number which we want to test for primality, then we could randomly choose $a$, such that $a &amp;lt; p$ and then calculate $a^{p-1} \equiv \pmod p$. If the result is not $1$, then by Fermat’s Little Theorem $p$ cannot be prime. What if that is not the case? We can choose another $a$ and then do the same test again. We could stop after some number of iterations and if the result is always $1$ in each of them, then we can state that is probably prime. The more iterations we do, the higher is the probability that our result is correct.&lt;/p&gt;
+
+&lt;h2 id=&#34;miller-rabin-primality-test&#34;&gt;Miller-Rabin Primality Test&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Key Ideas
+
+&lt;ol&gt;
+&lt;li&gt;Fermat’s Little Theorem.&lt;/li&gt;
+&lt;li&gt;If $p$ is prime and $x^2 \equiv 1 \pmod p$, then $x \equiv 1$ or $-1 \pmod p$&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The number we want to test its primality is necessarily odd, then $p-1$ is even and we can write $p-1 = 2^s d$ where $d$ is an odd number and $d ≥ 0$.&lt;/p&gt;
+
+&lt;p&gt;If $p$ is prime, then either $a^d \equiv 1 \pmod p$ as in this case, repeated squaring from $a^d$ will always yield $1$, so $a^{p-1} \pmod p$ will be $1$; or $a^{2^r d} \equiv -1 \pmod p$ for some $r$ such that $0 ≤ r ≤ s$, as repeated squaring from it will always yield $1$ and finally $a^{p-1} \equiv 1 \pmod p$. If none of these hold true, $a^{p-1}$ will not be $1$ for any prime number (otherwise there will be a contradiction with fact #2).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Test Algorithm&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let be $p$ the given number which we have to test. First we rewrite $p-1$ as $2^s d$. Now we pick some in range and then check whether or for . If both of them fail, then is definitely composite. Otherwise is probably prime. We can choose another and repeat the same test to reduce the probability of error.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;apple-s-pitfall&#34;&gt;Apple’s pitfall&lt;/h2&gt;
+
+&lt;p&gt;In number theory, a Carmichael number is a composite number $n$ which satisfies the modular arithmetic congruence relation $a^{p-1} \equiv 1 \pmod p$ for all integers $a$ which are coprime to $n$, i.e. a composite number that satisfies Fermat’s test. Robert Carmichael found the first and smallest such number, 561, which explains the name “Carmichael number”. Indeed, $561=3 \times 11 \times 17$ and $a^560 \equiv 1 \pmod 561$ for all $a$ coprime to $561$.&lt;/p&gt;
+
+&lt;p&gt;Like the Fermat, the Rabin-Miller test has Carmichael numbers (choices of $a$ for which the test declares a composite integer to be a probable prime) but there are fewer. It turns out for any composite $n$, including Carmichael numbers, the probability n passes the Miller-Rabin test is at most $&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;4&lt;/sub&gt;$ (on average it is significantly less.) Thus the probability $n$ passes several runs decreases exponentially. However, the bases $a$ should be chosen randomly so an attacker wouldn’t be able to find Carmichael numbers with respect to these bases.&lt;/p&gt;
+
+&lt;p&gt;In corecrypto library, Apple performs $t &amp;lt; 256$ rounds of Miller-Rabin testing, selecting the bases incrementally from a &lt;code&gt;hard-coded&lt;/code&gt; list of the first 256 primes. When performing, for instance, $t = 32$ rounds of testing, the probability of a false prime classification is estimated as $&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt;^{64}$. However, since the bases $a$ generation is deterministic, an attacker should be able to find composite numbers that fool the test. This was done in the &lt;a href=&#34;https://eprint.iacr.org/2018/749.pdf&#34; target=&#34;_blank&#34;&gt;paper&lt;/a&gt; using the method described in Arnault, F &amp;ldquo;Constructing Carmichael numbers which are strong pseudoprimes to several bases&amp;rdquo; paper. An example of such a composite 1024-bit number of the form $n=p \times q \times r$ is given below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;n = 105216055594390884840438324972769319399722594046651360392070071794973423530188471087867855419188813164954561140227145977855514336985746250989366318940490798583710597151720075427387437940535767395296272532149397065590267303873620351321073058502920032770522836726669005262088263964215455869031740912313201227043
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p = 123282949929736752510916282638002560328626287433241467864741378859343760091491850110380631340085554443
+q = 28724927333628663335043493854654596556569924971945262012484741274227096101317601075718687102239934184987
+r = 29711190933066557355130824115758617039198935271411193755402672305101846182049535876601732152960618620523
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Secure Two-Party Computation (S2PC)</title>
