@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="Here we describe how to add a page to your site.">
+  <meta name="description" content="In the series of posts I am willing to write, I will try to answer technical questions I have been asking myself throughout my readings about Maths, cryptography and Blockchain. For many questions, I couldn’t find easily or completely the answer I was looking for. One of these questions I faced is: Why did we even consider using elliptic curves for cryptography ? The question is &ldquo;Why&rdquo; rather than &ldquo;How&rdquo;. Elliptic curves are mathematical objects from the algebraic geometry and one should be normally surprised when discovering that such objects are used to encrypt data.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/why_ec/">
@@ -114,8 +114,8 @@
   <meta property="og:site_name" content="Homepage">
   <meta property="og:url" content="/post/why_ec/">
   <meta property="og:title" content="Why do we use elliptic curves for cryptography? | Homepage">
-  <meta property="og:description" content="Here we describe how to add a page to your site."><meta property="og:image" content="/img/why_ec.png">
-  <meta property="twitter:image" content="/img/why_ec.png"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="In the series of posts I am willing to write, I will try to answer technical questions I have been asking myself throughout my readings about Maths, cryptography and Blockchain. For many questions, I couldn’t find easily or completely the answer I was looking for. One of these questions I faced is: Why did we even consider using elliptic curves for cryptography ? The question is &ldquo;Why&rdquo; rather than &ldquo;How&rdquo;. Elliptic curves are mathematical objects from the algebraic geometry and one should be normally surprised when discovering that such objects are used to encrypt data."><meta property="og:image" content="/img/why_ec.jpg">
+  <meta property="twitter:image" content="/img/why_ec.jpg"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2018-10-07T00:00:00&#43;00:00">
@@ -166,7 +166,7 @@
       "url": "/img/icon-512.png"
     }
   },
-  "description": "Here we describe how to add a page to your site."
+  "description": "In the series of posts I am willing to write, I will try to answer technical questions I have been asking myself throughout my readings about Maths, cryptography and Blockchain. For many questions, I couldn’t find easily or completely the answer I was looking for. One of these questions I faced is: Why did we even consider using elliptic curves for cryptography ? The question is \u0026ldquo;Why\u0026rdquo; rather than \u0026ldquo;How\u0026rdquo;. Elliptic curves are mathematical objects from the algebraic geometry and one should be normally surprised when discovering that such objects are used to encrypt data."
 }
 </script>
 
@@ -453,7 +453,7 @@
 <div class="article-header">
   
   
-  <img src="/img/why_ec.png" class="article-banner" alt="">
+  <img src="/img/why_ec.jpg" class="article-banner" alt="">
   
 
   
@@ -533,13 +533,43 @@
 
     <div class="article-style">
       <p>In the series of posts I am willing to write, I will try to answer technical questions I have been asking myself throughout my readings about Maths, cryptography and Blockchain. For many questions, I couldn’t find easily or completely the answer I was looking for. One of these questions I faced is: Why did we even consider using elliptic curves for cryptography ? The question is &ldquo;Why&rdquo; rather than &ldquo;How&rdquo;.
-Elliptic curves are mathematical objects from the algebraic geometry and one should be normally surprised when discovering that such objects are used to encrypt data. In fact, elliptic curves are non-singular algebraic curves satisfying an equation of the form $$y^3=x^3+ax+b$$ (cf. figure 1).</p>
+Elliptic curves are mathematical objects from the algebraic geometry and one should be normally surprised when discovering that such objects are used to encrypt data. In fact, elliptic curves are non-singular algebraic curves satisfying an equation of the form $y^3=x^3+ax+b$ (cf. figure 1).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/ec.png" data-caption="Figure 1: Examples of elliptic curves over $\mathbb{R}^2$">
+<img src="/img/ec.png" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    Figure 1: Examples of elliptic curves over $\mathbb{R}^2$
+  </figcaption>
+
+
+</figure>
+
 
 <p>Well, that doesn’t help us a lot.. And since I started this post with a question you have the right to ask more questions: What do these mathy words mean? How did we get this equation? And why are they even called &ldquo;elliptic&rdquo; even though they do not resemble &ldquo;ellipses&rdquo; in any way ? Don’t worry I’ve asked myself these same questions and we’re going to deep dive into the answers in later posts. For now, let’s go back to the main question: Why do we use these curves to encrypt data?
-To answer this we have to trace the evolution of cryptography over the years. The earliest known cryptographic schemes use a symmetric approach — that is using the same key for both encryption and decryption. A simple example of this approach and one of the oldest would be &ldquo;Caesar cipher&rdquo; in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. In this scheme the encryption/decryption key is the fixed number of positions that must be kept secret and known only to the communicating parties. This symmetric approach is still widely used today through many ciphers such as AES, Blowfish or RC4 but the requirement of a secret symmetric key is still the main drawback.
-Cryptographers have been then looking for innovative asymmetric approaches where the decryption key differs from the encryption one. That is said, they have been looking for algorithms where it is easy to derive the decryption key (public) given the encryption key (private) and difficult the other way around — or mathematically put, a function that is straightforward to compute and computationally hard to inverse. One of the first algorithms proposed and still widely used nowadays is the famous RSA which relies on the hardness of the &ldquo;factorization problem&rdquo;. In fact, given two prime integers, it is easy to compute their multiplication but presumably hard to find the prime integers given the multiplication output. At this point you may (should) be asking why is it hard to factorize an integer and the answer is that there is no published algorithm that can do this in polynomial time (an algorithm is said to be of polynomial time if its running time is upper bounded by a polynomial expression in the size of the input for the algorithm). In fact, the best published asymptotic running time (on a classical computer, not a quantum one. Wait, quantum?) is for the general number field sieve (GNFS) algorithm which has a sub-exponential complexity. In short, integer factorization is &ldquo;hard&rdquo; in the sense of computational efficiency because we haven’t found just yet a reason for it to be easy, and we can’t prove it is hard. All this to come to the point that integer factorization, in my opinion, has nothing to do with the unknown primes distribution as widely believed. It is true that the problem is built upon the fundamental theorem of arithmetic which states that every integer can be uniquely represented as the product of prime numbers but I think that the chaotic nature of primes distribution has no bearing on the problem. There’s no reason to expect that factorization would become even a bit easier by proving the Goldbach conjecture, the twin primes conjecture or the Riemann Hypothesis for examples. However, the problem becomes computationally easier (polynomial time) when using quantum computers to run Shor’s algorithm as we will see on a later post.
-Another proposed asymmetric construction relies on the hardness of the &ldquo;discrete logarithm&rdquo; problem in cyclic groups. Given integers a and b in a carefully chosen group G, no efficient method is known for recovering the integer k such that a= bᵏ. In fact, the problem is quickly computable in a few special cases but in some cases there is not only no efficient algorithm known for the worst case, but the average-case complexity can be shown to be about as hard as the worst case using random self-reducibility. So choosing the group G is critical and a popular choice that provides good security assumptions is large prime order subgroups of groups ℤp. These groups were used to build several known cryptographic protocols such as ElGamal encrytpion, Diffie-Hellman (DH) key exchange and Digital Signature Algorithm (DSA). However, using these groups requires large key sizes because of the sub-exponential GNFS algorithm as well. In fact, while computing discrete logarithms and factoring integers are distinct problems, both are special cases of the hidden subgroup problem for finite Abelian groups and thus, for both, the most efficient approach remains GNFS on a classical computer and Shor’s algorithm on a quantum computer.
-At this point, you may be thinking that somehow changing that group G from finite fields to elliptic curves may provide better security assumptions. You’re right! The best published algorithms to find discrete logarithms over elliptic curves are Pollard’s ρ or baby-step-giant-step with a way better running time than GNFS. But wait, what is a discrete logarithm over elliptic curves? (you ask a lot of questions, huh?) Well, no worries, we will soon deep dive into all the machinery ;)</p>
+To answer this we have to trace the evolution of cryptography over the years. The earliest known cryptographic schemes use a symmetric approach — that is using the same key for both encryption and decryption. A simple example of this approach and one of the oldest would be <a href="https://en.wikipedia.org/wiki/Caesar_cipher" target="_blank">&ldquo;Caesar cipher&rdquo;</a> in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. In this scheme the encryption/decryption key is the fixed number of positions that must be kept secret and known only to the communicating parties. This symmetric approach is still widely used today through many ciphers such as <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank">AES</a>, <a href="https://en.wikipedia.org/wiki/Blowfish_(cipher)" target="_blank">Blowfish</a> or <a href="https://en.wikipedia.org/wiki/RC4" target="_blank">RC4</a> but the requirement of a secret symmetric key is still the main drawback.
+Cryptographers have been then looking for innovative asymmetric approaches where the decryption key differs from the encryption one. That is said, they have been looking for algorithms where it is easy to derive the decryption key (public) given the encryption key (private) and difficult the other way around — or mathematically put, a function that is straightforward to compute and computationally hard to inverse. One of the first algorithms proposed and still widely used nowadays is the famous <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)" target="_blank">RSA</a> which relies on the hardness of the &ldquo;factorization problem&rdquo;. In fact, given two prime integers, it is easy to compute their multiplication but presumably hard to find the prime integers given the multiplication output. At this point you may (should) be asking why is it hard to factorize an integer and the answer is that there is no published algorithm that can do this in polynomial time (an algorithm is said to be of polynomial time if its running time is upper bounded by a polynomial expression in the size of the input for the algorithm). In fact, the best published asymptotic running time (on a classical computer, not a quantum one. Wait, quantum?) is for the general number field sieve (<a href="https://en.wikipedia.org/wiki/General_number_field_sieve" target="_blank">GNFS</a>) algorithm which has a sub-exponential complexity. In short, integer factorization is &ldquo;hard&rdquo; in the sense of computational efficiency because <a href="https://en.wikipedia.org/wiki/P_versus_NP_problem" target="_blank">we haven’t found just yet a reason for it to be easy, and we can’t prove it is hard</a>. All this to come to the point that integer factorization, in my opinion, has nothing to do with the unknown primes distribution as widely believed. It is true that the problem is built upon the <a href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic" target="_blank">fundamental theorem of arithmetic</a> which states that every integer can be uniquely represented as the product of prime numbers but I think that the chaotic nature of primes distribution has no bearing on the problem. There’s no reason to expect that factorization would become even a bit easier by proving the <a href="https://en.wikipedia.org/wiki/Goldbach%27s_conjecture" target="_blank">Goldbach conjecture</a>, the <a href="https://en.wikipedia.org/wiki/Twin_prime" target="_blank">twin primes conjecture</a> or the <a href="https://en.wikipedia.org/wiki/Riemann_hypothesis" target="_blank">Riemann Hypothesis</a> for examples. However, the problem becomes computationally easier (polynomial time) when using quantum computers to run <a href="https://en.wikipedia.org/wiki/Shor%27s_algorithm" target="_blank">Shor’s algorithm</a> as we will see on a later post.
+Another proposed asymmetric construction relies on the hardness of the &ldquo;discrete logarithm&rdquo; problem in cyclic groups. Given integers a and b in a carefully chosen group G, no efficient method is known for recovering the integer k such that $a=b^k$. In fact, the problem is quickly computable in a few special cases but in some cases there is not only no efficient algorithm known for the worst case, but the <a href="https://en.wikipedia.org/wiki/Average-case_complexity" target="_blank">average-case complexity</a> can be shown to be about as hard as the worst case using <a href="https://en.wikipedia.org/wiki/Random_self-reducibility" target="_blank">random self-reducibility</a>. So choosing the group G is critical and a popular choice that provides good security assumptions is large prime order subgroups of groups $\mathbb{Z}_p$. These groups were used to build several known cryptographic protocols such as <a href="https://en.wikipedia.org/wiki/ElGamal_encryption" target="_blank">ElGamal encrytpion</a>, <a href="https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange" target="_blank">Diffie-Hellman (DH) key exchange</a> and <a href="https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange" target="_blank">Digital Signature Algorithm (DSA)</a>. However, using these groups requires large key sizes because of the sub-exponential <a href="https://en.wikipedia.org/wiki/General_number_field_sieve" target="_blank">GNFS</a> algorithm as well. In fact, while computing discrete logarithms and factoring integers are distinct problems, both are special cases of the <a href="https://en.wikipedia.org/wiki/Hidden_subgroup_problem" target="_blank">hidden subgroup problem</a> for finite Abelian groups and thus, for both, the most efficient approach remains <a href="https://en.wikipedia.org/wiki/General_number_field_sieve" target="_blank">GNFS</a> on a classical computer and <a href="https://en.wikipedia.org/wiki/Shor%27s_algorithm" target="_blank">Shor’s algorithm</a> on a quantum computer.
+At this point, you may be thinking that somehow changing that group G from finite fields to elliptic curves may provide better security assumptions. You’re right! The best published algorithms to find discrete logarithms over elliptic curves are <a href="https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm" target="_blank">Pollard’s $\rho$</a> or <a href="https://en.wikipedia.org/wiki/Baby-step_giant-step" target="_blank">baby-step-giant-step</a> with a way better running time than <a href="https://en.wikipedia.org/wiki/General_number_field_sieve" target="_blank">GNFS</a>. But wait, what is a discrete logarithm over elliptic curves? (you ask a lot of questions, huh?) Well, no worries, we will soon deep dive into all the machinery ;)</p>
 
     </div>
 
@@ -775,6 +805,9 @@ At this point, you may be thinking that somehow changing that group G from finit
 
     
     
+    
+    <script src="/js/mathjax-config.js"></script>
+    
 
     
     
@@ -795,6 +828,8 @@ At this point, you may be thinking that somehow changing that group G from finit
       
 
       
+      
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
 
