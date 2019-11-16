@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.5.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Youssef El Housni">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="From my Medium blog - medium.com/@youssef.housni21">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/sss/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/sss/">
+
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Homepage">
+  <meta property="og:url" content="/post/sss/">
+  <meta property="og:title" content="Shamir Secret Sharing — The magic 3S Spell | Homepage">
+  <meta property="og:description" content="From my Medium blog - medium.com/@youssef.housni21"><meta property="og:image" content="/img/sss.jpg">
+  <meta property="twitter:image" content="/img/sss.jpg"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2019-04-02T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2019-04-02T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/sss/"
+  },
+  "headline": "Shamir Secret Sharing — The magic 3S Spell",
+  
+  "datePublished": "2019-04-02T00:00:00Z",
+  "dateModified": "2019-04-02T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Youssef El Housni"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Homepage",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/img/icon-512.png"
+    }
+  },
+  "description": "From my Medium blog - medium.com/@youssef.housni21"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Shamir Secret Sharing — The magic 3S Spell | Homepage</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Homepage</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#featured"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+<div class="article-header">
+  
+  
+  <img src="/img/sss.jpg" class="article-banner" alt="">
+  
+
+  
+</div>
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Shamir Secret Sharing — The magic 3S Spell</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Apr 2, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+
+<blockquote>
+<p>“There are no more Horcruxes. It’s just you and me. Neither can live while the other survives, and one of us is about to leave for good…”
+—Harry Potter and the Deathly Hallows, Chapter 36: The Flaw in the Plan.</p>
+</blockquote>
+
+<p>The Horcrux hunt was a mission started by Albus Dumbeldore and given to Harry Potter to find all of Lord Voldemort’s remaining Horcruxes and destroy them. Obsessed with immortality from a young age, Lord Voldemort created a series of Horcruxes in an effort to prevent his death. A Horcrux is a vessel into which one places a piece of one’s soul to protect one from mortal death. Voldemort split his soul into 7 secret parts in a way that reconstruction is possible. It is widely believed that the process for Horcrux splitting involves a spell and a horrific act is performed after a murder has been committed, but this is not true. Voldemort invented this cover story to keep secret the very simple spell he used (a wizard patent for the technical term) — it is called the 3S spell.</p>
+
+<p>The 3S spell is nothing but a Shamir secret sharing scheme. In this scheme, a dealer (Voldemort) splits a secret (his soul) into multiple shares (Horcruxes) in a way that reconstruction is only possible when combining all of the shares or some sufficient fixed number of them. The spell uses some basic polynomial algebra magic (1st year at Hogwarts) and some finite field wizardry.</p>
+
+<h2 id="basic-scheme">Basic scheme</h2>
+
+<p>Let’s $s$ be the secret and $n$ the number of shares, a dealer can construct a secret sharing scheme where only $t &lt; n$ custodians can reconstruct the secret $s$. He first generates a $t$-degree polynomial $P(X) = p_0 + p_1X + p_2X^2 + · · · + p_t X^t$ where $p_0$ is the secret $s$ and $p_1, p_2, \dots , p_t$ are chosen at random from the finite field we’re working in (e.g. $\mathbb{F}_31$ which means integers from 0 to 30). He then computes the points $v_1 = P(1), v_2 = P(2), \dots and v_n = P(n)$ and distributes these $n$ shares to the custodians. Any $t &lt; n$ shares can reconstruct the polynomial $P$ with interpolation (e.g. <a href="https://en.wikipedia.org/wiki/Lagrange_polynomial" target="_blank">Lagrange interpolation</a>) and recover the original secret $s = P(0)$. Note that any $t − 1$ shares would interpolate with high probability a false polynomial.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/sss_wiki1.png" data-caption="One can draw an infinite number of polynomials of degree 2 through 2 points. 3 points are required to define a unique polynomial of degree 2. This image is for illustration purposes only — Shamir’s scheme uses polynomials over a finite field, not re-presentable on a 2-dimensional plane (Wikipedia)">
+<img src="/img/sss_wiki1.png" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    One can draw an infinite number of polynomials of degree 2 through 2 points. 3 points are required to define a unique polynomial of degree 2. This image is for illustration purposes only — Shamir’s scheme uses polynomials over a finite field, not re-presentable on a 2-dimensional plane (<a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing" target="_blank">Wikipedia</a>)
+  </figcaption>
+
+
+</figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/sss_wiki2.png" data-caption="This is a polynomial curve over a finite field — now the order of the polynomial has seemingly little to do with the shape of the graph (Wikipedia)">
+<img src="/img/sss_wiki2.png" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    This is a polynomial curve over a finite field — now the order of the polynomial has seemingly little to do with the shape of the graph (<a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing" target="_blank">Wikipedia</a>)
+  </figcaption>
+
+
+</figure>
+
+
+<h2 id="verifiable-scheme">Verifiable scheme</h2>
+
+<p>There are two problems with the basic scheme:</p>
+
+<ul>
+<li>A malicious custodian can submit a false share</li>
+<li>A malicious dealer can distribute false shares</li>
+</ul>
+
+<p>The first issue can be addressed by adding some fingerprint to the secret. This way, if a malicious custodian submit a false share, the reconstructed secret won’t be correct and the fingerprint lost. One way to do this is by concatenating the secret s with the hash of the last 31 bytes of s, i.e. s ← (s||sha256(s[: −32]). However, identifying the malicious custodian remains impossible in this approach.</p>
+
+<p>The solution to the second problem, can both identify a malicious dealer and a malicious custodian in the first scenario. A simple approach would be to publicly publish the hashes of shares but this might be impractical in some use-cases where the number of custodians increases quickly. In fact, each custodian will have a database of auxiliary information that may increases quickly over the time. A better approach was proposed by Feldman and uses homomorphic commitments.</p>
+
+<h3 id="feldman-s-approach">Feldman’s approach:</h3>
+
+<p>In this approach, the dealer publishes the commitments of polynomial’s coefficients $p_0= s$ and $p_1, p_2, \dots, p_t$ that are homomorphic with respect to multiplication. Such a commitment is known to be a Pedersen’s commitment. Given a finite field of prime characteristic $p$ and a generator $g$, the dealer publishes $c_0 \equiv g^s \pmod p, c_1 \equiv g^{p_1} \pmod p, \dots$ and $c_t \equiv g^{p_t} \pmod p$. Given the commitments $c_i$ for $i \in [0, t]$, the is no way to retrieve the secret $s$ and the coefficients $p_1, p_2, \dots, p_t$ because of the hardness of the discrete logarithm problem. A custodian can verify that the share $v_i$ he was given by the dealer wasn’t tampered with thanks to the homomorphic property of Pedersen’s commitments. In fact,</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/sss_eq.png" >
+<img src="/img/sss_eq.png" alt="" ></a>
+
+
+
+</figure>
+
+
+<p>This is basically the magic 3S spell that allowed Lord Voldemort to split his soul into 7 horcruxes. The process is rather simple that even Ronald Weasley can perform, but Tom Riddle invented the horrific-act-after-murder story to keep away wizardry newbies from reaching immortality.</p>
+
+<p>Yes, I ruined your childhood memories. Sorry Not Sorry.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/sss_voldemort.jpg" >
+<img src="/img/sss_voldemort.jpg" alt="" ></a>
+
+
+
+</figure>
+
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/sss/&amp;text=Shamir%20Secret%20Sharing%20%e2%80%94%20The%20magic%203S%20Spell" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/sss/&amp;t=Shamir%20Secret%20Sharing%20%e2%80%94%20The%20magic%203S%20Spell" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Shamir%20Secret%20Sharing%20%e2%80%94%20The%20magic%203S%20Spell&amp;body=/post/sss/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/sss/&amp;title=Shamir%20Secret%20Sharing%20%e2%80%94%20The%20magic%203S%20Spell" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Shamir%20Secret%20Sharing%20%e2%80%94%20The%20magic%203S%20Spell%20/post/sss/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/sss/&amp;title=Shamir%20Secret%20Sharing%20%e2%80%94%20The%20magic%203S%20Spell" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hu381e5819bc5366fb067596c00984f1ce_7838988_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Youssef El Housni</a></h5>
+      <h6 class="card-subtitle">Cryptography engineer at EY Blockchain Hub and PhD Student at Ecole Polytechnique (Paris)</h6>
+      <p class="card-text">My research interests include applied cryptography for privacy-preserving blockchain applications.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:youssef.housni21@gmail.com" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=kTCe0zYAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/yelhousni" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/youssef-el-housni-412427108/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    2019 Youssef El Housni ©
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
