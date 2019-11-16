@@ -5,12 +5,243 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 03 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 23 Mar 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Zero-knowledge summit - ZK0x03</title>
+      <link>/post/zk_summit_3/</link>
+      <pubDate>Sat, 23 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>/post/zk_summit_3/</guid>
+      <description>&lt;p&gt;On March 22nd 2019, I attended the third edition of &lt;a href=&#34;https://www.zeroknowledge.fm/summit&#34; target=&#34;_blank&#34;&gt;zero-knowledge summit ZK0x03&lt;/a&gt; held at Berlin. The summit was organized by Anna Rose and Fredrik Harrysson from &lt;a href=&#34;https://www.zeroknowledge.fm&#34; target=&#34;_blank&#34;&gt;zero-knowledge podcast&lt;/a&gt;, which is made for fellow developers and people looking to educate themselves on the inner workings of the blockchain zero-knowledge tech space. This one-day event focused on zero-knowledge topics, zkSNARK, MPCs, STARKs and blockchain scaling solutions featuring the following speakers:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ahivu Levy (StarkWare Industries) discussing scalability with STARKs&lt;/li&gt;
+&lt;li&gt;Harry Roberts (Ethsnarks) sharing the history of high-level programming languages for making zk proofs&lt;/li&gt;
+&lt;li&gt;John &amp;lsquo;Tux&amp;rsquo; Pacific (Nucypher) on fully homomorphic encryption&lt;/li&gt;
+&lt;li&gt;Jordi Baylina (Iden3) on Circom and Snarkjs&lt;/li&gt;
+&lt;li&gt;Izaak Meckler (CODA Protocol) on the secrets of SNARK programming&lt;/li&gt;
+&lt;li&gt;Alex Vlasov (Matter Labs) on scaling &amp;amp; privacy with zkSNARKs in Ethereum&lt;/li&gt;
+&lt;li&gt;Aurélien Nicolas (QED-it, zkproofs.org) discussing zk standards&lt;/li&gt;
+&lt;li&gt;Zachary Williamson (Aztec Protocol) on ERC-1724 confidential digital assets&lt;/li&gt;
+&lt;li&gt;Igor Barinov (POA Network) on scaling with xDai and side chains&lt;/li&gt;
+&lt;li&gt;Jonathan Levi (HACERA) on ZKPs for both permissioned and permissionless blockchains&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There were also discussions on confidential transaction scheme based on 1-out-of-N proofs, GDPR and privacy of Zcash shielded transactions as well as deep-dive workshops on practical use and implementation of ZKPs, building a STARK with pen and paper and more. The program ran from 9:30 a.m. to 8 p.m. where talks were presented at two different filmed stages while roundtables and circle discussion happened on two other dedicated rooms. The full program can be found &lt;a href=&#34;https://docs.google.com/spreadsheets/d/1V90U-mVMWsbO1PzSxDVOSJ76_a9pCORJPJYfInWvOLA/edit#gid=0&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; and the playlist of videos &lt;a href=&#34;https://www.youtube.com/playlist?list=PLj80z0cJm8QHvg1ydi6rTEUK1SpxbtKnM&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Since the program was running in parallel, I couldn’t make it to all the presentations so I chose 3 talks and 2 roundtables I was most interested in:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Talk 1: scalability first with STARK — Ahivu levy (StarkWare industries)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/talk1.png&#34; data-caption=&#34;video of the talk&#34;&gt;
+&lt;img src=&#34;/img/talk1.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    &lt;a href=&#34;https://www.youtube.com/watch?v=H16nWlj3C_M&amp;amp;index=3&amp;amp;list=PLj80z0cJm8QHvg1ydi6rTEUK1SpxbtKnM&amp;amp;t=0s&#34; target=&#34;_blank&#34;&gt;video of the talk&lt;/a&gt;
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;p&gt;This talk was about scalability using STARKs — It was presented by Ahivu, the head product of StarkWare, a startup that leverages on STARK technology to improve blockchain scalability and privacy. The main takeaway is that they are planning to release their first product mid-april which is a decentralized exchange (DEX) engine on Ethereum. While STARKs can solve privacy on the blockchain as it is widely believed, Ahivu thinks that they are the best candidate to solve scalability thanks to the exponentially small verifier running time.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Talk 2: fully homomorphic encryption the road to secure computation — John Tux Pacific (NuCypher)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/talk2.png&#34; data-caption=&#34;video of the talk&#34;&gt;
+&lt;img src=&#34;/img/talk2.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    &lt;a href=&#34;https://www.youtube.com/watch?v=_1qFoDEhHRY&amp;amp;index=6&amp;amp;list=PLj80z0cJm8QHvg1ydi6rTEUK1SpxbtKnM&amp;amp;t=0s&#34; target=&#34;_blank&#34;&gt;video of the talk&lt;/a&gt;
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;p&gt;This talk was about secure multiparty computation (SMPC), trusted execution evironments (TEE) and fully homomorphic encryption (FHE) with focus on the latter. It was presented by John who is a cryptography engineer at NuCypher, a startup that works mainly on proxy-reencryption and FHE to build privacy infrastructure for the blockchain. John started by presenting SMPC, TEE and FHE, and and then listed the pros and cons of each approach. Because FHE seems to be the ideal approach, he then exposed how research is aiming to address FHE cons.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Talk 3: Scaling and privacy with zkSNARKs in Ethereum — Alex Vlasov (Matter Labs)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/talk3.png&#34; data-caption=&#34;video of the talk&#34;&gt;
+&lt;img src=&#34;/img/talk3.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    &lt;a href=&#34;https://www.youtube.com/watch?v=fSp2tyTtsEY&amp;amp;list=PLj80z0cJm8QHvg1ydi6rTEUK1SpxbtKnM&amp;amp;index=7&amp;amp;t=0s&#34; target=&#34;_blank&#34;&gt;video of the talk&lt;/a&gt;
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+&lt;p&gt;Although the title of this talk is “scaling and privacy with zkSNARKs in Etherem”, the presentation was mainly about the new zero-knowledge protocol called &lt;a href=&#34;https://eprint.iacr.org/2019/099.pdf&#34; target=&#34;_blank&#34;&gt;SONIC&lt;/a&gt; and its comparison to the actual Groth16 zkSNARK protocol implemented in ZCash. The talk was presented by Alex who works at Matter Labs, a startup aiming to scale the blockchain using zero-knowledge proofs. &lt;a href=&#34;https://eprint.iacr.org/2019/099.pdf&#34; target=&#34;_blank&#34;&gt;SONIC&lt;/a&gt; is a new ZK proving system that requires an updatable and universal trusted setup — that means unlike other SNARKs, &lt;a href=&#34;https://eprint.iacr.org/2019/099.pdf&#34; target=&#34;_blank&#34;&gt;SONIC&lt;/a&gt; does not require a trusted setup for each circuit, but only a single setup for all circuits (up to a given circuit depth) and it never has to end, so it can be continuously secured by accumulating more contributions. To this point, Alex gave a nice comparison between usual SNARKs and &lt;a href=&#34;https://eprint.iacr.org/2019/099.pdf&#34; target=&#34;_blank&#34;&gt;SONIC&lt;/a&gt;; imagine you are playing a card game and you want some trusted deck of cards, in SNARKs you shuffle the deck and then you pass it to other players who shuffle it again every time you start a new game, but in &lt;a href=&#34;https://eprint.iacr.org/2019/099.pdf&#34; target=&#34;_blank&#34;&gt;SONIC&lt;/a&gt;s you only shuffle the deck once and then “clone” it every time you start a new game (this works for every game that requires the same number of cards or less ~circuit depth). For efficiency comparison, Groth16 is still better (0.6s vs 9s for a single proof and 3s vs 11.5s for a batch of 5 proofs — according to Alex benchmark) but we still need an efficient &lt;a href=&#34;https://eprint.iacr.org/2019/099.pdf&#34; target=&#34;_blank&#34;&gt;SONIC&lt;/a&gt; implementation as in Bellman to compare apples to apples. The main takeaway is that &lt;a href=&#34;https://eprint.iacr.org/2019/099.pdf&#34; target=&#34;_blank&#34;&gt;SONIC&lt;/a&gt;s are a real breakthrough that solve somewhat the SNARKs trusted setup issue. It is to mention that I discussed &lt;a href=&#34;https://eprint.iacr.org/2019/099.pdf&#34; target=&#34;_blank&#34;&gt;SONIC&lt;/a&gt;s with Ariel Gabizon (former ZCash cryptographer who discovered the trusted setup counterfeiting bug in ZCash) after the talk and he believes that a lot of research is being conducted in this direction and more efficient protocols are likely to be proposed later this year.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Roundtable 1: GPU implementation of zksnark prover — Konstantin Panarin (Matter Lab)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/roundtable1.png&#34; &gt;
+&lt;img src=&#34;/img/roundtable1.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+&lt;p&gt;This roundtable was animated by Konstantin from Matter Labs. He started by describing NVIDIA GPU architecture and code parallelization principles with examples, then he discussed how we can benefit from GPUs to speedup the proving step in Groth16 zkSNARKs. The most important part of the proving step (~60% of the computation time) is the multi-exponentiation and one way to do this efficiently is using &lt;a href=&#34;https://cr.yp.to/papers/pippenger.pdf&#34; target=&#34;_blank&#34;&gt;Pippenger&lt;/a&gt; algorithm (ZCash by the way moved from Bos-Coster algortihm to &lt;a href=&#34;https://cr.yp.to/papers/pippenger.pdf&#34; target=&#34;_blank&#34;&gt;Pippenger&lt;/a&gt; after Sapling activation). We discussed how the algorithm works and how it can be enhanced using NVIDIA GPUs keeping in mind that an enhancement should not only address the computation time but also the memory cost.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Roundtable 2: Building a STARK with pen and paper — Mathew Stevens and Micro Richter&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/roundtable2.jpg&#34; &gt;
+&lt;img src=&#34;/img/roundtable2.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+&lt;p&gt;This one was funny actually— we were 30 people at the beginning but only 10 stayed until the very end because of the heavy maths content. We deep dived into all the dirty details of the mathematical machinery behind zkSTARKS given a toy example (a Fibonacci sequence). The steps are:
+* Arithmetic intermediate representation (AIR) to show a computation as an execution trace with algebraic registers and to create polynomial contraints,
+* algebraic placement and routing (APR) to transform the AIR into functions that are Reed-Solomon codes if and only if the execution trace is a witness,
+* Reed-Solomon proximity testing (RPT) to check that an APR witness is an actual Reed-Solomon code in an efficient way, and
+* fast Reed-Solomon Interactive oracle proof of proximity (FRI) to efficiently check the proximity to the Reed-Solomon codes.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/panel.png&#34; &gt;
+&lt;img src=&#34;/img/panel.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+&lt;p&gt;The summit was closed by a park bench panel animated by Anna and Fredrik in a game form. Anyone from the audience can ask any question but if it turns out to be an opinion/remark then she/he is invited on stage to answer the upcoming questions. Here is a question I asked (which is actually an opinion according to Mrs Justice Anna):
+“Zero-knowledge proofs (ZKP) like zkSNARKs or zkSTARKs are not proofs but arguments because the soundness is only computational and not statistical, so is it a mistake to call them proofs?”&lt;/p&gt;
+
+&lt;p&gt;Besides the talks which were really interesting, this event was an opportunity to meet a lot of people from the broad ZKP/Blockchain community and to discuss technical details with sometimes the authors of some papers I’ve been scouring over the few last months. For this reason, I want to thank the organizers Anna and Fredrik for putting all of this together and especially Xavier De Boissieu and Quentin Drouot from EY for making my attendance possible.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Encryption using elliptic curves</title>
