@@ -5,12 +5,59 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 10 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 15 Aug 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Homepage</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>ZK-PAR 0x01</title>
+      <link>/post/zkpar1/</link>
+      <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>/post/zkpar1/</guid>
+      <description>&lt;p&gt;Once upon a time, the entire Universe was inside a bubble that was thousands of times smaller than a pinhead. It was hotter and denser than anything we can imagine. Then it suddenly exploded. The Universe that we know was born. Time, space and matter all began with the Big Bang. In a fraction of a second, the Universe grew from smaller than a single atom to bigger than a galaxy. And it kept on growing at a fantastic rate. It is still expanding today.&lt;/p&gt;
+
+&lt;p&gt;A biodiversity of species came to life. The total number of all species living on Earth estimates there are about 8.7 million species but the most important specie of all is one that, in the geological time scale, appeared recently. It is the human specie. So much happened on Earth before we came to call it home, but if we only focus on human life there is too much to narrate about.&lt;/p&gt;
+
+&lt;p&gt;One of the main discoveries by humans was fire control, it was an important step in their culture. It allowed humans to cook food and get warmth and protection. But before that, making fire also allowed destructive use as humans used it to attack predators, insects and each others.&lt;/p&gt;
+
+&lt;p&gt;Everyone knows this story but today I’m going to tell a similar story, as fascinating as this one. It is the story of elliptic curves. I’ll walk you through the pre- big bang and the post- big bang, I’ll show you the biodiversity of elliptic curves species and will present you to the specie used in cryptography, a.k.a. the Homo genus. Finally, we will go through a similar story to fire control that is pairing control.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I presented this story the 4th of July in Paris during ZK-PAR 0x01, the first Zero Knowledge meetup in the french capital. The meetups started in Tel-Aviv and then London and now Paris. They are intended for anyone interested in applied cryptography for privacy-preserving technology. The presentations are usually focussed on technical and practical aspects of this technology, notably its relation to blockchain technology. You can find more information and community discussions in the &lt;a href=&#34;https://www.facebook.com/groups/800441673459620/&#34; target=&#34;_blank&#34;&gt;Facebook group&lt;/a&gt; and the &lt;a href=&#34;https://www.youtube.com/channel/UCl6oyLa4CblZRurgwZwpgPQ&#34; target=&#34;_blank&#34;&gt;Youtube channel&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;ZK-PAR 0x01 hosted two speakers, Bastien Teinturier and myself. Bastien talked about anonymous payments in Bitcoin’s Lightning network and I invite you to watch his &lt;a href=&#34;https://www.youtube.com/watch?v=NM6WQkdjvYw&#34; target=&#34;_blank&#34;&gt;video&lt;/a&gt; and go through his &lt;a href=&#34;https://www.facebook.com/download/1117672475092357/ZK-PAR%200x01%20-%20Anonymous%20Payments%20in%20the%20Lightning%20Network%20-%20Bastien%20Teinturier.pdf?av=1151079687&amp;amp;eav=AfZveN272Vcrq3TdwQjKZQC-0UB7Q5NrjhkqP49rdEu0fBxPOFQZ55mNASEgwNbfSFI&amp;amp;hash=AcruoDF8Elw9chP1&#34; target=&#34;_blank&#34;&gt;slides&lt;/a&gt;. After that, my presentation was about this story of elliptic curves, or the story of life. Here is the &lt;a href=&#34;https://www.youtube.com/watch?v=bBWwOdGh2kw&amp;amp;fbclid=IwAR300GESe02Zn3npRvx8mZ746d1AdIV9kH-DAuYgkbhpz_hqLHAIqZTlnls&#34; target=&#34;_blank&#34;&gt;video&lt;/a&gt; and the &lt;a href=&#34;https://www.facebook.com/download/526379754568293/ZK-PAR%200x01%20-%20The%20generation%20of%20elliptic%20curves%20in%20cryptography%20-%20Youssef%20El%20Housni.pdf?av=1151079687&amp;amp;eav=AfYj4dbTgsp8i9mVQ6lrwIAB-vVMX-EP3uNYm9UZgJxoiZ4vQnANPgB6jpLDNz63-VA&amp;amp;hash=Acow_XOTtNM_8fkj&#34; target=&#34;_blank&#34;&gt;slides&lt;/a&gt;.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/zkpar1_me.png&#34; &gt;
+&lt;img src=&#34;/img/zkpar1_me.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+&lt;p&gt;Thanks to the sponsors of ZK-PAR: Beam, Consensys and Bitcoin.fr&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Heptadecagon</title>
