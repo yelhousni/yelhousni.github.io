@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="From my Medium blog - medium.com/@youssef.housni21">
+  <meta name="description" content="I this presentation the 4th of July in Paris during ZK-PAR 0x01, the first Zero Knowledge meetup in the french capital. The meetups started in Tel-Aviv and then London and now Paris. They are intended for anyone interested in applied cryptography for privacy-preserving technology. The presentations are usually focussed on technical and practical aspects of this technology, notably its relation to blockchain technology. You can find more information and community discussions in the Facebook group and the Youtube channel.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/post/s2pc/">
+  <link rel="alternate" hreflang="en-us" href="/talk/zk_par1/">
 
   
 
@@ -100,7 +100,7 @@
   <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/post/s2pc/">
+  <link rel="canonical" href="/talk/zk_par1/">
 
   
   
@@ -112,30 +112,23 @@
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Homepage">
-  <meta property="og:url" content="/post/s2pc/">
-  <meta property="og:title" content="Secure Two-Party Computation (S2PC) | Homepage">
-  <meta property="og:description" content="From my Medium blog - medium.com/@youssef.housni21"><meta property="og:image" content="/img/s2pc.jpg">
-  <meta property="twitter:image" content="/img/s2pc.jpg"><meta property="og:locale" content="en-us">
+  <meta property="og:url" content="/talk/zk_par1/">
+  <meta property="og:title" content="Elliptic curves in cryptography | Homepage">
+  <meta property="og:description" content="I this presentation the 4th of July in Paris during ZK-PAR 0x01, the first Zero Knowledge meetup in the french capital. The meetups started in Tel-Aviv and then London and now Paris. They are intended for anyone interested in applied cryptography for privacy-preserving technology. The presentations are usually focussed on technical and practical aspects of this technology, notably its relation to blockchain technology. You can find more information and community discussions in the Facebook group and the Youtube channel."><meta property="og:image" content="/img/zkpar1_me.png">
+  <meta property="twitter:image" content="/img/zkpar1_me.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2018-10-22T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2019-07-04T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2018-10-22T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2019-07-04T00:00:00&#43;00:00">
   
 
   
 
 
+
+  
     
-
-
-
-
-
-
-  
-
-
 
 
 
@@ -143,37 +136,42 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
+  "@type": "Event",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/post/s2pc/"
+    "@id": "/talk/zk_par1/"
   },
-  "headline": "Secure Two-Party Computation (S2PC)",
+  "name": "Elliptic curves in cryptography",
   
-  "datePublished": "2018-10-22T00:00:00Z",
-  "dateModified": "2018-10-22T00:00:00Z",
+  "location": {
+    "@type": "Place",
+    "name": "Consensys Paris",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10 Rue Vauvilliers",
+      "addressLocality": "Paris",
+      "postalCode": "",
+      "addressRegion": "",
+      "addressCountry": "France"
+    }
+    
+  },
   
-  "author": {
+  
+  "startDate": "2019-07-04T00:00:00Z",
+  
+  
+  "performer": {
     "@type": "Person",
     "name": "Youssef El Housni"
   },
   
-  "publisher": {
-    "@type": "Organization",
-    "name": "Homepage",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "/img/icon-512.png"
-    }
-  },
-  "description": "From my Medium blog - medium.com/@youssef.housni21"
+  "description": "I this presentation the 4th of July in Paris during ZK-PAR 0x01, the first Zero Knowledge meetup in the french capital. The meetups started in Tel-Aviv and then London and now Paris. They are intended for anyone interested in applied cryptography for privacy-preserving technology. The presentations are usually focussed on technical and practical aspects of this technology, notably its relation to blockchain technology. You can find more information and community discussions in the Facebook group and the Youtube channel."
 }
 </script>
 
   
 
-  
-
 
   
 
@@ -184,7 +182,7 @@
 
 
 
-  <title>Secure Two-Party Computation (S2PC) | Homepage</title>
+  <title>Elliptic curves in cryptography | Homepage</title>
 
 </head>
 
@@ -438,7 +436,7 @@
 </nav>
 
 
-  <article class="article">
+  <div class="pub">
 
   
 
@@ -453,7 +451,7 @@
 <div class="article-header">
   
   
-  <img src="/img/s2pc.jpg" class="article-banner" alt="">
+  <img src="/img/zkpar1_me.png" class="article-banner" alt="">
   
 
   
@@ -468,7 +466,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Secure Two-Party Computation (S2PC)</h1>
+  <h1>Elliptic curves in cryptography</h1>
 
   
 
@@ -482,22 +480,9 @@
   
 
   
-  <span class="article-date">
-    
-    
-      
-    
-    Oct 22, 2018
-  </span>
-  
 
   
 
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    4 min read
-  </span>
   
 
   
@@ -522,6 +507,55 @@
 
 
 
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary my-1 mr-1" href="/zk-par1.pdf" target="_blank" rel="noopener">
+  Slides
+</a>
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary my-1 mr-1" href="https://www.youtube.com/watch?v=NM6WQkdjvYw" target="_blank" rel="noopener">
+  Video
+</a>
+
+
+
+
+
+</div>
 
 
   
@@ -531,83 +565,73 @@
 
   <div class="article-container">
 
+    
+      <br>
+    
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Date</div>
+          <div class="col-12 col-md-9">
+            Jul 4, 2019 12:00 AM
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Event</div>
+          <div class="col-12 col-md-9">
+            <a href="https://www.meetup.com/fr-FR/Zero-Knowledge-Paris/" target="_blank" rel="noopener">
+            ZK-PAR 0x01
+            </a>
+          </div>
+        </div> 
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Location</div>
+          <div class="col-12 col-md-9">Consensys Paris</div>
+          
+            
+            
+            
+            
+            
+            
+            
+            <div class="col-md-3"></div>
+            <div class="col-12 col-md-9">10 Rue Vauvilliers, Paris, France</div>
+          
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    <div class="space-below"></div>
+
     <div class="article-style">
-      
+      <p>I this presentation the 4th of July in Paris during ZK-PAR 0x01, the first Zero Knowledge meetup in the french capital. The meetups started in Tel-Aviv and then London and now Paris. They are intended for anyone interested in applied cryptography for privacy-preserving technology. The presentations are usually focussed on technical and practical aspects of this technology, notably its relation to blockchain technology. You can find more information and community discussions in the <a href="https://www.facebook.com/groups/800441673459620/" target="_blank">Facebook group</a> and the <a href="https://www.youtube.com/channel/UCl6oyLa4CblZRurgwZwpgPQ" target="_blank">Youtube channel</a>.</p>
 
-<p>Not to toot my own horn here but when I was in high school I used to be quite popular :). I was moreover one of the least shy people I know but when it came to girls, I was interested in, I suddenly turn to this timid shell of a person. This awkward version of a popular guy is not uncommon and the fear of rejection is the reason that rattles us to the core. I still remember this girl from my high school I’ve never talked to, because of that fear — let’s call her <em>Lalla Salma</em> in the sequel (Any resemblance to actual persons, living or dead, is purely coincidental). No matter how much courage I’ve summoned and how firmly I’ve convinced myself I don’t care about the outcome, hearing no from <em>Lalla Salma</em> would have hurt. A graceful no hurts a great deal less but a cruel no in public drives a knife through the male psyche.</p>
-
-<p>Growing up, I became a cryptographer and figured out a mathematical way to deal with such a situation. How can you make secure advances to <em>Lalla Salma</em> ? Is there a way to securely guess the outcome ? or simply put, how can you avoid a dismissive no in public ? The solution uses <a href="https://en.wikipedia.org/wiki/Garbled_circuit" target="_blank">Yao’s Garbled circuits</a> for secure two-party computation (S2PC).</p>
-
-<p>Given private inputs $x$ and $y$ and a public function $f$, this method enables two parties to securely compute the outcome $f(x,y)$ without revealing the secrets $x$ and $y$. A circuit is just a way to represent a computation consisting of just operations on bits, like AND, OR, NOT and a garbled circuit is a way to “encrypt a computation” that reveals only the output of the computation, but reveals nothing about the inputs or any intermediate values. Our situation makes the basic way to understand how the protocol works. Let the secret $x$ be 1 if I am interested in <em>Lalla Salma</em> and 0 otherwise. Similarly, her secret $y$ is either 1 or 0. We want to securely compute a function that outputs 1 if we both are interested in each other and 0 otherwise — no one should be able to guess the inputs. A simple function would be an AND gate.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure>
-
-
-  <a data-fancybox="" href="/img/s2pc_tab1.png" >
-<img src="/img/s2pc_tab1.png" alt="" ></a>
-
-
-
-</figure>
-
-
-<p>There are 4 possibilities in the truth table but only one is the actual reality. Next, we “garble” this circuit as follows: For each wire $x, y$ and z, we specify two random values corresponding to 0 and 1 and then we encrypt (using some symmetric cipher such as AES) the truth table by encrypting the output-wire key with the corresponding pair of input-wire keys. Which results in the Garbled Computation Table (GCT).</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure>
-
-
-  <a data-fancybox="" href="/img/s2pc_tab2.png" >
-<img src="/img/s2pc_tab2.png" alt="" ></a>
-
-
-
-</figure>
-
-
-<p>Given two input keys only one row of the GCT can be decrypted correctly. Next, we rearrange the GCT — so that no information is leaked — and send it to <em>Lalla Salma</em> along with my input key. Note that, since the key is random, there is no way to associate it with the actual bit. At this point, she has the GCT and my input key but needs the key I have already associated to her input bit. But just like me, <em>Lalla Salma</em> doesn’t want to reveal her secret (bit)! Neither want I to send her both keys, as she would be able to decrypt more than a GCT row. What we need here is a protocol in which a sender transfers one of potentially many pieces of information to a receiver, but remains oblivious as to what piece has been transferred. Fortunately, such a protocol exists and is called <a href="https://en.wikipedia.org/wiki/Oblivious_transfer" target="_blank">1-out-of-2 oblivious transfer (OT)</a>. In the next section, I will present a simple 1–2 OT protocol but if you don’t know how RSA encryption works just skip this section since explaining it goes beyond the scope of this post.</p>
-
-<h2 id="1-2-oblivious-transfer">1–2 Oblivious Transfer</h2>
-
-<ul>
-<li>Alice holds $m_0, m_1$, and an RSA key pair $(e, d, N)$. Bob holds the public key $(e, N)$ of Alice, $x \in {0,1}$ and wants $m_x$</li>
-<li>Alice generates random $x_0, x_1$ and sends them to Bob</li>
-<li>Bob chooses a random $k$, computes $v=y_x+k^e$ and sends $v$ to Alice.</li>
-<li>Alice computes $k_0=(v-x_0)^d$ and $k_1=(v-x_1)^d$, and sends $m_0&rsquo;=m_0+k_0$ and $m_1&rsquo;=m_1+k_1$ to Bob</li>
-<li>Bob computes $m_x=m_x&rsquo;-k$ and learns nothing about $m&rsquo; _{1-x}$</li>
-</ul>
-
-<p>Now, using 1–2 OT protocol, <em>Lalla Salma</em> can have her input key without me knowing anything about her secret bit. At this point, we can decrypt the GCT row corresponding to our secrets and reveal securely the output value. If it is a 0, none is able to tell who rejected the other and if it is a 1… Jackpot!</p>
-
-<p>By and large, this is how we can do secure two-party computation. So, dear <em>Lalla Salma</em>, if by any chance you’re reading my post, here is my secret key ;)</p>
-
-<pre><code>0x3361736861206c6d616c69696969696b
-</code></pre>
+<p>ZK-PAR 0x01 hosted two speakers, Bastien Teinturier and myself. Bastien talked about anonymous payments in Bitcoin’s Lightning network and I invite you to watch his <a href="https://www.youtube.com/watch?v=NM6WQkdjvYw" target="_blank">video</a> and go through his <a href="https://www.facebook.com/download/1117672475092357/ZK-PAR%200x01%20-%20Anonymous%20Payments%20in%20the%20Lightning%20Network%20-%20Bastien%20Teinturier.pdf?av=1151079687&amp;eav=AfZveN272Vcrq3TdwQjKZQC-0UB7Q5NrjhkqP49rdEu0fBxPOFQZ55mNASEgwNbfSFI&amp;hash=AcruoDF8Elw9chP1" target="_blank">slides</a>.</p>
 
     </div>
 
@@ -630,7 +654,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/post/s2pc/&amp;text=Secure%20Two-Party%20Computation%20%28S2PC%29" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/talk/zk_par1/&amp;text=Elliptic%20curves%20in%20cryptography" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -643,7 +667,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/post/s2pc/&amp;t=Secure%20Two-Party%20Computation%20%28S2PC%29" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/talk/zk_par1/&amp;t=Elliptic%20curves%20in%20cryptography" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -656,7 +680,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/post/s2pc/&amp;title=Secure%20Two-Party%20Computation%20%28S2PC%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/talk/zk_par1/&amp;title=Elliptic%20curves%20in%20cryptography" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -798,7 +822,7 @@
 
 
   </div>
-</article>
+</div>
 
       
 

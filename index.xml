@@ -5,12 +5,21 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 15 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 10 Oct 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Homepage</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Nightfall - The Open Source Privacy Solution for Ethereum</title>
+      <link>/talk/devcon5/</link>
+      <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/talk/devcon5/</guid>
+      <description>&lt;p&gt;We believe that public blockchain is the future of business to business transactions. However, two issues - privacy and scalability - will need to be solved if this vision is to be fully realised. This talk will explain the motivations behind the open-source nightfall code and how it is intended to tackle the first of these issues. We cover the operation of the protocol, the method by which it provides complete privacy, and how developers can use it to build their own applications by making use of its smart contract infrastructure and the ZoKrates framework. We will also present our modelling of transaction costs, which shows that nightfall can already provide a cost-competitive alternative to private blockchains for many situations and how that will be true for a growing number of use cases in the near future.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ZK-PAR 0x01</title>
@@ -123,6 +132,17 @@
 
 &lt;/figure&gt;
 
+</description>
+    </item>
+    
+    <item>
+      <title>Elliptic curves in cryptography</title>
+      <link>/talk/zk_par1/</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>/talk/zk_par1/</guid>
+      <description>&lt;p&gt;I this presentation the 4th of July in Paris during ZK-PAR 0x01, the first Zero Knowledge meetup in the french capital. The meetups started in Tel-Aviv and then London and now Paris. They are intended for anyone interested in applied cryptography for privacy-preserving technology. The presentations are usually focussed on technical and practical aspects of this technology, notably its relation to blockchain technology. You can find more information and community discussions in the &lt;a href=&#34;https://www.facebook.com/groups/800441673459620/&#34; target=&#34;_blank&#34;&gt;Facebook group&lt;/a&gt; and the &lt;a href=&#34;https://www.youtube.com/channel/UCl6oyLa4CblZRurgwZwpgPQ&#34; target=&#34;_blank&#34;&gt;Youtube channel&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;ZK-PAR 0x01 hosted two speakers, Bastien Teinturier and myself. Bastien talked about anonymous payments in Bitcoin’s Lightning network and I invite you to watch his &lt;a href=&#34;https://www.youtube.com/watch?v=NM6WQkdjvYw&#34; target=&#34;_blank&#34;&gt;video&lt;/a&gt; and go through his &lt;a href=&#34;https://www.facebook.com/download/1117672475092357/ZK-PAR%200x01%20-%20Anonymous%20Payments%20in%20the%20Lightning%20Network%20-%20Bastien%20Teinturier.pdf?av=1151079687&amp;amp;eav=AfZveN272Vcrq3TdwQjKZQC-0UB7Q5NrjhkqP49rdEu0fBxPOFQZ55mNASEgwNbfSFI&amp;amp;hash=AcruoDF8Elw9chP1&#34; target=&#34;_blank&#34;&gt;slides&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

@@ -4,7 +4,17 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/devcon5/</loc>
+    <lastmod>2019-10-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/</loc>
+    <lastmod>2019-10-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -20,6 +30,11 @@
   <url>
     <loc>/post/heptadecagon/</loc>
     <lastmod>2019-08-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/zk_par1/</loc>
+    <lastmod>2019-07-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -84,10 +99,6 @@
   
   <url>
     <loc>/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>/talk/</loc>
   </url>
   
 </urlset>
