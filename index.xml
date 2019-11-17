@@ -872,5 +872,21 @@ At this point, you may be thinking that somehow changing that group G from finit
 </description>
     </item>
     
+    <item>
+      <title>On the Performance and Security of Multiplication in $GF(2^N)$</title>
+      <link>/publication/journal/mdpi18/</link>
+      <pubDate>Tue, 18 Sep 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/journal/mdpi18/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Random Numbers Generation: Tests and Attacks</title>
+      <link>/publication/conference/fdtc18/</link>
+      <pubDate>Thu, 13 Sep 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/conference/fdtc18/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
