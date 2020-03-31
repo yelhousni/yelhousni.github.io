@@ -5,12 +5,20 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Homepage</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 10 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 24 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Homepage</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Optimized and secure pairing-friendly elliptic curves suitable for one layer proof composition</title>
+      <link>/publication/preprint/eprint20-351/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/preprint/eprint20-351/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Nightfall - The Open Source Privacy Solution for Ethereum</title>

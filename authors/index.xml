@@ -5,7 +5,7 @@
     <link>/authors/</link>
       <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 18 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 24 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Authors</title>
@@ -15,7 +15,7 @@
     <item>
       <title></title>
       <link>/authors/admin/</link>
-      <pubDate>Tue, 18 Sep 2018 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
       <guid>/authors/admin/</guid>
       <description>&lt;p&gt;I am a cryptogrpahy engineer at &lt;a href=&#34;https://www.ey.com/en_us/blockchain&#34; target=&#34;_blank&#34;&gt;EY Blockchain Hub&lt;/a&gt; and a PhD student at &lt;a href=&#34;https://www.polytechnique.edu&#34; target=&#34;_blank&#34;&gt;Ecole Polytechnique&lt;/a&gt; and &lt;a href=&#34;https://www.inria.fr/centre/saclay&#34; target=&#34;_blank&#34;&gt;INRIA Saclay&lt;/a&gt; under the supervision of Prof. &lt;a href=&#34;http://pages.saclay.inria.fr/daniel.augot/index-eng.html&#34; target=&#34;_blank&#34;&gt;Daniel Augot&lt;/a&gt; and Prof. &lt;a href=&#34;https://www.lix.polytechnique.fr/Labo/Francois.Morain/english-index.html&#34; target=&#34;_blank&#34;&gt;François Morain&lt;/a&gt; in the project-team &lt;a href=&#34;https://team.inria.fr/grace/&#34; target=&#34;_blank&#34;&gt;GRACE&lt;/a&gt;.&lt;/p&gt;
 
@@ -23,6 +23,14 @@
 
 &lt;p&gt;My PhD research focuses on pairing-based zero-knowledge proofs and friendly related cryptographic primitives.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Aurore Guillevic</title>
+      <link>/authors/aurore-guillevic/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/aurore-guillevic/</guid>
+      <description></description>
     </item>
     
     <item>
