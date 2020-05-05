@@ -5,12 +5,21 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>يوسف</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 31 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 30 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>يوسف</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Optimized and secure pairing-friendly elliptic curve suitable for one layer proof composition</title>
+      <link>/talk/zkproof3/</link>
+      <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/talk/zkproof3/</guid>
+      <description>&lt;p&gt;This presentation is about a joint paper with &lt;a href=&#34;https://members.loria.fr/AGuillevic/&#34; target=&#34;_blank&#34;&gt;Aurore Guillevic&lt;/a&gt; that can be found online &lt;a href=&#34;https://eprint.iacr.org/2020/351&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. It introduced a new elliptic curve, namely &lt;strong&gt;BW6-761&lt;/strong&gt; that is very efficient for one-layer recursive SNARKs compared to the state-of-the-art.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Optimized and secure pairing-friendly elliptic curve suitable for one layer proof composition</title>
