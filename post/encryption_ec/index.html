@@ -562,26 +562,20 @@
 
     <div class="article-style">
       <p>In my first post, we’ve seen that elliptic curves cryptography (ECC) was first introduced as a better alternative to public-key cryptography based on multiplicative groups of finite fields. In fact, ECC requires smaller keys compared to its finite field analog to provide equivalent security. Finite fields cryptosystems rely on the “hardness” of the discrete logarithm problem (DLP) to build cryptographic tools such as encryption (ElGamal), key exchange (Diffie-Hellman DH) and digital signature algorithms(DSA). Analogously, one expects to have ElGamal, DH and DSA counterparts thanks to the “hardness” of the equivalent elliptic curves discrete logarithm problem (ECDLP). However, it seems that only ECDH and ECDSA are popular. So, is there an ElGamal version for elliptic curves? Is direct encryption even possible with elliptic curves?</p>
-
-<p>The use of elliptic curves in cryptography was suggested independently by Neal Koblitz and Victor S. Miller in 1985. The main reason was that previous asymmetric approaches were subject to subexponential-time index calculus algorithms that solve the underlying hard problems, whereas no subexponential-time algorithms are known for the discrete logarithm problem in a (suitably chosen) elliptic curve. Moreover, for the most part the best available algorithms are ones that have nothing to do with the specific structure of the elliptic curve group, but rather would work with essentially the same running time on any group. Such algorithms are said to be “generic”. In his <a href="https://www.ams.org/journals/mcom/1987-48-177/S0025-5718-1987-0866109-5/S0025-5718-1987-0866109-5.pdf" target="_blank">paper</a>, Koblitz suggested an encryption algorithm similar to ElGamal but it needed an invertible function to map plaintexts to points on an elliptic curve which made the scheme a bit impractical. The algorithm works as follows:</p>
-
+<p>The use of elliptic curves in cryptography was suggested independently by Neal Koblitz and Victor S. Miller in 1985. The main reason was that previous asymmetric approaches were subject to subexponential-time index calculus algorithms that solve the underlying hard problems, whereas no subexponential-time algorithms are known for the discrete logarithm problem in a (suitably chosen) elliptic curve. Moreover, for the most part the best available algorithms are ones that have nothing to do with the specific structure of the elliptic curve group, but rather would work with essentially the same running time on any group. Such algorithms are said to be “generic”. In his <a href="https://www.ams.org/journals/mcom/1987-48-177/S0025-5718-1987-0866109-5/S0025-5718-1987-0866109-5.pdf">paper</a>, Koblitz suggested an encryption algorithm similar to ElGamal but it needed an invertible function to map plaintexts to points on an elliptic curve which made the scheme a bit impractical. The algorithm works as follows:</p>
 <ul>
 <li>We set up an elliptic curve $E$ over a finite field $\mathbb{F}_p$ and a point $P$ of order $N$.</li>
 <li>We need a public known invertible function $f$ that maps messages $m$ to points $P_m$ on $E$.</li>
 <li>We choose a random secret key $x \in [1,N-1]$ and publish the point $Y=xP$ as public key.</li>
 <li><em>Encryption</em>: We choose a random integer $k \in [1,N-1]$, then calculate $C_1=kP$, $C_2=kY$ and $P_m=f(m)$. The ciphertext is the tuple $(C_1, C_2+P_m)$.</li>
-<li><em>Decryption</em>: From the ciphertext $(C, D)$ we calculate $C&rsquo;=xC$ and retrieve the point $P_m$ with $P_m=D-C&rsquo;$ ($=k(xP)+P_m-x(kP)$). Finally, we recover the message $m$ with $f^{-1}(P_m)$.</li>
+<li><em>Decryption</em>: From the ciphertext $(C, D)$ we calculate $C'=xC$ and retrieve the point $P_m$ with $P_m=D-C'$ ($=k(xP)+P_m-x(kP)$). Finally, we recover the message $m$ with $f^{-1}(P_m)$.</li>
 </ul>
-
 <p>Basically, this is how we can do encryption on the elliptic curve but for real-world encryption this is somehow impractical because of the required invertible point mapping. One way to do it is interpreting the message as the $X$ coordinate of a curve point and computing a matching $Y$ coordinate. This has two drawbacks:</p>
-
 <ul>
 <li>First, only about half of the $X$ values can be the first coordinate of a curve point and</li>
-<li>second, one needs to compute a modular quadratic residue ($Y^2=X^3+aX+b$) to find the $Y$. This is not trivial and requires using <a href="https://en.wikipedia.org/wiki/Tonelli–Shanks_algorithm" target="_blank">Tonelli-Shanks algorithm</a>.</li>
+<li>second, one needs to compute a modular quadratic residue ($Y^2=X^3+aX+b$) to find the $Y$. This is not trivial and requires using <a href="https://en.wikipedia.org/wiki/Tonelli%E2%80%93Shanks_algorithm">Tonelli-Shanks algorithm</a>.</li>
 </ul>
-
 <p>So, for things to work, some variability (some bits which can be adjusted until a possible $X$ is reached) would be needed and since the size of the message would be severely limited (no bigger than $p$) this is hardly worthwhile.</p>
-
 <p>For these reasons, direct encryption using elliptic curve is not practical but one can use hybrid encryption instead. That is, using ECDH to produce a shared secret value that will be used as a secret for some symmetric encryption algorithm (e.g. AES). This is called Elliptic Curve Integrated Encryption Scheme (ECIES).</p>
 
     </div>
@@ -666,12 +660,12 @@
   <div class="media author-card content-widget-hr">
     
       
-      <img class="portrait mr-3" src="/authors/admin/avatar_hu381e5819bc5366fb067596c00984f1ce_7838988_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+      <img class="portrait mr-3" src="/authors/admin/avatar_hu3a32b806eef5eee7ec88ed8617772bf5_83901_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
     
 
     <div class="media-body">
       <h5 class="card-title"><a href="/">Youssef El Housni</a></h5>
-      <h6 class="card-subtitle">Cryptography engineer at EY Blockchain Hub and PhD Student at Ecole Polytechnique (Paris)</h6>
+      <h6 class="card-subtitle">Cryptography engineer at ConsenSys and PhD Student at Ecole Polytechnique (Paris)</h6>
       <p class="card-text">My research interests include applied cryptography for privacy-preserving blockchain applications.</p>
       <ul class="network-icon" aria-hidden="true">
   
@@ -879,7 +873,7 @@
     
     
     
-    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
+    <script src="/js/academic.min.b59fdb6275ef5e6e2859c30582fc271a.js"></script>
 
     
 

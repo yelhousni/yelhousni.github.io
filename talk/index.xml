@@ -17,7 +17,7 @@
       <link>/talk/zksummit5/</link>
       <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
       <guid>/talk/zksummit5/</guid>
-      <description>&lt;p&gt;This presentation is about a joint paper with &lt;a href=&#34;https://members.loria.fr/AGuillevic/&#34; target=&#34;_blank&#34;&gt;Aurore Guillevic&lt;/a&gt; that can be found online &lt;a href=&#34;https://eprint.iacr.org/2020/351&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. It introduced a new elliptic curve, namely &lt;strong&gt;BW6-761&lt;/strong&gt; that is very efficient for one-layer recursive SNARKs compared to the state-of-the-art.&lt;/p&gt;
+      <description>&lt;p&gt;This presentation is about a joint paper with &lt;a href=&#34;https://members.loria.fr/AGuillevic/&#34;&gt;Aurore Guillevic&lt;/a&gt; that can be found online &lt;a href=&#34;https://eprint.iacr.org/2020/351&#34;&gt;here&lt;/a&gt;. It introduced a new elliptic curve, namely &lt;strong&gt;BW6-761&lt;/strong&gt; that is very efficient for one-layer recursive SNARKs compared to the state-of-the-art.&lt;/p&gt;
 </description>
     </item>
     
@@ -35,9 +35,8 @@
       <link>/talk/zk_par1/</link>
       <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
       <guid>/talk/zk_par1/</guid>
-      <description>&lt;p&gt;I this presentation the 4th of July in Paris during ZK-PAR 0x01, the first Zero Knowledge meetup in the french capital. The meetups started in Tel-Aviv and then London and now Paris. They are intended for anyone interested in applied cryptography for privacy-preserving technology. The presentations are usually focussed on technical and practical aspects of this technology, notably its relation to blockchain technology. You can find more information and community discussions in the &lt;a href=&#34;https://www.facebook.com/groups/800441673459620/&#34; target=&#34;_blank&#34;&gt;Facebook group&lt;/a&gt; and the &lt;a href=&#34;https://www.youtube.com/channel/UCl6oyLa4CblZRurgwZwpgPQ&#34; target=&#34;_blank&#34;&gt;Youtube channel&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;ZK-PAR 0x01 hosted two speakers, Bastien Teinturier and myself. Bastien talked about anonymous payments in Bitcoin’s Lightning network and I invite you to watch his &lt;a href=&#34;https://www.youtube.com/watch?v=NM6WQkdjvYw&#34; target=&#34;_blank&#34;&gt;video&lt;/a&gt; and go through his &lt;a href=&#34;https://www.facebook.com/download/1117672475092357/ZK-PAR%200x01%20-%20Anonymous%20Payments%20in%20the%20Lightning%20Network%20-%20Bastien%20Teinturier.pdf?av=1151079687&amp;amp;eav=AfZveN272Vcrq3TdwQjKZQC-0UB7Q5NrjhkqP49rdEu0fBxPOFQZ55mNASEgwNbfSFI&amp;amp;hash=AcruoDF8Elw9chP1&#34; target=&#34;_blank&#34;&gt;slides&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;I this presentation the 4th of July in Paris during ZK-PAR 0x01, the first Zero Knowledge meetup in the french capital. The meetups started in Tel-Aviv and then London and now Paris. They are intended for anyone interested in applied cryptography for privacy-preserving technology. The presentations are usually focussed on technical and practical aspects of this technology, notably its relation to blockchain technology. You can find more information and community discussions in the &lt;a href=&#34;https://www.facebook.com/groups/800441673459620/&#34;&gt;Facebook group&lt;/a&gt; and the &lt;a href=&#34;https://www.youtube.com/channel/UCl6oyLa4CblZRurgwZwpgPQ&#34;&gt;Youtube channel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;ZK-PAR 0x01 hosted two speakers, Bastien Teinturier and myself. Bastien talked about anonymous payments in Bitcoin’s Lightning network and I invite you to watch his &lt;a href=&#34;https://www.youtube.com/watch?v=NM6WQkdjvYw&#34;&gt;video&lt;/a&gt; and go through his &lt;a href=&#34;https://www.facebook.com/download/1117672475092357/ZK-PAR%200x01%20-%20Anonymous%20Payments%20in%20the%20Lightning%20Network%20-%20Bastien%20Teinturier.pdf?av=1151079687&amp;amp;eav=AfZveN272Vcrq3TdwQjKZQC-0UB7Q5NrjhkqP49rdEu0fBxPOFQZ55mNASEgwNbfSFI&amp;amp;hash=AcruoDF8Elw9chP1&#34;&gt;slides&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
