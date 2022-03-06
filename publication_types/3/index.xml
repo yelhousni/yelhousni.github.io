@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Aurore Guillevic | يوسف</title>
-    <link>/authors/aurore-guillevic/</link>
-      <atom:link href="/authors/aurore-guillevic/index.xml" rel="self" type="application/rss+xml" />
-    <description>Aurore Guillevic</description>
+    <title>3 | يوسف</title>
+    <link>/publication_types/3/</link>
+      <atom:link href="/publication_types/3/index.xml" rel="self" type="application/rss+xml" />
+    <description>3</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 08 Oct 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
-      <title>Aurore Guillevic</title>
-      <link>/authors/aurore-guillevic/</link>
+      <title>3</title>
+      <link>/publication_types/3/</link>
     </image>
     
     <item>
@@ -17,14 +17,6 @@
       <link>/publication/preprint/eprint211359/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
       <guid>/publication/preprint/eprint211359/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Optimized and secure pairing-friendly elliptic curves suitable for one layer proof composition</title>
-      <link>/publication/conference/cans20/</link>
-      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/cans20/</guid>
       <description></description>
     </item>
     

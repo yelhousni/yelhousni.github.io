@@ -5,12 +5,20 @@
     <link>/authors/admin/</link>
       <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>يوسف</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 24 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 08 Oct 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>يوسف</title>
       <link>/authors/admin/</link>
     </image>
+    
+    <item>
+      <title>Families of SNARK-friendly 2-chains of elliptic curves</title>
+      <link>/publication/preprint/eprint211359/</link>
+      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>/publication/preprint/eprint211359/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Optimized and secure pairing-friendly elliptic curves suitable for one layer proof composition</title>
