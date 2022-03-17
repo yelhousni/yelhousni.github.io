@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>3 | يوسف</title>
-    <link>/publication_types/3/</link>
-      <atom:link href="/publication_types/3/index.xml" rel="self" type="application/rss+xml" />
-    <description>3</description>
+    <title>Thomas Piellard | يوسف</title>
+    <link>/authors/thomas-piellard/</link>
+      <atom:link href="/authors/thomas-piellard/index.xml" rel="self" type="application/rss+xml" />
+    <description>Thomas Piellard</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 08 Oct 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
-      <title>3</title>
-      <link>/publication_types/3/</link>
+      <title>Thomas Piellard</title>
+      <link>/authors/thomas-piellard/</link>
     </image>
     
     <item>
@@ -17,14 +17,6 @@
       <link>/publication/preprint/africacrypt/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
       <guid>/publication/preprint/africacrypt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Families of SNARK-friendly 2-chains of elliptic curves</title>
-      <link>/publication/preprint/eprint211359/</link>
-      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/preprint/eprint211359/</guid>
       <description></description>
     </item>
     
