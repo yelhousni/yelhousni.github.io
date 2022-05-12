@@ -5,7 +5,7 @@
     <link>/publication/</link>
       <atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 08 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 12 May 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Publications</title>
@@ -13,18 +13,26 @@
     </image>
     
     <item>
+      <title>A survey of elliptic curves for proof systems</title>
+      <link>/publication/preprint/dcc22/</link>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      <guid>/publication/preprint/dcc22/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Co-factor clearing and subgroup membership testing on pairing-friendly curves</title>
-      <link>/publication/preprint/africacrypt/</link>
-      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/preprint/africacrypt/</guid>
+      <link>/publication/conference/africacrypt22/</link>
+      <pubDate>Fri, 29 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>/publication/conference/africacrypt22/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Families of SNARK-friendly 2-chains of elliptic curves</title>
-      <link>/publication/preprint/eprint211359/</link>
-      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/preprint/eprint211359/</guid>
+      <link>/publication/conference/eurocrypt22/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>/publication/conference/eurocrypt22/</guid>
       <description></description>
     </item>
     

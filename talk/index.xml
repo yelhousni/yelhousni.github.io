@@ -5,12 +5,21 @@
     <link>/talk/</link>
       <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Talks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 09 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Talks</title>
       <link>/talk/</link>
     </image>
+    
+    <item>
+      <title>Pairings in R1CS</title>
+      <link>/talk/zksummit7/</link>
+      <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>/talk/zksummit7/</guid>
+      <description>&lt;p&gt;This presentation is about how to efficiently express a pairing a Rank-1 Constraint System (R1CS) arithmetic circuit. The goal is to reduce the time complexity to SNARK prove a bilinear pairing. A corresponding research paper will be soon available on ePrint.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>On choosing suitable elliptic curves for zk-SNARK</title>
