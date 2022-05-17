@@ -5,7 +5,7 @@
     <link>/talk/</link>
       <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Talks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 11 May 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Talks</title>
@@ -13,11 +13,29 @@
     </image>
     
     <item>
+      <title>Elliptic curves and SNARKs</title>
+      <link>/talk/aarhus_seminar/</link>
+      <pubDate>Wed, 11 May 2022 00:00:00 +0000</pubDate>
+      <guid>/talk/aarhus_seminar/</guid>
+      <description>&lt;p&gt;Elliptic curves have become key ingredients for instantiating zero-knowledge proofs and more generally proof systems. Recently, there have been many tailored constructions of these curves that aim at efficiently implementing different kinds of proof systems. In this talk we provide a comprehensive view on existing work. We present an overview at two stages of the process; curves to instantiate a SNARK and curves to instantiate a recursive SNARK.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Pairings in R1CS</title>
       <link>/talk/zksummit7/</link>
       <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
       <guid>/talk/zksummit7/</guid>
       <description>&lt;p&gt;This presentation is about how to efficiently express a pairing a Rank-1 Constraint System (R1CS) arithmetic circuit. The goal is to reduce the time complexity to SNARK prove a bilinear pairing. A corresponding research paper will be soon available on ePrint.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Families of SNARK-friendly 2-chains of elliptic curves</title>
+      <link>/talk/jc2-2022/</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>/talk/jc2-2022/</guid>
+      <description>&lt;p&gt;In this talk, we first are interested in families of 2-chains in which the BW6-761 curve would fall. We present a family of BW6 curves from any BLS12 curve and derive generic formulas, in terms of the BLS12 curve seed u, and integer parameters ht,hy. We extend this work to a 2-chain family of BW6 curves from BLS24 curves. To achieve higher levels of security in the target finite field of the outer curves, we compare a larger field characteristic thanks to larger parameters ht,hy, to the larger embedding degrees 8 and 12 obtained with Cocks-Pinch curves. Finally, we argue that the BLS12 and BLS24 based families are respectively tailored for Groth’16 and KZG-based SNARKs recursive proof composition, and we present a short list of curves with an optimized implementation along with benchmarks.&lt;/p&gt;
 </description>
     </item>
     
