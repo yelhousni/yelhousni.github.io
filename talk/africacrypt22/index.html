@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="AFRICACRYPT 2022 (ePrint 2022/352)">
+  <meta name="description" content="Africacrypt 2022 - Fez, Morocco">
 
   
-  <link rel="alternate" hreflang="en-us" href="/publication/conference/africacrypt22/">
+  <link rel="alternate" hreflang="en-us" href="/talk/africacrypt22/">
 
   
 
@@ -100,7 +100,7 @@
   <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/publication/conference/africacrypt22/">
+  <link rel="canonical" href="/talk/africacrypt22/">
 
   
   
@@ -113,28 +113,23 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="يوسف">
-  <meta property="og:url" content="/publication/conference/africacrypt22/">
-  <meta property="og:title" content="Co-factor clearing and subgroup membership testing on pairing-friendly curves | يوسف">
-  <meta property="og:description" content="AFRICACRYPT 2022 (ePrint 2022/352)"><meta property="og:image" content="/img/icon-192.png">
+  <meta property="og:url" content="/talk/africacrypt22/">
+  <meta property="og:title" content="Cofactor clearing and subgroup membership testing on pairing-friendly elliptic curves | يوسف">
+  <meta property="og:description" content="Africacrypt 2022 - Fez, Morocco"><meta property="og:image" content="/img/icon-192.png">
   <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2022-04-29T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2022-07-20T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2022-04-29T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2022-07-20T00:00:00&#43;00:00">
   
 
   
 
 
+
+  
     
-
-
-
-
-
-
-
 
 
 
@@ -142,37 +137,33 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "Event",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/publication/conference/africacrypt22/"
+    "@id": "/talk/africacrypt22/"
   },
-  "headline": "Co-factor clearing and subgroup membership testing on pairing-friendly curves",
+  "name": "Cofactor clearing and subgroup membership testing on pairing-friendly elliptic curves",
   
-  "datePublished": "2022-04-29T00:00:00Z",
-  "dateModified": "2022-04-29T00:00:00Z",
+  "location": {
+    "@type": "Place",
+    "name": "Fez, Morocco"
+  },
   
-  "author": {
+  
+  "startDate": "2022-07-20T00:00:00Z",
+  
+  
+  "performer": {
     "@type": "Person",
     "name": "Youssef El Housni"
   },
   
-  "publisher": {
-    "@type": "Organization",
-    "name": "يوسف",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "/img/icon-512.png"
-    }
-  },
-  "description": "AFRICACRYPT 2022 (ePrint 2022/352)"
+  "description": "Africacrypt 2022 - Fez, Morocco"
 }
 </script>
 
   
 
-  
-
 
   
 
@@ -183,7 +174,7 @@
 
 
 
-  <title>Co-factor clearing and subgroup membership testing on pairing-friendly curves | يوسف</title>
+  <title>Cofactor clearing and subgroup membership testing on pairing-friendly elliptic curves | يوسف</title>
 
 </head>
 
@@ -487,7 +478,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Co-factor clearing and subgroup membership testing on pairing-friendly curves</h1>
+  <h1>Cofactor clearing and subgroup membership testing on pairing-friendly elliptic curves</h1>
 
   
 
@@ -499,28 +490,7 @@
 
   
   
-  
-  
-  <div>
-    
 
-
-
-  
-  <span><a href="/authors/admin/">Youssef El Housni</a></span>, <span><a href="/authors/aurore-guillevic/">Aurore Guillevic</a></span>, <span><a href="/authors/thomas-piellard/">Thomas Piellard</a></span>
-
-  </div>
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    April 2022
-  </span>
   
 
   
@@ -549,6 +519,47 @@
 
 
 
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary my-1 mr-1" href="/africacrypt.pdf" target="_blank" rel="noopener">
+  Slides
+</a>
+
+
+
+
+
+
+
+</div>
 
 
   
@@ -559,25 +570,35 @@
   <div class="article-container">
 
     
-    <h3>Abstract</h3>
-    <p class="pub-abstract">An important cryptographic operation on elliptic curves is hashing to a point on the curve. When the curve is not of prime order, the point is multiplied by the cofactor so that the result has a prime order. This is important to avoid small subgroup attacks for example. A second important operation, in the composite-order case, is testing whether a point belongs to the subgroup of prime order. A pairing is a bilinear map e from G1xG2 to GT where G1 and G2 are distinct subgroups of prime order of an elliptic curve, and GT is a multiplicative subgroup of the same prime order r of a finite field extension. Pairing-friendly curves are rarely of prime order. We investigate cofactor clearing and subgroup membership testing on these composite-order curves. First, we generalize a result on faster cofactor clearing for BLS curves to other pairing-friendly families of a polynomial form from the taxonomy of Freeman, Scott and Teske. Second, we investigate subgroup membership testing for G1 and G2. We fix a proof argument for the G2 case that appeared in a preprint by Scott in late 2021 and has recently been implemented in different cryptographic libraries. We then generalize the result to both G1 and G2 and apply it to different pairing-friendly families of curves. This gives a simple and shared framework to prove membership tests for both cryptographic subgroups.</p>
+      <br>
     
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Date</div>
+          <div class="col-12 col-md-9">
+            Jul 20, 2022 12:00 AM
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
 
     
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">
         <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Type</div>
+          <div class="col-12 col-md-3 pub-row-heading">Event</div>
           <div class="col-12 col-md-9">
-            
-            
-            <a href="/publication/#1">
-              Conference paper
+            <a href="https://africacrypt2022.cs.ru.nl/" target="_blank" rel="noopener">
+            Africacrypt 2022
             </a>
-            
           </div>
-        </div>
+        </div> 
       </div>
       <div class="col-md-1"></div>
     </div>
@@ -589,8 +610,9 @@
       <div class="col-md-1"></div>
       <div class="col-md-10">
         <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
-          <div class="col-12 col-md-9">AFRICACRYPT 2022</div>
+          <div class="col-12 col-md-3 pub-row-heading">Location</div>
+          <div class="col-12 col-md-9">Fez, Morocco</div>
+          
         </div>
       </div>
       <div class="col-md-1"></div>
@@ -600,7 +622,10 @@
 
     <div class="space-below"></div>
 
-    <div class="article-style"></div>
+    <div class="article-style">
+      <p>An important cryptographic operation on elliptic curves is hashing to a point on the curve. When the curve is not of prime order, the point is multiplied by the cofactor so that the result has a prime order. This is important to avoid small subgroup attacks for example.  A second important operation, in the composite-order case, is testing whether a point belongs to the subgroup of prime order. A pairing is a bilinear map e: G1×G2 → GT where G1 and G2 are distinct subgroups of prime order r of an elliptic curve, and GT is a multiplicative subgroup of the same prime order r of a finite field extension.  Pairing-friendly curves are rarely of prime order. In this talk, we investigate cofactor clearing and subgroup membership testing on these composite-order curves. First, we generalize a result on faster cofactor clearing for BLS curves to other pairingfriendly families of a polynomial form from the taxonomy of Freeman, Scott and Teske. Second, we investigate subgroup membership testing for G1 and G2. We fix a proof argument for the G2 case that appeared in a preprint by Scott in late 2021 and has recently been implemented in different cryptographic libraries. We then generalize the result to both G1 and G2 and apply it to different pairing-friendly families of curves.  This gives a simple and shared framework to prove membership tests for both cryptographic subgroups.</p>
+
+    </div>
 
     
 
@@ -621,7 +646,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/publication/conference/africacrypt22/&amp;text=Co-factor%20clearing%20and%20subgroup%20membership%20testing%20on%20pairing-friendly%20curves" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/talk/africacrypt22/&amp;text=Cofactor%20clearing%20and%20subgroup%20membership%20testing%20on%20pairing-friendly%20elliptic%20curves" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -634,7 +659,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/publication/conference/africacrypt22/&amp;t=Co-factor%20clearing%20and%20subgroup%20membership%20testing%20on%20pairing-friendly%20curves" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/talk/africacrypt22/&amp;t=Cofactor%20clearing%20and%20subgroup%20membership%20testing%20on%20pairing-friendly%20elliptic%20curves" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -647,7 +672,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/publication/conference/africacrypt22/&amp;title=Co-factor%20clearing%20and%20subgroup%20membership%20testing%20on%20pairing-friendly%20curves" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/talk/africacrypt22/&amp;title=Cofactor%20clearing%20and%20subgroup%20membership%20testing%20on%20pairing-friendly%20elliptic%20curves" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -666,10 +691,6 @@
 
 
 
-  
-  
-    
-  
   
 
 

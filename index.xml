@@ -5,7 +5,7 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>يوسف</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 08 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 20 Jul 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>يوسف</title>
@@ -13,10 +13,19 @@
     </image>
     
     <item>
+      <title>Cofactor clearing and subgroup membership testing on pairing-friendly elliptic curves</title>
+      <link>/talk/africacrypt22/</link>
+      <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>/talk/africacrypt22/</guid>
+      <description>&lt;p&gt;An important cryptographic operation on elliptic curves is hashing to a point on the curve. When the curve is not of prime order, the point is multiplied by the cofactor so that the result has a prime order. This is important to avoid small subgroup attacks for example.  A second important operation, in the composite-order case, is testing whether a point belongs to the subgroup of prime order. A pairing is a bilinear map e: G1×G2 → GT where G1 and G2 are distinct subgroups of prime order r of an elliptic curve, and GT is a multiplicative subgroup of the same prime order r of a finite field extension.  Pairing-friendly curves are rarely of prime order. In this talk, we investigate cofactor clearing and subgroup membership testing on these composite-order curves. First, we generalize a result on faster cofactor clearing for BLS curves to other pairingfriendly families of a polynomial form from the taxonomy of Freeman, Scott and Teske. Second, we investigate subgroup membership testing for G1 and G2. We fix a proof argument for the G2 case that appeared in a preprint by Scott in late 2021 and has recently been implemented in different cryptographic libraries. We then generalize the result to both G1 and G2 and apply it to different pairing-friendly families of curves.  This gives a simple and shared framework to prove membership tests for both cryptographic subgroups.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Pairings in Rank-1 Constraint System</title>
-      <link>/publication/preprint/sac22/</link>
+      <link>/publication/preprint/acns23/</link>
       <pubDate>Wed, 08 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/preprint/sac22/</guid>
+      <guid>/publication/preprint/acns23/</guid>
       <description></description>
     </item>
     
@@ -31,9 +40,9 @@
     
     <item>
       <title>A survey of elliptic curves for proof systems</title>
-      <link>/publication/preprint/dcc22/</link>
+      <link>/publication/journal/dcc22/</link>
       <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/preprint/dcc22/</guid>
+      <guid>/publication/journal/dcc22/</guid>
       <description></description>
     </item>
     
