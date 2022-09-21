@@ -5,12 +5,21 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>يوسف</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 20 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>يوسف</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Elliptic curves and zk-SNARKs</title>
+      <link>/talk/rennes_seminar/</link>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>/talk/rennes_seminar/</guid>
+      <description>&lt;p&gt;A proof system is a protocol where one party (called the prover) tries to convince another party (called the verifier) that a given statement is true. In the class of non-interactive proof systems, a particularly interesting concept for proving the computational integrity is the Succinct Non-interactive ARgument of Knowledge (SNARK). It provides a computationally sound proof, cheap to verify and small compared to the size of the statement or the witness. Bilinear pairings over elliptic curves have become key ingredients for instantiating such SNARKs. In this thesis we investigate tailored pairing-friendly elliptic curves to efficiently implement SNARKs. We present a study at three stages of the process: curves to instantiate a SNARK, curves to instantiate a recursive SNARK, and also curves to express an elliptic-curve related statement. We provide new constructions of curves for SNARKs and new families of 2-chain curves for recursive SNARKs. We derive and implement in open-source efficient algorithms to speed up the arithmetic on these curves: Co-factor clearing, subgroup membership testing, multi-scalar multiplication and pairings over 2-chains. We also study and optimize elliptic curves arithmetic and pairings as a SNARK statement, yielding to the fastest recursive proof generation in pairing-based settings.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Cofactor clearing and subgroup membership testing on pairing-friendly elliptic curves</title>
