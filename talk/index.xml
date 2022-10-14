@@ -5,12 +5,21 @@
     <link>/talk/</link>
       <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Talks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 13 Oct 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Talks</title>
       <link>/talk/</link>
     </image>
+    
+    <item>
+      <title>Optimizing cryptographic algorithms in gnark</title>
+      <link>/talk/devcon6/</link>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>/talk/devcon6/</guid>
+      <description>&lt;p&gt;This talk is about algorithmic optimizations techniques used in gnark. In particular, we show that the implementation of Multi-Scalar-Multiplication (MSM) is 45% faster compared to competitors libraries. We also explain optimizations in the pairing computations both out-circuit and in-circuit. To the best of our knowledge, these implementations are best-in-class.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Elliptic curves and zk-SNARKs</title>
