@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>3 | يوسف</title>
-    <link>/publication_types/3/</link>
-      <atom:link href="/publication_types/3/index.xml" rel="self" type="application/rss+xml" />
-    <description>3</description>
+    <title>Gautam Botrel | يوسف</title>
+    <link>/authors/gautam-botrel/</link>
+      <atom:link href="/authors/gautam-botrel/index.xml" rel="self" type="application/rss+xml" />
+    <description>Gautam Botrel</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 23 Oct 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
-      <title>3</title>
-      <link>/publication_types/3/</link>
+      <title>Gautam Botrel</title>
+      <link>/authors/gautam-botrel/</link>
     </image>
     
     <item>
@@ -17,14 +17,6 @@
       <link>/publication/preprint/tches23/</link>
       <pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate>
       <guid>/publication/preprint/tches23/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pairings in Rank-1 Constraint System</title>
-      <link>/publication/preprint/acns23/</link>
-      <pubDate>Wed, 08 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/preprint/acns23/</guid>
       <description></description>
     </item>
     
