@@ -29,7 +29,10 @@
     <loc>/</loc>
     <lastmod>2022-11-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/preprint/tches23/</loc>
+    <loc>/publication_types/2/</loc>
+    <lastmod>2022-10-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/journal/tches23/</loc>
     <lastmod>2022-10-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/gautam-botrel/</loc>
@@ -52,9 +55,6 @@
   </url><url>
     <loc>/talk/eurocrypt22/</loc>
     <lastmod>2022-06-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication_types/2/</loc>
-    <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/publication/journal/dcc22/</loc>
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
