@@ -222,8 +222,8 @@
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/zkpar1_me.png&#34; &gt;
-&lt;img src=&#34;/img/zkpar1_me.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/zkpar1_me.png&#34; &gt;
+&lt;img src=&#34;./img/zkpar1_me.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
 
@@ -258,8 +258,8 @@
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/heptadecagon_eq.png&#34; &gt;
-&lt;img src=&#34;/img/heptadecagon_eq.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/heptadecagon_eq.png&#34; &gt;
+&lt;img src=&#34;./img/heptadecagon_eq.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
 
@@ -283,8 +283,8 @@
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/heptadecagon_gif.gif&#34; &gt;
-&lt;img src=&#34;/img/heptadecagon_gif.gif&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/heptadecagon_gif.gif&#34; &gt;
+&lt;img src=&#34;./img/heptadecagon_gif.gif&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
 
@@ -356,8 +356,8 @@
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/sss_wiki1.png&#34; data-caption=&#34;One can draw an infinite number of polynomials of degree 2 through 2 points. 3 points are required to define a unique polynomial of degree 2. This image is for illustration purposes only — Shamir’s scheme uses polynomials over a finite field, not re-presentable on a 2-dimensional plane (Wikipedia)&#34;&gt;
-&lt;img src=&#34;/img/sss_wiki1.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/sss_wiki1.png&#34; data-caption=&#34;One can draw an infinite number of polynomials of degree 2 through 2 points. 3 points are required to define a unique polynomial of degree 2. This image is for illustration purposes only — Shamir’s scheme uses polynomials over a finite field, not re-presentable on a 2-dimensional plane (Wikipedia)&#34;&gt;
+&lt;img src=&#34;./img/sss_wiki1.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
   
@@ -385,8 +385,8 @@
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/sss_wiki2.png&#34; data-caption=&#34;This is a polynomial curve over a finite field — now the order of the polynomial has seemingly little to do with the shape of the graph (Wikipedia)&#34;&gt;
-&lt;img src=&#34;/img/sss_wiki2.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/sss_wiki2.png&#34; data-caption=&#34;This is a polynomial curve over a finite field — now the order of the polynomial has seemingly little to do with the shape of the graph (Wikipedia)&#34;&gt;
+&lt;img src=&#34;./img/sss_wiki2.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
   
@@ -424,8 +424,8 @@
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/sss_eq.png&#34; &gt;
-&lt;img src=&#34;/img/sss_eq.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/sss_eq.png&#34; &gt;
+&lt;img src=&#34;./img/sss_eq.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
 
@@ -449,8 +449,8 @@
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/sss_voldemort.jpg&#34; &gt;
-&lt;img src=&#34;/img/sss_voldemort.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/sss_voldemort.jpg&#34; &gt;
+&lt;img src=&#34;./img/sss_voldemort.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
 
@@ -499,8 +499,8 @@
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/talk1.png&#34; data-caption=&#34;video of the talk&#34;&gt;
-&lt;img src=&#34;/img/talk1.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/talk1.png&#34; data-caption=&#34;video of the talk&#34;&gt;
+&lt;img src=&#34;./img/talk1.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
   
@@ -532,8 +532,8 @@
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/talk2.png&#34; data-caption=&#34;video of the talk&#34;&gt;
-&lt;img src=&#34;/img/talk2.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/talk2.png&#34; data-caption=&#34;video of the talk&#34;&gt;
+&lt;img src=&#34;./img/talk2.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
   
@@ -565,8 +565,8 @@
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/talk3.png&#34; data-caption=&#34;video of the talk&#34;&gt;
-&lt;img src=&#34;/img/talk3.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/talk3.png&#34; data-caption=&#34;video of the talk&#34;&gt;
+&lt;img src=&#34;./img/talk3.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
   
@@ -598,8 +598,8 @@
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/roundtable1.png&#34; &gt;
-&lt;img src=&#34;/img/roundtable1.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/roundtable1.png&#34; &gt;
+&lt;img src=&#34;./img/roundtable1.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
 
@@ -625,8 +625,8 @@
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/roundtable2.jpg&#34; &gt;
-&lt;img src=&#34;/img/roundtable2.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/roundtable2.jpg&#34; &gt;
+&lt;img src=&#34;./img/roundtable2.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
 
@@ -656,8 +656,8 @@
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/panel.png&#34; &gt;
-&lt;img src=&#34;/img/panel.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/panel.png&#34; &gt;
+&lt;img src=&#34;./img/panel.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
 
@@ -775,8 +775,8 @@ r = 2971119093306655735513082411575861703919893527141119375540267230510184618204
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/s2pc_tab1.png&#34; &gt;
-&lt;img src=&#34;/img/s2pc_tab1.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/s2pc_tab1.png&#34; &gt;
+&lt;img src=&#34;./img/s2pc_tab1.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
 
@@ -799,8 +799,8 @@ r = 2971119093306655735513082411575861703919893527141119375540267230510184618204
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/s2pc_tab2.png&#34; &gt;
-&lt;img src=&#34;/img/s2pc_tab2.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/s2pc_tab2.png&#34; &gt;
+&lt;img src=&#34;./img/s2pc_tab2.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
 
@@ -844,8 +844,8 @@ In mathematics, it is no different. When mathematicians introduce their new baby
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/ec_vs_ellipse.png&#34; &gt;
-&lt;img src=&#34;/img/ec_vs_ellipse.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/ec_vs_ellipse.png&#34; &gt;
+&lt;img src=&#34;./img/ec_vs_ellipse.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
 
@@ -871,8 +871,8 @@ Names are reservoirs of stories and this was the story behind elliptic curves’
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/jon_snow.jpg&#34; &gt;
-&lt;img src=&#34;/img/jon_snow.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/jon_snow.jpg&#34; &gt;
+&lt;img src=&#34;./img/jon_snow.jpg&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
 
@@ -904,8 +904,8 @@ Elliptic curves are mathematical objects from the algebraic geometry and one sho
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/img/ec.png&#34; data-caption=&#34;Figure 1: Examples of elliptic curves over $\mathbb{R}^2$&#34;&gt;
-&lt;img src=&#34;/img/ec.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/ec.png&#34; data-caption=&#34;Figure 1: Examples of elliptic curves over $\mathbb{R}^2$&#34;&gt;
+&lt;img src=&#34;./img/ec.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
 
 
   
