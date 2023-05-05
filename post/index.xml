@@ -5,12 +5,121 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 15 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>ZPrize competition 2022</title>
+      <link>/post/zprize/</link>
+      <pubDate>Tue, 04 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>/post/zprize/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Zero-knowledge cryptography is a groundbreaking new technology enabling privacy, interoperability, and scalability for Web 3.0 protocols and applications. Like the DARPA Grand Challenge, select teams will compete for monetary prizes spanning a range of categories. Over $7M in prize money has been committed, along with token grants from sponsoring projects.&lt;/p&gt;
+&lt;p&gt;All winning submissions will become open-source libraries for the benefit of all. We hope this foundation can support the next generation of decentralized protocols and applications to enable secure, interoperable, and scalable applications for the next-generation web.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;With Gautam Botrel from ConsenSys, we participated in the inaugural edition of ZPrize (2022) in the open division: &amp;ldquo;ACCELERATING MSM ON MOBILE&amp;rdquo; as the gnark team. Our submission resulted in a &lt;strong&gt;4.2x speedup&lt;/strong&gt; over the baseline and won the &lt;strong&gt;first place&lt;/strong&gt;. The prize was &lt;strong&gt;$259,147&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;accelerating-msm-on-mobile&#34;&gt;ACCELERATING MSM ON MOBILE&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Proving on mobile devices is a transformative technology for applications including private transactions, self-sovereign identity, and scalable computation. Multi-scalar multiplication (MSM) is a core operation for producing zkSNARKs, and it is the primary bottleneck and barrier for deployment of proving on mobile. This prize will focus on minimizing latency of computing MSM in native mobile applications.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The goal was to write the fastest MSM over BLS12-377 curve on a mobile device (Samsung Galaxy A13 5G). The specification details can be found &lt;a href=&#34;https://assets.website-files.com/625a083eef681031e135cc99/6305a48d25fb8f385a8da446_mobile-msm.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Our submission was written in Go, and derived from the &lt;a href=&#34;https://github.com/ConsenSys/gnark-crypto&#34;&gt;gnark-crypto&lt;/a&gt; project.
+On the target device, for a random BLS12-377 G1 MSM ($n = 2^{16}$), we measured:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;~2309ms for the reference benchmark&lt;/li&gt;
+&lt;li&gt;~509ms for our submission&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is a &lt;strong&gt;-77.9% optimisation&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;code-and-techniques&#34;&gt;Code and techniques&lt;/h2&gt;
+&lt;p&gt;The code can be found on github &lt;a href=&#34;https://github.com/gbotrel/zprize-mobile-harness&#34;&gt;here&lt;/a&gt; under Apache-2 or MIT license.&lt;/p&gt;
+&lt;p&gt;We experimented several approaches; here is a description of the key findings for the final ones:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It uses our in-house &lt;code&gt;gnark-crypto/bls12377&lt;/code&gt; package, which out of the box performs very well compared to the zprize baseline. The MSM algorithm is described in &lt;a href=&#34;https://eprint.iacr.org/2022/1400.pdf&#34;&gt;this paper&lt;/a&gt; (to appear in TCHES, Issue 3) and the Go code is documented. We introduced a bls12-377 algorithmic optimization; the &amp;ldquo;bucket/pippenger&amp;rdquo; method now uses an optimized twisted edwards extended cordinate system, resulting in a significant performance improvement (~30% on some target).&lt;/li&gt;
+&lt;li&gt;We perform a static build targetting a 64bit arm linux architecture, which allows without a complicated build procress to run 64bit code on the target device. We copy the output in the armv7 (32bit) destination folder; in a production deployment, Java calling code must at runtime check for the actual CPU architecture and switch to a fallback if it&amp;rsquo;s 32bit (outside of the scope of the challenge). Note that while the submission spawn a process at each msm call, other ways may turn out more efficient (allocate the verifying key on the stack, communicate with the process with unix sockets, &amp;hellip;).&lt;/li&gt;
+&lt;li&gt;We hand tuned the field arithmetic for the Multiplication targetting the arm64 architecture. Our pure-go version performed better than the arm assembly one, and resulted in a ~20% speed up on some platforms compared to existing version in gnark-crypto.&lt;/li&gt;
+&lt;li&gt;We implemented and optimized a dedicated Squaring algorithm (rather than calling the Multiplication as in gnark-crypto) following our previous work &lt;a href=&#34;https://hackmd.io/@gnark/modular_multiplication&#34;&gt;https://hackmd.io/@gnark/modular_multiplication&lt;/a&gt;  (also described in the TCHES paper), which resulted in significant perf improvement on the target device. This is not used in the twisted edwards extended MSM, only in the parameterized Jacobian version which uses Affine points as input (branch: buckets/jacobian, performance: ~600ms for $2^16$).&lt;/li&gt;
+&lt;li&gt;For the target (arm64) we add ~40lines of arm assembly for a small function (&lt;code&gt;fp.Butterfly(a, b) -&amp;gt; a = a + b; b = a - b&lt;/code&gt;). The perf impact is ~5%, as it speeds up a bit the UnifiedMixedAdd point addition in the buckets (msm). The rest of the submission is compiled from pure Go code;&lt;/li&gt;
+&lt;li&gt;On this device, our GPU experimentations were not promising.&lt;/li&gt;
+&lt;li&gt;We raised an &lt;a href=&#34;https://github.com/golang/go/issues/54607&#34;&gt;issue&lt;/a&gt; to the Golang team. Once the fix is merged into the latest Golang compiler release, we might squeeze an extra 5-10% perf improvement.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
+&lt;p&gt;The results were annouced on 04-04-2023 in this &lt;a href=&#34;https://www.zprize.io/blog/announcing-zprize-results&#34;&gt;blog post&lt;/a&gt;.
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;../img/zprize-results.png&#34; &gt;
+&lt;img src=&#34;../img/zprize-results.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;The main sponsor (Ocelot) authored a more detailed announcement for the specific Mobile division in &lt;a href=&#34;https://mirror.xyz/ocelotlabs.eth/QytYZQIaiA73abHeUj8NS0Mm5_f0fMptrZM70DvmeMc&#34;&gt;this post&lt;/a&gt;.
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;../img/ocelot-results2.png&#34; &gt;
+&lt;img src=&#34;../img/ocelot-results2.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;../img/ocelot-results1.png&#34; &gt;
+&lt;img src=&#34;../img/ocelot-results1.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ZK-PAR 0x01</title>

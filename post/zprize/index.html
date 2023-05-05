@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Cryptography engineer at ConsenSys (Paris, France)">
+  <meta name="description" content="1st place winner of the Mobile category">
 
   
-  <link rel="alternate" hreflang="en-us" href="../../publication_types/2/">
+  <link rel="alternate" hreflang="en-us" href="../../post/zprize/">
 
   
 
@@ -95,49 +95,96 @@
 
 
   
-  <link rel="alternate" href="../../publication_types/2/index.xml" type="application/rss+xml" title="يوسف">
-  
 
   <link rel="manifest" href="../../index.webmanifest">
   <link rel="icon" type="image/png" href="../../img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="../../img/icon-192.png">
 
-  <link rel="canonical" href="../../publication_types/2/">
+  <link rel="canonical" href="../../post/zprize/">
 
   
   
   
   
     
-    
   
   
-  <meta property="twitter:card" content="summary">
+  <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="يوسف">
-  <meta property="og:url" content="/publication_types/2/">
-  <meta property="og:title" content="2 | يوسف">
-  <meta property="og:description" content="Cryptography engineer at ConsenSys (Paris, France)"><meta property="og:image" content="/img/icon-192.png">
-  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  <meta property="og:url" content="/post/zprize/">
+  <meta property="og:title" content="ZPrize competition 2022 | يوسف">
+  <meta property="og:description" content="1st place winner of the Mobile category"><meta property="og:image" content="/img/zprize2022.png">
+  <meta property="twitter:image" content="/img/zprize2022.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2022-10-23T00:00:00&#43;00:00">
+    
+      <meta property="article:published_time" content="2023-04-04T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2023-04-04T00:00:00&#43;00:00">
   
-
-  
-
-
-
 
   
 
 
+    
+
+
+
+
+
+
   
 
 
 
 
 
-  <title>2 | يوسف</title>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/zprize/"
+  },
+  "headline": "ZPrize competition 2022",
+  
+  "datePublished": "2023-04-04T00:00:00Z",
+  "dateModified": "2023-04-04T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Youssef El Housni"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "يوسف",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/img/icon-512.png"
+    }
+  },
+  "description": "1st place winner of the Mobile category"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>ZPrize competition 2022 | يوسف</title>
 
 </head>
 
@@ -398,72 +445,394 @@
 </nav>
 
 
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+<div class="article-header">
+  
+  
+  <img src="../../img/zprize2022.png" class="article-banner" alt="">
+  
+
+  
+</div>
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>ZPrize competition 2022</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Apr 4, 2023
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <blockquote>
+<p>Zero-knowledge cryptography is a groundbreaking new technology enabling privacy, interoperability, and scalability for Web 3.0 protocols and applications. Like the DARPA Grand Challenge, select teams will compete for monetary prizes spanning a range of categories. Over $7M in prize money has been committed, along with token grants from sponsoring projects.</p>
+<p>All winning submissions will become open-source libraries for the benefit of all. We hope this foundation can support the next generation of decentralized protocols and applications to enable secure, interoperable, and scalable applications for the next-generation web.</p>
+</blockquote>
+<p>With Gautam Botrel from ConsenSys, we participated in the inaugural edition of ZPrize (2022) in the open division: &ldquo;ACCELERATING MSM ON MOBILE&rdquo; as the gnark team. Our submission resulted in a <strong>4.2x speedup</strong> over the baseline and won the <strong>first place</strong>. The prize was <strong>$259,147</strong>.</p>
+<h2 id="accelerating-msm-on-mobile">ACCELERATING MSM ON MOBILE</h2>
+<blockquote>
+<p>Proving on mobile devices is a transformative technology for applications including private transactions, self-sovereign identity, and scalable computation. Multi-scalar multiplication (MSM) is a core operation for producing zkSNARKs, and it is the primary bottleneck and barrier for deployment of proving on mobile. This prize will focus on minimizing latency of computing MSM in native mobile applications.</p>
+</blockquote>
+<p>The goal was to write the fastest MSM over BLS12-377 curve on a mobile device (Samsung Galaxy A13 5G). The specification details can be found <a href="https://assets.website-files.com/625a083eef681031e135cc99/6305a48d25fb8f385a8da446_mobile-msm.pdf">here</a>.</p>
+<p>Our submission was written in Go, and derived from the <a href="https://github.com/ConsenSys/gnark-crypto">gnark-crypto</a> project.
+On the target device, for a random BLS12-377 G1 MSM ($n = 2^{16}$), we measured:</p>
+<ul>
+<li>~2309ms for the reference benchmark</li>
+<li>~509ms for our submission</li>
+</ul>
+<p>This is a <strong>-77.9% optimisation</strong>.</p>
+<h2 id="code-and-techniques">Code and techniques</h2>
+<p>The code can be found on github <a href="https://github.com/gbotrel/zprize-mobile-harness">here</a> under Apache-2 or MIT license.</p>
+<p>We experimented several approaches; here is a description of the key findings for the final ones:</p>
+<ul>
+<li>It uses our in-house <code>gnark-crypto/bls12377</code> package, which out of the box performs very well compared to the zprize baseline. The MSM algorithm is described in <a href="https://eprint.iacr.org/2022/1400.pdf">this paper</a> (to appear in TCHES, Issue 3) and the Go code is documented. We introduced a bls12-377 algorithmic optimization; the &ldquo;bucket/pippenger&rdquo; method now uses an optimized twisted edwards extended cordinate system, resulting in a significant performance improvement (~30% on some target).</li>
+<li>We perform a static build targetting a 64bit arm linux architecture, which allows without a complicated build procress to run 64bit code on the target device. We copy the output in the armv7 (32bit) destination folder; in a production deployment, Java calling code must at runtime check for the actual CPU architecture and switch to a fallback if it&rsquo;s 32bit (outside of the scope of the challenge). Note that while the submission spawn a process at each msm call, other ways may turn out more efficient (allocate the verifying key on the stack, communicate with the process with unix sockets, &hellip;).</li>
+<li>We hand tuned the field arithmetic for the Multiplication targetting the arm64 architecture. Our pure-go version performed better than the arm assembly one, and resulted in a ~20% speed up on some platforms compared to existing version in gnark-crypto.</li>
+<li>We implemented and optimized a dedicated Squaring algorithm (rather than calling the Multiplication as in gnark-crypto) following our previous work <a href="https://hackmd.io/@gnark/modular_multiplication">https://hackmd.io/@gnark/modular_multiplication</a>  (also described in the TCHES paper), which resulted in significant perf improvement on the target device. This is not used in the twisted edwards extended MSM, only in the parameterized Jacobian version which uses Affine points as input (branch: buckets/jacobian, performance: ~600ms for $2^16$).</li>
+<li>For the target (arm64) we add ~40lines of arm assembly for a small function (<code>fp.Butterfly(a, b) -&gt; a = a + b; b = a - b</code>). The perf impact is ~5%, as it speeds up a bit the UnifiedMixedAdd point addition in the buckets (msm). The rest of the submission is compiled from pure Go code;</li>
+<li>On this device, our GPU experimentations were not promising.</li>
+<li>We raised an <a href="https://github.com/golang/go/issues/54607">issue</a> to the Golang team. Once the fix is merged into the latest Golang compiler release, we might squeeze an extra 5-10% perf improvement.</li>
+</ul>
+<h2 id="results">Results</h2>
+<p>The results were annouced on 04-04-2023 in this <a href="https://www.zprize.io/blog/announcing-zprize-results">blog post</a>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="../../img/zprize-results.png" >
+<img src="../../img/zprize-results.png" alt="" ></a>
+
+
+
+</figure>
+</p>
+<p>The main sponsor (Ocelot) authored a more detailed announcement for the specific Mobile division in <a href="https://mirror.xyz/ocelotlabs.eth/QytYZQIaiA73abHeUj8NS0Mm5_f0fMptrZM70DvmeMc">this post</a>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="../../img/ocelot-results2.png" >
+<img src="../../img/ocelot-results2.png" alt="" ></a>
+
+
+
+</figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="../../img/ocelot-results1.png" >
+<img src="../../img/ocelot-results1.png" alt="" ></a>
+
+
+
+</figure>
+</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=../../post/zprize/&amp;text=ZPrize%20competition%202022" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/zprize/&amp;t=ZPrize%20competition%202022" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=../../post/zprize/&amp;title=ZPrize%20competition%202022" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
   
 
 
 
 
 
-
-
-
-
-
-
-
-  
 
   
   
   
     
   
-<div class="universal-wrapper pt-3">
-  <h1>2</h1>
-
   
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-  <div>
-    <h2><a href="../../publication/journal/tches23/">EdMSM: Multi-Scalar-Multiplication for recursive SNARKs and more</a></h2>
-    <div class="article-style">
+  <div class="media author-card content-widget-hr">
+    
       
-      TCHES 2023, Issue 3 ([ePrint 2022/1400](https://ia.cr/2022/1400))
+      <img class="portrait mr-3" src="../../authors/admin/avatar_hu3c805fe0adc2d159a48c6193a9d1e875_360912_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="../../">Youssef El Housni</a></h5>
+      <h6 class="card-subtitle">Cryptography engineer at ConsenSys (Paris, France)</h6>
+      <p class="card-text">My research interests include applied cryptography for privacy-preserving blockchain applications.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
       
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/yelhousni" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/YoussefElHousn3" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/youssef-el-housni-412427108/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:youssef.housni21@gmail.com" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=kTCe0zYAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+</ul>
+
     </div>
   </div>
-  
-  <div>
-    <h2><a href="../../publication/journal/dcc22/">A survey of elliptic curves for proof systems</a></h2>
-    <div class="article-style">
-      
-      DCC 2022 ([ePrint 2022/586](https://ia.cr/2022/586))
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="../../publication/journal/mdpi18/">On the Performance and Security of Multiplication in $GF(2^N)$</a></h2>
-    <div class="article-style">
-      
-      MDPI Cryptography 2018, 2(3) (Special Issue Code-Based Cryptography)
-      
-    </div>
-  </div>
-  
+
+
+
+
+
+
+
+
 
   
+  
 
-</div>
+
+
+  </div>
+</article>
 
       
 
