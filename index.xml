@@ -139,7 +139,7 @@ On the target device, for a random BLS12-377 G1 MSM ($n = 2^{16}$), we measured:
     </item>
     
     <item>
-      <title>EdMSM: Multi-Scalar-Multiplication for recursive SNARKs and more</title>
+      <title>Faster Montgomery multiplication and Multi-Scalar-Multiplication for SNARKs</title>
       <link>/publication/journal/tches23/</link>
       <pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate>
       <guid>/publication/journal/tches23/</guid>
