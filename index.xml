@@ -5,12 +5,21 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>يوسف</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 20 Jun 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>يوسف</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Pairings in Rank-1 Constraint System</title>
+      <link>/talk/acns23/</link>
+      <pubDate>Tue, 20 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>/talk/acns23/</guid>
+      <description>&lt;p&gt;This presentation is about the conference article that can be found online &lt;a href=&#34;https://eprint.iacr.org/2022/1162.pdf&#34;&gt;here&lt;/a&gt;. In this work, we consider efficiently implementing pairings in Rank-1 Constraint Systems (R1CS), a widely used model to express SNARK statements. We show that our techniques almost halve the arithmetic circuit depth of the previously best known pairing implementation on a Barreto&amp;ndash;Lynn&amp;ndash;Scott (BLS) curve of embedding degree 12, resulting in 70% faster proving time. We also investigate and implement the case of BLS curves of embedding degree 24.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ZPrize competition 2022</title>
@@ -339,66 +348,6 @@ On the target device, for a random BLS12-377 G1 MSM ($n = 2^{16}$), we measured:
 &lt;/figure&gt;
 
 &lt;p&gt;Thanks to the sponsors of ZK-PAR: Beam, Consensys and Bitcoin.fr&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Heptadecagon</title>
-      <link>/post/heptadecagon/</link>
-      <pubDate>Sat, 10 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/post/heptadecagon/</guid>
-      <description>&lt;p&gt;Today, I feel like talking about heptadecagons&amp;hellip; because &lt;em&gt;pourquoi pas&lt;/em&gt;?&lt;/p&gt;
-&lt;p&gt;A heptadecagon is a polygon with 17 equal sides and angles and 119 diagonals. The sum of its interior angles is 15$\pi$ (2700°) and each interior angle equals 15π/17 (158.82°). But how can one construct such a polygon?&lt;/p&gt;
-&lt;p&gt;In 1796, a 19 years old Gauss showed how to construct a heptadecagon using only a compass and an unmarked straightedge. The teenage’s proof relies on the property of irreducible polynomial equations and Fermat primes, those of the form $2^{2^n}+1$.&lt;/p&gt;
-&lt;p&gt;If it is only about proving constructibility, the solution is clear. Taking $360°=17φ$, if $\cos φ$ can be expressed as a square root then the construction is possible as $\cos φ$ represents the $x$ coordinate of a point on the circumference of a unit circle. There is a computational process to prove that:&lt;/p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure&gt;
-
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/heptadecagon_eq.png&#34; &gt;
-&lt;img src=&#34;./img/heptadecagon_eq.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
-
-
-
-&lt;/figure&gt;
-
-&lt;p&gt;Given the fact that $S_n=\cos φ + \cos 2φ + \dots + \cos nφ$ implies that $2S_n \sin φ/2 = sin((2n+1)φ/2-sin(φ/2)$ (1) (a simple proof uses trigonometric identities), and setting: $cosφ+cos4φ =a, cos2φ+cos8φ =b, cos3φ+cos5φ =c, cos6φ+cos7φ =d$, and $a+b=e$ and $c+d=f$ you can find that $e+f = \frac{-1}{2}$ ($S_8=\frac{-1}{2}$ by applying (1)) and that $e.f=-1$ by straightforward trigonometric calculation. This means that $e$ and $f$ are solutions to the quadratic equation $x^2+x/2–1$ according to &lt;a href=&#34;https://en.wikipedia.org/wiki/Vieta%27s_formulas&#34;&gt;Vieta’s formulas&lt;/a&gt;. Thus $e=\frac{-1}{4}+\sqrt{\frac{17}{16}}$ and $f=\frac{-1}{4}-\sqrt{\frac{17}{16}}$. Now, the equation $x^2−ex - \frac{1}{4} = 0$ has roots $a$ and $b$ that yield to $a$ and $b$ expressions, and we find $c$ and $d$ the exact same way. Finally, $\cos φ$ and $cos4φ$ are roots to $x^2− ax + c/2$ because $cos φ · cos 4φ = c/2$. Expressing all those roots yields the expression of $cos(2\pi /17)$ in terms of square roots of 17.&lt;/p&gt;
-&lt;p&gt;All this calculation is just a confirmation. Gauss uses cyclotomic eqations theory to prove the construction works the way it does. Consider the equation $x^17 -1=0$ and $ζ$ as a 17th primitive root, we have $ζ+…+ζ^{16}+1=0$. Let’s now take a generator of $\mathbb{Z}_{17}^*$, say 3. Then the roots can be expressed as powers of $ζ^3$. Define $x_1=ζ^{3^0}+ζ^{3^2}+\dots+ζ^{3^{14}}$ and $x_2=ζ^{3^1}+ζ^{3^3}+\dots+ζ^{3^{15}}$, then $x_1+x_2=-1$ and $x_1 x_2=-4$. This defines a quadratic for which $x_1$ and $x_2$ are roots. Similarly, define $y_1=ζ^{3^0}+ζ^{3^4}+ζ^{3^8}+ζ^{3^{12}}$ and $y_2=ζ^{3^2}+ζ^{3^6}+ζ^{3^{10}}+ζ^{3^{14}}$ then $y_1+y_2=x_1$ and $y_1 y_2=-1$ defines another quadratic and so on with $y_3=ζ^3 +ζ^5+ζ^{14}+ζ^{12}, y_4=ζ^{10}+ζ^{11}+ζ^7+ζ^6, z_1=ζ+ζ^{16}$ and $z_2=ζ^{13}+ζ^4$.&lt;/p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure&gt;
-
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;./img/heptadecagon_gif.gif&#34; &gt;
-&lt;img src=&#34;./img/heptadecagon_gif.gif&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
-
-
-
-&lt;/figure&gt;
-
 </description>
     </item>
     

@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/talk/acns23/</loc>
+    <lastmod>2023-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/talk/</loc>
+    <lastmod>2023-06-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2023-06-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/post/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/post/zprize/</loc>
-    <lastmod>2023-04-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/admin/</loc>
@@ -24,9 +30,6 @@
     <lastmod>2022-11-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/publication/</loc>
-    <lastmod>2022-11-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/talk/</loc>
     <lastmod>2022-11-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/publication/preprint/phd/</loc>
@@ -112,9 +115,6 @@
   </url><url>
     <loc>/post/zkpar1/</loc>
     <lastmod>2019-08-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/post/heptadecagon/</loc>
-    <lastmod>2019-08-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/zk_par1/</loc>
     <lastmod>2019-07-04T00:00:00+00:00</lastmod>
