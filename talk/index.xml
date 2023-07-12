@@ -5,12 +5,21 @@
     <link>/talk/</link>
       <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Talks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 20 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 12 Jul 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Talks</title>
       <link>/talk/</link>
     </image>
+    
+    <item>
+      <title>Pairings in Rank-1 Constraint System</title>
+      <link>/talk/siam-ag23/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>/talk/siam-ag23/</guid>
+      <description>&lt;p&gt;This presentation is about the conference article that can be found online &lt;a href=&#34;https://eprint.iacr.org/2022/1162.pdf&#34;&gt;here&lt;/a&gt;. In this work, we consider efficiently implementing pairings in Rank-1 Constraint Systems (R1CS), a widely used model to express SNARK statements. We show that our techniques almost halve the arithmetic circuit depth of the previously best known pairing implementation on a Barreto&amp;ndash;Lynn&amp;ndash;Scott (BLS) curve of embedding degree 12, resulting in 70% faster proving time. We also investigate and implement the case of BLS curves of embedding degree 24.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Pairings in Rank-1 Constraint System</title>
