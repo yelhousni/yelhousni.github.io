@@ -5,12 +5,21 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>يوسف</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 12 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 11 Sep 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>يوسف</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Faster Montgomery multiplication and Multi-Scalar-Multiplication for SNARKs</title>
+      <link>/talk/ches23/</link>
+      <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>/talk/ches23/</guid>
+      <description>&lt;p&gt;This presentation is about the conference article that can be found online &lt;a href=&#34;https://tches.iacr.org/index.php/TCHES/article/view/10972&#34;&gt;here&lt;/a&gt;.  The bottleneck in the proving algorithm of most of elliptic-curve-based SNARK proof systems is the Multi-Scalar-Multiplication (MSM) algorithm. In this paper we give an overview of a variant of the Pippenger MSM algorithm together with a set of optimizations tailored for curves that admit a twisted Edwards form. We prove that this is the case for SNARK-friendly chains and cycles of elliptic curves, which are useful for recursive constructions. Our contribution is twofold: first, we optimize the arithmetic of finite fields by improving on the well-known Coarsely Integrated Operand Scanning (CIOS) modular multiplication. This is a contribution of independent interest that applies to many different contexts. Second, we propose a new coordinate system for twisted Edwards curves tailored for the Pippenger MSM algorithm.Accelerating the MSM over these curves is critical for deployment of recursive proof systems applications such as proof-carrying-data, blockchain rollups and blockchain light clients. We implement our work in Go and benchmark it on two different CPU architectures (x86 and arm64). We show that our implementation achieves a 40-47% speedup over the state-of-the-art implementation (which was implemented in Rust). This MSM implementation won the first place in the ZPrize competition in the open division “Accelerating MSM on Mobile” and will be deployed in two real-world applications: Linea zkEVM by ConsenSys and probably Celo network.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Pairings in Rank-1 Constraint System</title>
