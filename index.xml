@@ -5,12 +5,21 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>يوسف</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 29 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 15 May 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>يوسف</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Discovering New Elliptic Curves (podcast)</title>
+      <link>/talk/zkpodcast24/</link>
+      <pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
+      <guid>/talk/zkpodcast24/</guid>
+      <description>&lt;p&gt;In this podcast episode, Antonio Sanso (EF researcher) and myself discuss with Anna Rose (host) and Nico (co-host from Geometry research) our new work, Families of prime-order endomorphism-equipped embedded curves on pairing-friendly curves and dive into Elliptic Curve cryptography, Bandersnatch and Verkle Tries amongst much more, before dissecting what terms in the title of this paper truly mean. After getting into the weeds of cryptographic technicalities, the group explores where this work could be used and what it would enable.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>gnark and 2-chain aggregation for Linea</title>
