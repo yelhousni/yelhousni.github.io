@@ -5,12 +5,21 @@
     <link>/talk/</link>
       <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Talks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 15 May 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 02 Jun 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Talks</title>
       <link>/talk/</link>
     </image>
+    
+    <item>
+      <title>zkAggregation in Linea</title>
+      <link>/talk/zkbelgrade/</link>
+      <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>/talk/zkbelgrade/</guid>
+      <description>&lt;p&gt;This presentation is about the proof aggregation protocol in the Linea zkEVM. It uses the elliptic 2-chain of curves BLS12-377 and BW6-761 to aggregate PLONK-KZG proofs and reduce the verification cost.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Discovering New Elliptic Curves (podcast)</title>
