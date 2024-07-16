@@ -21,13 +21,13 @@
 &lt;p&gt;Zero-knowledge cryptography is a groundbreaking new technology enabling privacy, interoperability, and scalability for Web 3.0 protocols and applications. Like the DARPA Grand Challenge, select teams will compete for monetary prizes spanning a range of categories. Over $7M in prize money has been committed, along with token grants from sponsoring projects.&lt;/p&gt;
 &lt;p&gt;All winning submissions will become open-source libraries for the benefit of all. We hope this foundation can support the next generation of decentralized protocols and applications to enable secure, interoperable, and scalable applications for the next-generation web.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;With Gautam Botrel from ConsenSys, we participated in the inaugural edition of ZPrize (2022) in the open division: &amp;ldquo;ACCELERATING MSM ON MOBILE&amp;rdquo; as the gnark team. Our submission resulted in a &lt;strong&gt;4.2x speedup&lt;/strong&gt; over the baseline and won the &lt;strong&gt;first place&lt;/strong&gt;. The prize was &lt;strong&gt;$259,147&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;With Gautam Botrel from Consensys, we participated in the inaugural edition of ZPrize (2022) in the open division: &amp;ldquo;ACCELERATING MSM ON MOBILE&amp;rdquo; as the gnark team. Our submission resulted in a &lt;strong&gt;4.2x speedup&lt;/strong&gt; over the baseline and won the &lt;strong&gt;first place&lt;/strong&gt;. The prize was &lt;strong&gt;$259,147&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;accelerating-msm-on-mobile&#34;&gt;ACCELERATING MSM ON MOBILE&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Proving on mobile devices is a transformative technology for applications including private transactions, self-sovereign identity, and scalable computation. Multi-scalar multiplication (MSM) is a core operation for producing zkSNARKs, and it is the primary bottleneck and barrier for deployment of proving on mobile. This prize will focus on minimizing latency of computing MSM in native mobile applications.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The goal was to write the fastest MSM over BLS12-377 curve on a mobile device (Samsung Galaxy A13 5G). The specification details can be found &lt;a href=&#34;https://assets.website-files.com/625a083eef681031e135cc99/6305a48d25fb8f385a8da446_mobile-msm.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Our submission was written in Go, and derived from the &lt;a href=&#34;https://github.com/ConsenSys/gnark-crypto&#34;&gt;gnark-crypto&lt;/a&gt; project.
+&lt;p&gt;Our submission was written in Go, and derived from the &lt;a href=&#34;https://github.com/Consensys/gnark-crypto&#34;&gt;gnark-crypto&lt;/a&gt; project.
 On the target device, for a random BLS12-377 G1 MSM ($n = 2^{16}$), we measured:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;~2309ms for the reference benchmark&lt;/li&gt;
