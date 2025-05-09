@@ -5,12 +5,28 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 04 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 12 Apr 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Cipher Challenge 2025 — UM6P</title>
+      <link>/post/cipherchallenge/</link>
+      <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/post/cipherchallenge/</guid>
+      <description>&lt;p&gt;I helped organize the Cipher Challenge 2025 — Cryptography Edtion held at the
+University Mohammed VI Polytechnique (UM6P) in Rabat, Morocco. The event took
+place on April 12 and 13, 2025, and was a great success, attracting
+participants from various universities and institutions in Morocco.&lt;/p&gt;
+&lt;p&gt;My contribution was twofold: Prior to the event, I created (most of) the
+challenges and also assisted in grading the students. On April the 12th, I gave
+a keynote talk on Modern &amp;ldquo;Applications of Cryptography&amp;rdquo;. The material I
+contributed can be found at: &lt;a href=&#34;https://cipherchallenge.github.io/&#34;&gt;https://cipherchallenge.github.io/&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ZPrize competition 2022</title>
