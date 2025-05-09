@@ -155,7 +155,7 @@
   
   "author": {
     "@type": "Person",
-    "name": "Youssef El Housni"
+    "name": "يوسف"
   },
   
   "publisher": {
@@ -584,9 +584,9 @@ After one or more iterations, if is not found to be a composite number, then it 
 <p>In number theory, a Carmichael number is a composite number $n$ which satisfies the modular arithmetic congruence relation $a^{p-1} \equiv 1 \pmod p$ for all integers $a$ which are coprime to $n$, i.e. a composite number that satisfies Fermat’s test. Robert Carmichael found the first and smallest such number, 561, which explains the name &ldquo;Carmichael number&rdquo;. Indeed, $561=3 \times 11 \times 17$ and $a^{560} \equiv 1 \pmod{561}$ for all $a$ coprime to $561$.</p>
 <p>Like the Fermat, the Rabin-Miller test has Carmichael numbers (choices of $a$ for which the test declares a composite integer to be a probable prime) but there are fewer. It turns out for any composite $n$, including Carmichael numbers, the probability $n$ passes the Miller-Rabin test is at most 1/4 (on average it is significantly less.) Thus the probability $n$ passes several runs decreases exponentially. However, the bases $a$ should be chosen randomly so an attacker wouldn’t be able to find Carmichael numbers with respect to these bases.</p>
 <p>In corecrypto library, Apple performs $t &lt; 256$ rounds of Miller-Rabin testing, selecting the bases incrementally from a <code>hard-coded</code> list of the first 256 primes. When performing, for instance, $t = 32$ rounds of testing, the probability of a false prime classification is estimated as 1/$2^{64}$. However, since the bases $a$ generation is deterministic, an attacker should be able to find composite numbers that fool the test. This was done in the <a href="https://eprint.iacr.org/2018/749.pdf">paper</a> using the method described in Arnault, F &ldquo;Constructing Carmichael numbers which are strong pseudoprimes to several bases&rdquo; paper. An example of such a composite 1024-bit number of the form $n=p \times q \times r$ is given below:</p>
-<pre><code>n = 105216055594390884840438324972769319399722594046651360392070071794973423530188471087867855419188813164954561140227145977855514336985746250989366318940490798583710597151720075427387437940535767395296272532149397065590267303873620351321073058502920032770522836726669005262088263964215455869031740912313201227043
+<pre tabindex="0"><code>n = 105216055594390884840438324972769319399722594046651360392070071794973423530188471087867855419188813164954561140227145977855514336985746250989366318940490798583710597151720075427387437940535767395296272532149397065590267303873620351321073058502920032770522836726669005262088263964215455869031740912313201227043
 </code></pre><p>with</p>
-<pre><code>p = 123282949929736752510916282638002560328626287433241467864741378859343760091491850110380631340085554443
+<pre tabindex="0"><code>p = 123282949929736752510916282638002560328626287433241467864741378859343760091491850110380631340085554443
 q = 28724927333628663335043493854654596556569924971945262012484741274227096101317601075718687102239934184987
 r = 29711190933066557355130824115758617039198935271411193755402672305101846182049535876601732152960618620523
 </code></pre>
@@ -662,110 +662,6 @@ r = 2971119093306655735513082411575861703919893527141119375540267230510184618204
 
 
 
-
-  
-  
-  
-    
-  
-  
-  <div class="media author-card content-widget-hr">
-    
-      
-      <img class="portrait mr-3" src="../../authors/admin/avatar_hu3c805fe0adc2d159a48c6193a9d1e875_360912_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
-    
-
-    <div class="media-body">
-      <h5 class="card-title"><a href="../../">Youssef El Housni</a></h5>
-      <h6 class="card-subtitle">Cryptographer at Consensys (NYC, USA)</h6>
-      <p class="card-text">My research interests include applied cryptography for blockchain applications.</p>
-      <ul class="network-icon" aria-hidden="true">
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://github.com/yelhousni" target="_blank" rel="noopener">
-        <i class="fab fa-github"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://twitter.com/YoussefElHousn3" target="_blank" rel="noopener">
-        <i class="fab fa-twitter"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://www.linkedin.com/in/youssef-el-housni-412427108/" target="_blank" rel="noopener">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-    <li>
-      <a href="mailto:youssef.housni21@gmail.com" >
-        <i class="fas fa-envelope"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://scholar.google.com/citations?user=kTCe0zYAAAAJ&amp;hl=en" target="_blank" rel="noopener">
-        <i class="ai ai-google-scholar"></i>
-      </a>
-    </li>
-  
-</ul>
-
-    </div>
-  </div>
 
 
 
@@ -887,7 +783,7 @@ r = 2971119093306655735513082411575861703919893527141119375540267230510184618204
     
     
     
-    <script src="../../js/academic.min.b59fdb6275ef5e6e2859c30582fc271a.js"></script>
+    <script src="../../js/academic.min.01f68d44d80310e669a1731b68a35481.js"></script>
 
     
 

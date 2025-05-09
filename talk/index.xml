@@ -5,12 +5,53 @@
     <link>/talk/</link>
       <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Talks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 12 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 30 Apr 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Talks</title>
       <link>/talk/</link>
     </image>
+    
+    <item>
+      <title>Zero-knowedge proofs and blockchains</title>
+      <link>/talk/tangermed/</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/talk/tangermed/</guid>
+      <description>&lt;p&gt;In this presentation, we will explore the fascinating intersection of zero-knowledge proofs and blockchain technology. We will begin by demystifying zero-knowledge proofs, explaining their fundamental principles and tracing their evolution from theoretical primitives to practical tools in cryptography. Following this, we will delve into the world of blockchain, discussing its reliance on cryptographic techniques to ensure security and integrity. The core of the talk will focus on the necessity of zero-knowledge proofs in blockchain applications, addressing privacy and scalability concerns. We will highlight how blockchain technology has spurred significant advancements in zero-knowledge proof research, fostering collaboration between academia and industry. Finally, I will present my own contributions to the field, including the optimization of mathematical building blocks for zero-knowledge proofs and their concrete applications within blockchain systems. This presentation aims to provide a comprehensive understanding of the critical role zero-knowledge proofs play in enhancing blockchain technology and to share insights from cutting-edge research in this dynamic area.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Zero-knowedge proofs and blockchains</title>
+      <link>/talk/um6p_benguerir/</link>
+      <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/talk/um6p_benguerir/</guid>
+      <description>&lt;p&gt;In this presentation, we will explore the fascinating intersection of zero-knowledge proofs and blockchain technology. We will begin by demystifying zero-knowledge proofs, explaining their fundamental principles and tracing their evolution from theoretical primitives to practical tools in cryptography. Following this, we will delve into the world of blockchain, discussing its reliance on cryptographic techniques to ensure security and integrity. The core of the talk will focus on the necessity of zero-knowledge proofs in blockchain applications, addressing privacy and scalability concerns. We will highlight how blockchain technology has spurred significant advancements in zero-knowledge proof research, fostering collaboration between academia and industry. Finally, I will present my own contributions to the field, including the optimization of mathematical building blocks for zero-knowledge proofs and their concrete applications within blockchain systems. This presentation aims to provide a comprehensive understanding of the critical role zero-knowledge proofs play in enhancing blockchain technology and to share insights from cutting-edge research in this dynamic area.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Modern Applications of Cryptography</title>
+      <link>/talk/um6p_cipherchallenge/</link>
+      <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/talk/um6p_cipherchallenge/</guid>
+      <description>&lt;p&gt;I helped organize the Cipher Challenge at UM6P College of Computing, a
+competition that brings together students from all over Morocco. The material I
+contributed can be found at: &lt;a href=&#34;https://cipherchallenge.github.io/&#34;&gt;https://cipherchallenge.github.io/&lt;/a&gt;.
+I gave a keynote presentation that delves into the fascinating world of
+cryptography and its evolution from classical techniques to modern
+applications. This talk provides a comprehensive overview of how cryptography
+has been traditionally used for encryption and digital signatures, and then
+explores groundbreaking advancements that are shaping the future of secure
+communication and data protection.  Throughout the talk, we provide concrete
+examples of how these cryptographic techniques are being utilized in popular
+platforms and technologies, including Playstation, TikTok, Apple, WhatsApp, and
+various blockchains such as Bitcoin and Ethereum.  By the end of the session,
+the goal is for the attendees to have a deeper appreciation for the critical
+role cryptography plays in our digital world and the innovative ways it
+continues to evolve to meet new challenges.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Elliptic curves and SNARKs — Past, present and future.</title>

@@ -13,6 +13,16 @@
     </image>
     
     <item>
+      <title></title>
+      <link>/authors/admin/</link>
+      <pubDate>Tue, 10 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>/authors/admin/</guid>
+      <description>&lt;p&gt;I am a cryptographer at &lt;a href=&#34;https://consensys.net/&#34;&gt;Consensys&lt;/a&gt; developping a zero-knowledge cryptography open-source ecosystem in Go language (see &lt;a href=&#34;https://github.com/Consensys/gnark&#34;&gt;gnark&lt;/a&gt; and &lt;a href=&#34;https://github.com/Consensys/gnark-crypto&#34;&gt;gnark-crypto&lt;/a&gt; libraries) and building &lt;a href=&#34;https://linea.build/&#34;&gt;Linea&lt;/a&gt; on top of it, an EVM-equivalent Type-2 zkEVM. I completed &lt;a href=&#34;https://yelhousni.github.io/phd.pdf&#34;&gt;my PhD&lt;/a&gt; in Mathematics and Computer Science at &lt;a href=&#34;https://www.polytechnique.edu&#34;&gt;Ecole Polytechnique&lt;/a&gt;. I was advised by &lt;a href=&#34;https://www.lix.polytechnique.fr/Labo/Francois.Morain/english-index.html&#34;&gt;François Morain&lt;/a&gt; and &lt;a href=&#34;https://pages.saclay.inria.fr/daniel.augot/&#34;&gt;Daniel Augot&lt;/a&gt;, and then by &lt;a href=&#34;https://members.loria.fr/AGuillevic/&#34;&gt;Aurore Guillevic&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My research focus on efficient proof systems based on algorithmic number theory. I am particularly interested in the theory and application of bilinear pairings and elliptic curves in SNARKs.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Families of prime-order endomorphism-equipped embedded curves on pairing-friendly curves</title>
       <link>/publication/journal/joc24/</link>
       <pubDate>Tue, 10 Oct 2023 00:00:00 +0000</pubDate>
