@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>3 | يوسف</title>
-    <link>/publication_types/3/</link>
-      <atom:link href="/publication_types/3/index.xml" rel="self" type="application/rss+xml" />
-    <description>3</description>
+    <title>Georgios Fotiadis | يوسف</title>
+    <link>/authors/georgios-fotiadis/</link>
+      <atom:link href="/authors/georgios-fotiadis/index.xml" rel="self" type="application/rss+xml" />
+    <description>Georgios Fotiadis</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 19 Jul 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
-      <title>3</title>
-      <link>/publication_types/3/</link>
+      <title>Georgios Fotiadis</title>
+      <link>/authors/georgios-fotiadis/</link>
     </image>
     
     <item>
@@ -17,14 +17,6 @@
       <link>/publication/preprint/preprint25-1311/</link>
       <pubDate>Sat, 19 Jul 2025 00:00:00 +0000</pubDate>
       <guid>/publication/preprint/preprint25-1311/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>The arithmetic of pairing-based proof systems</title>
-      <link>/publication/preprint/phd/</link>
-      <pubDate>Fri, 18 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/preprint/phd/</guid>
       <description></description>
     </item>
     

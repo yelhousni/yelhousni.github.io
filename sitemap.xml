@@ -3,33 +3,45 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/authors/admin/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication_types/3/</loc>
+    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/</loc>
+    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/preprint/preprint25-1311/</loc>
+    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/dimitri-koshelev/</loc>
+    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/authors/georgios-fotiadis/</loc>
+    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication_types/</loc>
+    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/</loc>
+    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/publication_types/1/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/authors/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication/preprint/preprint25933/</loc>
+    <loc>/publication/conference/latincrypt25/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/liam-eagen/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication_types/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/simon-masson/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/authors/thomas-piellard/</loc>
-    <lastmod>2025-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/</loc>
@@ -85,9 +97,6 @@
   </url><url>
     <loc>/post/zprize/</loc>
     <lastmod>2023-04-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication_types/3/</loc>
-    <lastmod>2022-11-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/publication/preprint/phd/</loc>
     <lastmod>2022-11-18T00:00:00+00:00</lastmod>
