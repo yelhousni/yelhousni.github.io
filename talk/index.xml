@@ -5,12 +5,21 @@
     <link>/talk/</link>
       <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Talks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 30 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 24 Jul 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Talks</title>
       <link>/talk/</link>
     </image>
+    
+    <item>
+      <title>On pairing implementation</title>
+      <link>/talk/google25/</link>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>/talk/google25/</guid>
+      <description>&lt;p&gt;This talk was about implementing bilinear pairings, with focus on gnark-crypto optimizations. It covers the mathematical foundations of pairings, their applications in cryptography, and practical considerations for efficient implementation. The talk also discusses challenges faced during the implementation process and how they were addressed, providing insights into the complexities of working with advanced cryptographic primitives.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Zero-knowedge proofs and blockchains</title>

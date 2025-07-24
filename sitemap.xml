@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/talk/google25/</loc>
+    <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/talk/</loc>
+    <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/authors/admin/</loc>
     <lastmod>2025-07-19T00:00:00+00:00</lastmod>
   </url><url>
@@ -26,9 +35,6 @@
     <loc>/publication/</loc>
     <lastmod>2025-07-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/</loc>
-    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/publication_types/1/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
   </url><url>
@@ -43,9 +49,6 @@
   </url><url>
     <loc>/authors/thomas-piellard/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/talk/</loc>
-    <lastmod>2025-04-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/tangermed/</loc>
     <lastmod>2025-04-30T00:00:00+00:00</lastmod>
