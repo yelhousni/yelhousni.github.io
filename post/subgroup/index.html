@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Cryptographer at Consensys (NYC, USA)">
+  <meta name="description" content="From my Hackmd - hackmd.io/@yelhousni">
 
   
-  <link rel="alternate" hreflang="en-us" href="../../../post/">
+  <link rel="alternate" hreflang="en-us" href="../../post/subgroup/">
 
   
 
@@ -84,7 +84,7 @@
   
   
   
-  <link rel="stylesheet" href="../../../css/academic.css">
+  <link rel="stylesheet" href="../../css/academic.css">
 
   
 
@@ -95,14 +95,12 @@
 
 
   
-  <link rel="alternate" href="../../../post/index.xml" type="application/rss+xml" title="يوسف">
-  
 
-  <link rel="manifest" href="../../../index.webmanifest">
-  <link rel="icon" type="image/png" href="../../../img/icon-32.png">
-  <link rel="apple-touch-icon" type="image/png" href="../../../img/icon-192.png">
+  <link rel="manifest" href="../../index.webmanifest">
+  <link rel="icon" type="image/png" href="../../img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="../../img/icon-192.png">
 
-  <link rel="canonical" href="../../../post/">
+  <link rel="canonical" href="../../post/subgroup/">
 
   
   
@@ -115,18 +113,65 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="يوسف">
-  <meta property="og:url" content="/post/">
-  <meta property="og:title" content="Posts | يوسف">
-  <meta property="og:description" content="Cryptographer at Consensys (NYC, USA)"><meta property="og:image" content="/img/icon-192.png">
+  <meta property="og:url" content="/post/subgroup/">
+  <meta property="og:title" content="A note on implementing subgroup membership using the Tate pairing | يوسف">
+  <meta property="og:description" content="From my Hackmd - hackmd.io/@yelhousni"><meta property="og:image" content="/img/icon-192.png">
   <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2025-10-06T00:00:00&#43;00:00">
+    
+      <meta property="article:published_time" content="2025-10-06T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2025-10-06T00:00:00&#43;00:00">
   
 
   
 
 
+    
 
+
+
+
+
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/subgroup/"
+  },
+  "headline": "A note on implementing subgroup membership using the Tate pairing",
+  
+  "datePublished": "2025-10-06T00:00:00Z",
+  "dateModified": "2025-10-06T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "يوسف"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "يوسف",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/img/icon-512.png"
+    }
+  },
+  "description": "From my Hackmd - hackmd.io/@yelhousni"
+}
+</script>
+
+  
 
   
 
@@ -134,10 +179,13 @@
   
 
 
+  
 
 
 
-  <title>Posts | يوسف</title>
+
+
+  <title>A note on implementing subgroup membership using the Tate pairing | يوسف</title>
 
 </head>
 
@@ -180,7 +228,7 @@
   <div class="container">
 
     
-      <a class="navbar-brand" href="../../../">يوسف</a>
+      <a class="navbar-brand" href="../../">يوسف</a>
       
       <button type="button" class="navbar-toggler" data-toggle="collapse"
               data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -219,7 +267,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="../../../#about"><span>Home</span></a>
+          <a class="nav-link " href="../../#about"><span>Home</span></a>
         </li>
 
         
@@ -248,7 +296,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="../../../#experience"><span>Work</span></a>
+          <a class="nav-link " href="../../#experience"><span>Work</span></a>
         </li>
 
         
@@ -277,7 +325,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="../../../#publications"><span>Publications</span></a>
+          <a class="nav-link " href="../../#publications"><span>Publications</span></a>
         </li>
 
         
@@ -306,7 +354,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="../../../#talks"><span>Talks</span></a>
+          <a class="nav-link " href="../../#talks"><span>Talks</span></a>
         </li>
 
         
@@ -335,7 +383,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="../../../#posts"><span>Blog</span></a>
+          <a class="nav-link " href="../../#posts"><span>Blog</span></a>
         </li>
 
         
@@ -364,7 +412,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="../../../#contact"><span>Contact</span></a>
+          <a class="nav-link " href="../../#contact"><span>Contact</span></a>
         </li>
 
         
@@ -398,78 +446,33 @@
 </nav>
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
+  <article class="article">
 
   
 
+
+
+
+
+
+
+
+
+
+
+
+  
+
   
   
+  
+<div class="article-container pt-3">
+  <h1>A note on implementing subgroup membership using the Tate pairing</h1>
+
+  
+
   
     
-  
-<div class="universal-wrapper pt-3">
-  <h1>Posts</h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-
-  
-
-  
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="../../../post/s2pc/" >Secure Two-Party Computation (S2PC)</a>
-    </h3>
-
-    
-    <div class="article-style">
-      From my Medium blog - <a href="mailto:medium.com/@youssef.housni21">medium.com/@youssef.housni21</a>
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
 
 
 <div class="article-metadata">
@@ -483,92 +486,7 @@
     
       
     
-    Oct 22, 2018
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    4 min read
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="../../../post/ellipse/" >Why elliptic curves are called &#34;elliptic&#34; ?</a>
-    </h3>
-
-    
-    <div class="article-style">
-      From my Medium blog - <a href="mailto:medium.com/@youssef.housni21">medium.com/@youssef.housni21</a>
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    Oct 14, 2018
+    Oct 6, 2025
   </span>
   
 
@@ -590,126 +508,174 @@
 
 </div>
 
-      
-    </div>
-
     
 
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 </div>
 
-    
-  
-    
-      
 
 
+  <div class="article-container">
 
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="../../../post/why_ec/" >Why do we use elliptic curves for cryptography?</a>
-    </h3>
-
-    
     <div class="article-style">
-      From my Medium blog - <a href="mailto:medium.com/@youssef.housni21">medium.com/@youssef.housni21</a>
+      <p>The paper &ldquo;Subgroup membership testing on elliptic curves via the Tate pairing&rdquo; by Dmitrii Koshelev (<a href="https://eprint.iacr.org/2022/037.pdf">https://eprint.iacr.org/2022/037.pdf</a>) is a cute result. Let $E/F_p$ be an elliptic curve of order $N = c\cdot r$, with prime integer $r$. To check that a point $P \in E$ is of order $r$, the naive method is to check that $[r]P = \mathcal{O}$. The paper shows that, given the group structure $E \cong Z_{e_1} \bigoplus Z_{e_2 \cdot r}$ and $e_2 \mid p-1$ ($c$ being $e_1\cdot e_2$), it is sufficient to check that the Tate pairings:</p>
+<p>$$
+f_{e_1,P_1}(P)^{(p-1)/e_1} = 1 \quad \text{and}\quad f_{e_2,P_2}(P)^{(p-1)/e_2} = 1
+$$</p>
+<p>where $P_1$ and $P_2$ are points on $E$ of orders $e_1$ and $e_2$ respectively.</p>
+<p>$E$ is not necessarily pairing-friendly. Pairing-friendliness just means that the embedding degree $k$ is small enough to have fast arithmetic and big enough to have good security (e.g. $k=12$ for BLS12 and BN curves). Here $k=1$ and we only care about performance. To compute these pairings, we need to compute:</p>
+<ol>
+<li>the Miller functions $f_{e_i,P_i}$</li>
+<li>the final exponentiations by $(p-1)/e_i$</li>
+</ol>
+<p>The whole idea of the paper is that when $e_i$ are small, these two steps become very efficient to implement.</p>
+<h4 id="step-2">Step 2</h4>
+<p>Let us start with step 2. Given $f\in F_p$, checking that $f^{(p-1)/e_i} =_? 1$ is equivalent to checking if $f$ is an $e_i$-th residue in $F_p$, i.e. $\exists z \in F_p$ s.t. $z^{e_i} = f \pmod p$. This is known as Euler criterion. For small $e_i$, this can be performed more efficiently than exponentiation, by using Euclidean algorithms. The power residue symbol satisfy similar relations to the GCD and hence one can adapt GCD algorithms to compute power residue symbols. For $e_i = 2$, this is known as the Legendre symbol and can be computed efficiently using the binary GCD algorithm (see <a href="https://github.com/pornin/x25519-cm0?tab=readme-ov-file#legendre-symbol">Pornin&rsquo;s algorithm</a> and <a href="https://github.com/Consensys/gnark-crypto/pull/704">gnark-crypto implementation</a> by Arya). For bigger $e_i \leq 16$, there are similar algorithms — although less &ldquo;CPU-friendly&rdquo; than the binary-GCD. However, one can always resolve to exponentiations.</p>
+<h4 id="step-1">Step 1</h4>
+<p>Computing Miller functions is done through Miller loops. For small $e_i$, we can explicitly give the formulas. For example when $e_i=2$, the paper states that $f_{e_i,P_i} = X - X_{P_i}$ which is true when the curve is given in short Weierstrass form $E_{sw}: Y^2=X^3+AX+B$. When $e_i=1$, $f_i=1$ trivially. When $e_i=2^m$, the paper gives the formula in page 5.</p>
+<h3 id="discussion">Discussion</h3>
+<p>I believe that the result is significantly performant only when $e_1=e_2=2$, in which case we can compute the Legendre symbol efficiently using the binary-GCD algorithm. For other cases it is still moderately fast using exponentiations, or someone has to implement efficient Euclidean-type higher power residue symbols.</p>
+<p>Now let us focus on the case $e_1=e_2=2$. This happens for the curve <a href="https://eprint.iacr.org/2021/1152.pdf">Bandersnatch</a> used in Verkle trie. It is mostly efficient when given in twisted Edwards form $E_{ed}: ax^2+y^2=1+dx^2y^2$. So to implement this test with input points $(x,y)\in E_{ed}$, we need to map $(x,y)$ to $(X,Y) \in E_{sw}$. The formula is:</p>
+<p>$$
+X = (\frac{a-d}{4})\cdot(\frac{1+y}{1-y}) + \frac{a+d}{6}
+$$</p>
+<p>and we don&rsquo;t need the $Y$ coordinate.</p>
+<p>To avoid inverses we use the fact that $(\frac{1/x}{p})<em>2 = (\frac{x}{p})<em>2$. Thus, $f</em>{2,P_i} = X - X</em>{P_i}$ becomes:</p>
+<p>$$
+12(a-d)^2(1-y)[(5a - d - 12X_{P_i}) + (a - 5d + 12X_{P_i})y]
+$$</p>
+<p>or equivalently</p>
+<p>$$
+t_2 (1-y)(t_1 + t_0y)
+$$</p>
+<p>with $t_2=12(a-d)^2$, $t_1=5a - d - 12X_{P_i}$ and $t_0=a - 5d + 12X_{P_i}$ some pre-computed constants.</p>
+<p>For Bandersnatch implementers, they just need to take this last formula with:</p>
+<ul>
+<li>$X_{P_1} = \texttt{0x23e93c143a3aa62dfef158aabe40ed250530ac9369509c984891a87e04178ed3}$</li>
+<li>$X_{P_2} = \texttt{0x5de00fbdcf0964d2188e44aec311d927af0f7e94e94fca97c891a87d84178ed1}$</li>
+</ul>
+<p>which leads, for the first point, to:</p>
+<ul>
+<li>$t_0=1$</li>
+<li>$t_1=1$</li>
+<li>$t_2=\texttt{0x384d1c153c878eea316b96e5c340cf6abd025b636bd74122926c66eb6fa86d15}$</li>
+</ul>
+<p>and, for the second, to:</p>
+<ul>
+<li>$t_0=\texttt{0x636b1e56f54c03e873dd6068f2f238776f43b4a3d72a357835d2fc15ba90cdea}$</li>
+<li>$t_1=\texttt{0x108288fc3451795fbf5c779f16af9f8de479ef5f28d42686ca2d03e9456f321d}$</li>
+<li>$t_2=\texttt{0x34f9acec8bf92f766108eca94020963ae3496e2743876768b74534c34ef9473e}$</li>
+</ul>
+<p>A full implementation in gnark-crypto can be found here: <a href="https://github.com/Consensys/gnark-crypto/pull/708">https://github.com/Consensys/gnark-crypto/pull/708</a></p>
+
     </div>
+
     
 
-    <div class="stream-meta article-metadata">
 
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
       
-
+      
       
         
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=../../post/subgroup/&amp;text=A%20note%20on%20implementing%20subgroup%20membership%20using%20the%20Tate%20pairing" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
     
       
-    
-    Oct 7, 2018
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    5 min read
-  </span>
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
       
-    </div>
-
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/subgroup/&amp;t=A%20note%20on%20implementing%20subgroup%20membership%20using%20the%20Tate%20pairing" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
     
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item"><a class="page-link" href="../../../post/">&laquo;</a></li>
-    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=../../post/subgroup/&amp;title=A%20note%20on%20implementing%20subgroup%20membership%20using%20the%20Tate%20pairing" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
     
   </ul>
-</nav>
-
-
-
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
+</article>
 
       
 
     
     
     
-    <script src="../../../js/mathjax-config.js"></script>
+    <script src="../../js/mathjax-config.js"></script>
     
 
     
@@ -808,7 +774,7 @@
     
     
     
-    <script src="../../../js/academic.min.01f68d44d80310e669a1731b68a35481.js"></script>
+    <script src="../../js/academic.min.01f68d44d80310e669a1731b68a35481.js"></script>
 
     
 

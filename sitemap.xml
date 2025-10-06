@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/post/subgroup/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/talk/latincrypt25/</loc>
     <lastmod>2025-10-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/</loc>
-    <lastmod>2025-10-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/</loc>
     <lastmod>2025-10-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/google25/</loc>
@@ -62,14 +68,14 @@
     <loc>/talk/um6p_cipherchallenge/</loc>
     <lastmod>2025-04-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/post/</loc>
-    <lastmod>2025-04-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/talk/devcon7/</loc>
     <lastmod>2024-11-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/zkhub/</loc>
     <lastmod>2024-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/fakeglv/</loc>
+    <lastmod>2024-09-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/zkbelgrade/</loc>
     <lastmod>2024-06-02T00:00:00+00:00</lastmod>

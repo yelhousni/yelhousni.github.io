@@ -5,12 +5,69 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 12 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>A note on implementing subgroup membership using the Tate pairing</title>
+      <link>/post/subgroup/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>/post/subgroup/</guid>
+      <description>&lt;p&gt;The paper &amp;ldquo;Subgroup membership testing on elliptic curves via the Tate pairing&amp;rdquo; by Dmitrii Koshelev (&lt;a href=&#34;https://eprint.iacr.org/2022/037.pdf&#34;&gt;https://eprint.iacr.org/2022/037.pdf&lt;/a&gt;) is a cute result. Let $E/F_p$ be an elliptic curve of order $N = c\cdot r$, with prime integer $r$. To check that a point $P \in E$ is of order $r$, the naive method is to check that $[r]P = \mathcal{O}$. The paper shows that, given the group structure $E \cong Z_{e_1} \bigoplus Z_{e_2 \cdot r}$ and $e_2 \mid p-1$ ($c$ being $e_1\cdot e_2$), it is sufficient to check that the Tate pairings:&lt;/p&gt;
+&lt;p&gt;$$
+f_{e_1,P_1}(P)^{(p-1)/e_1} = 1 \quad \text{and}\quad f_{e_2,P_2}(P)^{(p-1)/e_2} = 1
+$$&lt;/p&gt;
+&lt;p&gt;where $P_1$ and $P_2$ are points on $E$ of orders $e_1$ and $e_2$ respectively.&lt;/p&gt;
+&lt;p&gt;$E$ is not necessarily pairing-friendly. Pairing-friendliness just means that the embedding degree $k$ is small enough to have fast arithmetic and big enough to have good security (e.g. $k=12$ for BLS12 and BN curves). Here $k=1$ and we only care about performance. To compute these pairings, we need to compute:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;the Miller functions $f_{e_i,P_i}$&lt;/li&gt;
+&lt;li&gt;the final exponentiations by $(p-1)/e_i$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The whole idea of the paper is that when $e_i$ are small, these two steps become very efficient to implement.&lt;/p&gt;
+&lt;h4 id=&#34;step-2&#34;&gt;Step 2&lt;/h4&gt;
+&lt;p&gt;Let us start with step 2. Given $f\in F_p$, checking that $f^{(p-1)/e_i} =_? 1$ is equivalent to checking if $f$ is an $e_i$-th residue in $F_p$, i.e. $\exists z \in F_p$ s.t. $z^{e_i} = f \pmod p$. This is known as Euler criterion. For small $e_i$, this can be performed more efficiently than exponentiation, by using Euclidean algorithms. The power residue symbol satisfy similar relations to the GCD and hence one can adapt GCD algorithms to compute power residue symbols. For $e_i = 2$, this is known as the Legendre symbol and can be computed efficiently using the binary GCD algorithm (see &lt;a href=&#34;https://github.com/pornin/x25519-cm0?tab=readme-ov-file#legendre-symbol&#34;&gt;Pornin&amp;rsquo;s algorithm&lt;/a&gt; and &lt;a href=&#34;https://github.com/Consensys/gnark-crypto/pull/704&#34;&gt;gnark-crypto implementation&lt;/a&gt; by Arya). For bigger $e_i \leq 16$, there are similar algorithms — although less &amp;ldquo;CPU-friendly&amp;rdquo; than the binary-GCD. However, one can always resolve to exponentiations.&lt;/p&gt;
+&lt;h4 id=&#34;step-1&#34;&gt;Step 1&lt;/h4&gt;
+&lt;p&gt;Computing Miller functions is done through Miller loops. For small $e_i$, we can explicitly give the formulas. For example when $e_i=2$, the paper states that $f_{e_i,P_i} = X - X_{P_i}$ which is true when the curve is given in short Weierstrass form $E_{sw}: Y^2=X^3+AX+B$. When $e_i=1$, $f_i=1$ trivially. When $e_i=2^m$, the paper gives the formula in page 5.&lt;/p&gt;
+&lt;h3 id=&#34;discussion&#34;&gt;Discussion&lt;/h3&gt;
+&lt;p&gt;I believe that the result is significantly performant only when $e_1=e_2=2$, in which case we can compute the Legendre symbol efficiently using the binary-GCD algorithm. For other cases it is still moderately fast using exponentiations, or someone has to implement efficient Euclidean-type higher power residue symbols.&lt;/p&gt;
+&lt;p&gt;Now let us focus on the case $e_1=e_2=2$. This happens for the curve &lt;a href=&#34;https://eprint.iacr.org/2021/1152.pdf&#34;&gt;Bandersnatch&lt;/a&gt; used in Verkle trie. It is mostly efficient when given in twisted Edwards form $E_{ed}: ax^2+y^2=1+dx^2y^2$. So to implement this test with input points $(x,y)\in E_{ed}$, we need to map $(x,y)$ to $(X,Y) \in E_{sw}$. The formula is:&lt;/p&gt;
+&lt;p&gt;$$
+X = (\frac{a-d}{4})\cdot(\frac{1+y}{1-y}) + \frac{a+d}{6}
+$$&lt;/p&gt;
+&lt;p&gt;and we don&amp;rsquo;t need the $Y$ coordinate.&lt;/p&gt;
+&lt;p&gt;To avoid inverses we use the fact that $(\frac{1/x}{p})&lt;em&gt;2 = (\frac{x}{p})&lt;em&gt;2$. Thus, $f&lt;/em&gt;{2,P_i} = X - X&lt;/em&gt;{P_i}$ becomes:&lt;/p&gt;
+&lt;p&gt;$$
+12(a-d)^2(1-y)[(5a - d - 12X_{P_i}) + (a - 5d + 12X_{P_i})y]
+$$&lt;/p&gt;
+&lt;p&gt;or equivalently&lt;/p&gt;
+&lt;p&gt;$$
+t_2 (1-y)(t_1 + t_0y)
+$$&lt;/p&gt;
+&lt;p&gt;with $t_2=12(a-d)^2$, $t_1=5a - d - 12X_{P_i}$ and $t_0=a - 5d + 12X_{P_i}$ some pre-computed constants.&lt;/p&gt;
+&lt;p&gt;For Bandersnatch implementers, they just need to take this last formula with:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$X_{P_1} = \texttt{0x23e93c143a3aa62dfef158aabe40ed250530ac9369509c984891a87e04178ed3}$&lt;/li&gt;
+&lt;li&gt;$X_{P_2} = \texttt{0x5de00fbdcf0964d2188e44aec311d927af0f7e94e94fca97c891a87d84178ed1}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;which leads, for the first point, to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$t_0=1$&lt;/li&gt;
+&lt;li&gt;$t_1=1$&lt;/li&gt;
+&lt;li&gt;$t_2=\texttt{0x384d1c153c878eea316b96e5c340cf6abd025b636bd74122926c66eb6fa86d15}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;and, for the second, to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$t_0=\texttt{0x636b1e56f54c03e873dd6068f2f238776f43b4a3d72a357835d2fc15ba90cdea}$&lt;/li&gt;
+&lt;li&gt;$t_1=\texttt{0x108288fc3451795fbf5c779f16af9f8de479ef5f28d42686ca2d03e9456f321d}$&lt;/li&gt;
+&lt;li&gt;$t_2=\texttt{0x34f9acec8bf92f766108eca94020963ae3496e2743876768b74534c34ef9473e}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A full implementation in gnark-crypto can be found here: &lt;a href=&#34;https://github.com/Consensys/gnark-crypto/pull/708&#34;&gt;https://github.com/Consensys/gnark-crypto/pull/708&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Cipher Challenge 2025 — UM6P</title>
@@ -25,6 +82,217 @@ participants from various universities and institutions in Morocco.&lt;/p&gt;
 challenges and also assisted in grading the students. On April the 12th, I gave
 a keynote talk on Modern &amp;ldquo;Applications of Cryptography&amp;rdquo;. The material I
 contributed can be found at: &lt;a href=&#34;https://cipherchallenge.github.io/&#34;&gt;https://cipherchallenge.github.io/&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fake GLV</title>
+      <link>/post/fakeglv/</link>
+      <pubDate>Fri, 20 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>/post/fakeglv/</guid>
+      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; _____     _           ____ _ __     __
+|  ___|_ _| | _____   / ___| |\ \   / /
+| |_ / _` | |/ / _ \ | |  _| | \ \ / /
+|  _| (_| |   &amp;lt;  __/ | |_| | |__\ V /
+|_|  \__,_|_|\_\___|  \____|_____\_/
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;you-dont-need-an-efficient-endomorphism-to-implement-glv-like-scalar-multiplication-in-snark-circuits&#34;&gt;You don&amp;rsquo;t need an efficient endomorphism to implement GLV-like scalar multiplication in SNARK circuits&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../post/fakeglv/#Introduction&#34;&gt;Introduction&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../post/fakeglv/#Other-applications&#34;&gt;Other applications&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../post/fakeglv/#Background&#34;&gt;Background&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../post/fakeglv/#The-fake-GLV-trick6&#34;&gt;The fake GLV trick&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../post/fakeglv/#Implementation7&#34;&gt;Implementation&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../post/fakeglv/#Benchmark&#34;&gt;Benchmark&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../post/fakeglv/#Comparison&#34;&gt;Comparison&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;P-256, also known as secp256r1 and prime256v1, is a 256-bit prime field Weierstrass curve standardized by the NIST. It is widely adopted in internet systems, which explains its myriad use cases in platforms such as TLS, DNSSEC, Apple’s Secure Enclave, Passkeys, Android Keystore, and Yubikey. The key operation in elliptic curves based cryptography is the scalar multiplication. When the curve is equipped with an efficient endomorphism it is possible to speed up this operation through the well-known &lt;a href=&#34;https://www.iacr.org/archive/crypto2001/21390189.pdf&#34;&gt;GLV&lt;/a&gt; algorithm. P-256 does unfortunately not have an efficient endomorphism (see &lt;a href=&#34;https://neuromancer.sk/std/nist/P-256&#34;&gt;parameters&lt;/a&gt;) to enjoy this speedup.&lt;/p&gt;
+&lt;p&gt;Verifying ECDSA signatures on Ethereum through precompiled contracts, i.e. smart contracts built into the Ethereum protocol (there are only 9) is only possible with the &lt;em&gt;secp256k1&lt;/em&gt; curve and not the P-256.
+Verifying ECDSA signatures on P-256 requires computing scalar multiplications in Solidity and is especially useful for smart-contract wallets, enabling hardware-based signing keys and safer, easier self-custody. Different solutions can bring P-256 signatures on-chain. There are primarily three interesting approaches: (zk)-SNARK based verifiers, smart contract verifiers (e.g. &lt;a href=&#34;https://eprint.iacr.org/2023/939.pdf&#34;&gt;[Dubois23]&lt;/a&gt;, &lt;a href=&#34;#ZgotmplZ&#34;&gt;Ledger/FCL&lt;/a&gt; (deprecated), &lt;a href=&#34;https://github.com/get-smooth/crypto-lib&#34;&gt;smoo.th/SCL&lt;/a&gt; and &lt;a href=&#34;https://daimo.com/blog/p256verifier&#34;&gt;daimo/p256verifier&lt;/a&gt;), and native protocol precompiles (&lt;a href=&#34;https://github.com/ethereum/RIPs/blob/master/RIPS/rip-7212.md&#34;&gt;EIP/RIP 7212&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Using SNARK (succinctness) properties, provides a great way to reduce gas cost for computation on Ethereum (e.g. ~232k gas for &lt;a href=&#34;https://eprint.iacr.org/2016/260.pdf&#34;&gt;Groth16&lt;/a&gt;, ~285k gas for &lt;a href=&#34;https://eprint.iacr.org/2019/953.pdf&#34;&gt;PLONK&lt;/a&gt; and ~185k gas for &lt;a href=&#34;https://eprint.iacr.org/2021/1167&#34;&gt;FFLONK&lt;/a&gt;). This is very competitive with (and sometimes better that) the currently gas-optimal smart contract verifier. Moreover one can batch many ECDSA verifications in a single proof, amortizing thus the gas cost. However verifying P-256 signatures in a SNARK circuit can be very expensive i.e. long proving time. This is because the field where the points on the P-256 curve lie is different than the field where the SNARK computation is usually expressed. To be able to verify the proof onchain through the procompile the SNARK field needs to be the &lt;a href=&#34;https://hackmd.io/@jpw/bn254&#34;&gt;BN254&lt;/a&gt; scalar field. Different teams tried to implement the ECDSA verification on P-256 in a BN254 SNARK circuit efficiently. Among these: &lt;a href=&#34;https://github.com/zkwebauthn/webauthn-halo2&#34;&gt;zkwebauthn/webauthn-halo2&lt;/a&gt;, &lt;a href=&#34;https://github.com/zkwebauthn/webauthn-circom&#34;&gt;https://github.com/zkwebauthn/webauthn-circom&lt;/a&gt; and &lt;a href=&#34;https://github.com/privacy-scaling-explorations/circom-ecdsa-p256&#34;&gt;PSE/circom-ecdsa-p256&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If P-256 had an efficient endomorphism we could have optimized the proving time a great deal!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In this note we show a way to implement a GLV-like scalar multiplications in-circuit without having an efficient endomorphism.&lt;/p&gt;
+&lt;h3 id=&#34;other-applications&#34;&gt;Other applications&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;This technique can be applied to any elliptic curve without an efficient endomorphism (e.g. &lt;a href=&#34;https://en.wikipedia.org/wiki/Curve25519&#34;&gt;Curve25519&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/P-384&#34;&gt;P-384&lt;/a&gt;, MNT-753 (&lt;a href=&#34;https://coinlist.co/build/coda/pages/MNT4753&#34;&gt;k=4&lt;/a&gt;, &lt;a href=&#34;https://coinlist.co/build/coda/pages/MNT6753&#34;&gt;k=6&lt;/a&gt;), &lt;a href=&#34;https://docs.starknet.io/architecture-and-concepts/cryptography/stark-curve/&#34;&gt;STARK curve&lt;/a&gt;, &lt;a href=&#34;https://eprint.iacr.org/2024/869&#34;&gt;$\mathcal{B}$ of &amp;ldquo;cycle5&amp;rdquo;&lt;/a&gt;, &amp;hellip;). See this &lt;a href=&#34;https://neuromancer.sk/std/&#34;&gt;database&lt;/a&gt; for other curves.&lt;/li&gt;
+&lt;li&gt;This would question the choice of &lt;a href=&#34;https://eprint.iacr.org/2021/1152&#34;&gt;Bandersnatch&lt;/a&gt; (&lt;em&gt;an embedded endomorphism-equipped curve over BLS12-381&lt;/em&gt;) over &lt;a href=&#34;https://github.com/zkcrypto/jubjub&#34;&gt;Jubjub&lt;/a&gt; (&lt;em&gt;an embedded curve over BLS12-381 without endomorphism&lt;/em&gt;) for &lt;a href=&#34;https://verkle.info/&#34;&gt;Ethereum Verkle trees&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;This can speedup ECDSA verification in &lt;a href=&#34;https://docs.cairo-lang.org/hello_starknet/signature_verification.html&#34;&gt;Starknet&lt;/a&gt; and &lt;a href=&#34;https://www.cairo-lang.org/&#34;&gt;Cairo&lt;/a&gt; (through the &lt;a href=&#34;https://docs.starknet.io/architecture-and-concepts/cryptography/stark-curve/&#34;&gt;STARK curve&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;This can speedup natively the folding step (à la Nova) of Ed25519 signatures through the 2-cycles proposed &lt;a href=&#34;https://moderncrypto.org/mail-archive/curves/2024/001050.html&#34;&gt;here&lt;/a&gt; by Aurore Guillevic.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;h3 id=&#34;standard-scalar-multiplication&#34;&gt;Standard scalar multiplication&lt;/h3&gt;
+&lt;p&gt;Let $E$ be an elliptic curve defined over the prime field $\mathbb{F}_p$ and let $r$ be a prime divisor of the curve order #$E(\mathbb{F}_p)$ (i.e. the number of points).
+Let $s \in \mathbb{F}_r$ and $P(x,y) \in E(\mathbb{F}_p)$, we are interested in proving scalar multiplication $s\cdot P$ over the $r$-torsion subgroup of $E$, denoted $E[r]$ (i.e. the subset of points of order $r$).&lt;/p&gt;
+&lt;p&gt;The simplest algorithm is the standard left-to-right &lt;em&gt;double-and-add&lt;/em&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;INPUT: s = (s_{t−1},..., s_1, s_0), P ∈ E(Fp).
+OUTPUT: sP.
+1. Q ← ∞.
+2. For i from t−1 downto 0 do
+    2.1 Q ← 2Q.
+    2.2 If s_i = 1 then Q ← Q + P.
+3. Return(Q).
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If/else branching is not possible in SNARK circuits so this is replaced by constant window table lookups inside the circuit. This can be achieved using polynomials which vanish at the constants that aren’t being selected, i.e. a 1-bit table lookup &lt;code&gt;Q ← s_i * Q + (1 - s_i) * (Q+P)&lt;/code&gt;. Hence this double-and-add algorithm requires $t$ doublings, $t$ additions and $t$ 1-bit table lookup.
+This can be extended to &lt;em&gt;windowed&lt;/em&gt; double-and-add, i.e. scanning more than a bit per iteration using larger window tables, but the multiplicative depth of the evaluation increases exponentially. We use affine coordinates for doubling/adding points because inverses cost as much as multiplications, i.e. instead of checking that $1/x$ is $y$ we provide $y$ out-circuit and check in-circuit that $x\cdot y = 1$. However since we start with $Q ← ∞$ it is infeasible to avoid conditional branching since affine formulas are incomplete. Instead, we scan the bits right-to-left and assume that the first bit &lt;code&gt;s_0&lt;/code&gt; is 1 (so that we start at &lt;code&gt;Q ← P&lt;/code&gt;), we double the input point &lt;code&gt;P&lt;/code&gt; instead of the accumulator &lt;code&gt;Q&lt;/code&gt; in this algorithm and finally conditionally subtract (using the 1-bit lookup) &lt;code&gt;P&lt;/code&gt; if &lt;code&gt;s_0&lt;/code&gt; was 0.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;INPUT: s = (s_{t−1},..., s_1, s_0), P ∈ E(Fp).
+OUTPUT: sP.
+1. Q ← P.
+2. For i from 1 to t−1 do
+    2.1 If s_i = 1 then Q ← Q + P.
+    2.2 P ← 2P.
+3. if s_0 = 0 then Q ← Q - P
+4. Return(Q).
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;glv-scalar-multiplication&#34;&gt;GLV scalar multiplication&lt;/h3&gt;
+&lt;p&gt;However it is well known that if the curve is equipped with an efficient endomorphism then there exists a faster algorithm known as &lt;a href=&#34;https://www.iacr.org/archive/crypto2001/21390189.pdf&#34;&gt;[GLV]&lt;/a&gt;.
+:::info
+&lt;strong&gt;Example 1 :&lt;/strong&gt; suppose that $E$ has Complex Multiplication (CM) with discrimant $-D=-3$, i.e. $E$ is of the form $y^2=x^3+b$, with $b \in \mathbb{F}_p$. This is the case of &lt;code&gt;BN254&lt;/code&gt;, &lt;code&gt;BLS12-381&lt;/code&gt; and &lt;code&gt;secp256k1&lt;/code&gt; elliptic curves used in Ethereum. There is an efficient endomorphism $\phi: E \rightarrow E$ defined by $(x,y)\mapsto (\omega x,y)$ (and $\mathcal{O} \mapsto \mathcal{O}$) that acts on $P \in E[r]$ as $\phi(P)=\lambda \cdot P$. Both $\omega$ and $\lambda$ are cube roots of unity in $\mathbb{F}_p$ and $\mathbb{F}_r$ respectively, i.e. $\omega^2+\omega+1 \equiv 0 \pmod p$ and $\lambda^2+\lambda+1 \equiv 0 \pmod r$.
+:::
+:::info
+&lt;strong&gt;Example 2 :&lt;/strong&gt; suppose that $E$ has Complex Multiplication (CM) with discrimant $-D=-8$, meaning that the endomorphism ring is $\mathbf{Z}[\sqrt{−2}]$. This is the case of the &lt;code&gt;Bandersnatch&lt;/code&gt; elliptic curves specified in Ethereum Verkle trie. There is an efficient endomorphism $\phi: E \rightarrow E$ whose kernel is generated by a 2-torsion point. The map can be found by looking at 2-isogeneous curves and applying Vélu&amp;rsquo;s formulas. For Bandersnatch it is defined by $(x,y)\mapsto (u^2\cdot \frac{x^2+wx+t}{x+w},u^3\cdot y\cdot \frac{x^2+2wx+v}{(x+w)^2})$ for some constants $u,v,w,t$ (and $\mathcal{O} \mapsto \mathcal{O}$) that acts on $P \in E[r]$ as $\phi(P)=\lambda \cdot P$ where $\lambda^2+2 \equiv 0 \pmod r$.
+:::
+The GLV algorithm starts by decomposing $s$ as $s = s_0 + \lambda s_1$ and then replacing the scalar multiplication $s \cdot P$ by $s_0 \cdot P + s_1 \cdot \phi(P)$. Because $s_0$ and $s_1$ are guaranteed to be $\leq \sqrt{r}$ (see Sec.4 of &lt;a href=&#34;https://www.iacr.org/archive/crypto2001/21390189.pdf&#34;&gt;[GLV]&lt;/a&gt; and Sec.4 of &lt;a href=&#34;https://eprint.iacr.org/2015/565.pdf&#34;&gt;[FourQ]&lt;/a&gt; for an optimization trick), we can halve the size of the for loop in the double-and-add algorithm. We can then scan simultaenously the bits of $s_0$ and $s_1$ and apply the &lt;a href=&#34;https://crypto.stackexchange.com/questions/99975/strauss-shamir-trick-on-ec-multiplication-by-scalar&#34;&gt;Strauss-Shamir trick&lt;/a&gt;. This results in a significant speed up but only when an endomorphism is available. For example the left-to-right double-and-add would become:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;INPUT: s and P ∈ E(Fp).
+OUTPUT: sP.
+1. Find s1 and s2 s.t. s = s1 + 𝜆 * s2 mod r
+    1.1 let s1 = (s1_{t−1},..., s1_1, s1_0)
+    1.2 and s2 = = (s2_{t−1},..., s2_1, s2_0)
+2. P1 ← P, P2 ← 𝜙(P) and Q ← ∞.
+3. For i from t−1 downto 0 do
+    3.1 Q ← 2Q.
+    3.2 If s1_i = 0 and s2_i = 0 then Q ← Q.
+    3.3 If s1_i = 1 and s2_i = 0 then Q ← Q + P1.
+    3.4 If s1_i = 0 and s2_i = 1 then Q ← Q + P2.
+    3.5 If s1_i = 1 and s2_i = 1 then Q ← Q + P1 + P2.
+4. Return(Q).
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Using the efficient endomorphism in-circuit is also possible (see &lt;a href=&#34;https://eprint.iacr.org/2019/1021.pdf&#34;&gt;[Halo, Sec. 6.2 and Appendix C]&lt;/a&gt; or &lt;a href=&#34;https://github.com/Consensys/gnark/blob/ea53f373f45d2f9ad9cc1639c34359a35f771191/std/algebra/emulated/sw_emulated/point.go#L530&#34;&gt;[gnark implementation]&lt;/a&gt; for short Weierstrass curves and &lt;a href=&#34;https://github.com/zhenfeizhang/bandersnatch-glv&#34;&gt;[arkworks]&lt;/a&gt; and &lt;a href=&#34;https://github.com/Consensys/gnark/blob/master/std/algebra/native/twistededwards/scalarmul_glv.go&#34;&gt;[gnark]&lt;/a&gt; implementations for twisted Edwards). But one should be careful about some extra checks of the decomposition $s = s_0 + \lambda s_1 \mod r$ (not the SNARK modulus). The integers $s_0, s_1$ can possibly be negative in which case they will be reduced in-circuit modulo the SNARK field and not $r$.&lt;/p&gt;
+&lt;h2 id=&#34;the-fake-glv-trick&#34;&gt;The fake GLV trick&lt;/h2&gt;
+&lt;p&gt;Remember that we are proving that $s\cdot P = Q$ and not computing it. We can &amp;ldquo;hint&amp;rdquo; the result $Q$ and check in-circuit that $s\cdot P - Q = \mathcal{O}$. Now, if we can find $u,v \leq \sqrt{r}$ such that $v\cdot s = u \pmod r$ then we can check instead that
+$$ (v\cdot s)\cdot P - v\cdot Q = \mathcal{O}$$
+which is equivalent to
+$$ u\cdot P - v\cdot Q = \mathcal{O}$$
+The thing now is that $u$ and $v$ are &amp;ldquo;small&amp;rdquo; and we can, similarly to the GLV algorithm, halve the size of the double-and-add loop and apply the Strauss-Shamir trick.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: running the half-GCD algorithm (i.e. running GCD half-way) is sufficient to find $u$ and $v$. We can apply the exact same trick for finding the lattice basis as in the GLV paper (Sec. 4). For completeness we recall the algorithm hereafter.
+We apply the extended Euclidean algorithm to find the greatest common divisor of $r$ and $s$ (This gcd is 1 since $r$ is prime.) The algorithm produces a sequence of equations
+$$w_i \cdot r + v_i \cdot s = u_i$$
+for $i = 0, 1, 2, \dots$  where $w_0 = 1, v_0 = 0, u_0 = r, w_1 = 0, v_1 = 1, u_1 = s$, and $u_i \geq 0$ for all $i$. We stop at the index $m$ for which $u_m \geq \sqrt{r}$ and take $u = u_{m+1}$ and $v = -v_{m+1}$.
+&lt;em&gt;Note:&lt;/em&gt; By construction $u$ is guaranteed to be a positive integer but $v$ can be negative, in which case it would be reduced in-circuit modulo the SNARK modulus and not $r$. To circumvent this we return in the hint $u$, $v$ and a $\texttt{b}=1$ if $v$ is negative and $\texttt{b}=0$ otherwise. In-circuit we negate $Q$ instead when $\texttt{b}=1$.&lt;/p&gt;
+&lt;h3 id=&#34;implementation&#34;&gt;Implementation&lt;/h3&gt;
+&lt;p&gt;A generic implementation in the gnark library is available at &lt;a href=&#34;https://github.com/Consensys/gnark/feat/fake-GLV&#34;&gt;gnark.io (feat/fake-GLV branch)&lt;/a&gt;. For Short Weierstrass (e.g. P256) look at the &lt;code&gt;scalarMulFakeGLV&lt;/code&gt; &lt;a href=&#34;https://github.com/Consensys/gnark/blob/62c89cb10cff1413e9d68cce054c7e711d04c726/std/algebra/emulated/sw_emulated/point.go#L1263&#34;&gt;method&lt;/a&gt; in the emulated package and for twisted Edwards (e.g. Bandersnatch/Jubjub) look at the &lt;code&gt;scalarMulFakeGLV&lt;/code&gt; &lt;a href=&#34;https://github.com/Consensys/gnark/blob/62c89cb10cff1413e9d68cce054c7e711d04c726/std/algebra/native/twistededwards/point.go#L261&#34;&gt;method&lt;/a&gt; in the native package.&lt;/p&gt;
+&lt;h4 id=&#34;benchmark&#34;&gt;Benchmark&lt;/h4&gt;
+&lt;p&gt;The best algorithm to implement scalar multiplication in a non-native circuit (i.e. circuit field ≠ curve field) when an efficient endomorphism is &lt;em&gt;not&lt;/em&gt; available is an adaptation of &lt;a href=&#34;https://www.iacr.org/archive/ches2007/47270135/47270135.pdf&#34;&gt;[Joye07]&lt;/a&gt; (implemented in &lt;a href=&#34;https://github.com/Consensys/gnark/blob/fdb2b0de422b1c4fc5c6d08e81e788095ac818a6/std/algebra/emulated/sw_emulated/point.go#L748&#34;&gt;gnark here&lt;/a&gt;).
+Next we compare this scalar multiplication with our fake GLV in a PLONKish vanilla (i.e. no custom gates) circuit (scs) over the BN254 curve (Ethereum compatible). We also give benchmarks in R1CS.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;P-256&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Old (Joye07)&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;New (fake GLV)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;$[s]P$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;738,031 scs / 186,466 r1cs&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;385,412 scs / 100,914 r1cs&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ECDSA verification&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1,135,876 scs / 293,814 r1cs&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;742,541 scs / 195,266 r1cs&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note here that the old ECDSA verification uses Strauss-Shamir trick for computing $[s]P+[t]Q$ while the new version is merely two fake GLV multiplications and an addition.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h4 id=&#34;comparison&#34;&gt;Comparison&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.p256wallet.org/&#34;&gt;p256wallet.org&lt;/a&gt; is an ERC-4337 smart contract wallet that leverages zk-SNARKs for WebAuthn and P-256 signature verification. It uses &lt;a href=&#34;https://github.com/privacy-scaling-explorations/circom-ecdsa-p256&#34;&gt;PSE/circom-ecdsa-p256&lt;/a&gt; to generate the webAuthn proof, and underneath &lt;a href=&#34;https://github.com/privacy-scaling-explorations/circom-ecdsa-p256&#34;&gt;PSE/circom-ecdsa-p256&lt;/a&gt; to generate the ECDSA proof on P-256 curve. The github README reports &lt;code&gt;1,972,905 R1CS&lt;/code&gt;. Compiling our circuit in R1CS results in &lt;strong&gt;&lt;code&gt;195,266 R1CS&lt;/code&gt;&lt;/strong&gt;. This is more than a &lt;strong&gt;10x&lt;/strong&gt; reduction, which is not only due to the fake GLV algorithm but also to optimized non-native field arithmetic in gnark.&lt;/p&gt;
+&lt;h4 id=&#34;other-curves&#34;&gt;Other curves&lt;/h4&gt;
+&lt;p&gt;Similar results are noticed for other curves in short Weirstrass, e.g. P-384 and STARK curve:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;P-384&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Old (Joye07)&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;New (fake GLV)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;$[s]P$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1,438,071 scs&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;782,674 scs&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ECDSA verification&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2,174,027 scs&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;1,419,929 scs&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;STARK curve&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Old (Joye07)&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;New (fake GLV)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;$[s]P$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;727,033 scs&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;380,210 scs&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ECDSA verification&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;1,137,459 scs&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;732,131 scs&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;and also in twisted Edwards e.g. Jubjub vs. Bandersnatch:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Jubjub&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Old (2-bit double-and-add)&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;New (fake GLV)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;$[s]P$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5,863 scs / 3,314 r1cs&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;4,549  scs / 2,401 r1cs&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Bandersnatch&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Old (GLV)&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;New (fake GLV)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;$[s]P$&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4,781 scs /  2,455 r1cs&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;4,712 scs / 2,420 r1cs&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;EDIT: Thanks to Ben Smith for reporting that a similar idea was proposed in [SAC05:ABGL+] for ECDSA verification. We note that, in our context, the trick applies to a single scalar multiplication and that the half GCD is free through the hint.&lt;/p&gt;&lt;/blockquote&gt;
 </description>
     </item>
     
