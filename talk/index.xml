@@ -5,7 +5,7 @@
     <link>/talk/</link>
       <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Talks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 24 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Oct 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Talks</title>
@@ -13,20 +13,20 @@
     </image>
     
     <item>
+      <title>Fast Elliptic Curve Scalar Multiplications in SN(T)ARK Circuits</title>
+      <link>/talk/latincrypt25/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>/talk/latincrypt25/</guid>
+      <description>&lt;p&gt;Proof systems of arbitrary computations have found many applications in recent years. However, the proving algorithm has a consequent complexity tied to the size of the computation being proved. Thus, proving large computations is quite inefficient. One of these large computations is the scalar multiplication over an elliptic curve. In this work, we provide new techniques for reducing the time corresponding to proving a scalar multiplication, using integer lattice reduction or a (half) extended Euclidean algorithm in a ring of integers. We investigate optimizations in the case of small (complex multiplication) discriminant curves, and its generalization for multi scalar multiplications as used in signature verification. We provide an optimized Golang implementation for different elliptic curves in different proof systems settings. The speed-up in proving time is between 22% and 53% compared to the previous state-of-the-art.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>On pairing implementation</title>
       <link>/talk/google25/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
       <guid>/talk/google25/</guid>
       <description>&lt;p&gt;This talk was about implementing bilinear pairings, with focus on gnark-crypto optimizations. It covers the mathematical foundations of pairings, their applications in cryptography, and practical considerations for efficient implementation. The talk also discusses challenges faced during the implementation process and how they were addressed, providing insights into the complexities of working with advanced cryptographic primitives.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Zero-knowedge proofs and blockchains</title>
-      <link>/talk/tangermed/</link>
-      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>/talk/tangermed/</guid>
-      <description>&lt;p&gt;In this presentation, we will explore the fascinating intersection of zero-knowledge proofs and blockchain technology. We will begin by demystifying zero-knowledge proofs, explaining their fundamental principles and tracing their evolution from theoretical primitives to practical tools in cryptography. Following this, we will delve into the world of blockchain, discussing its reliance on cryptographic techniques to ensure security and integrity. The core of the talk will focus on the necessity of zero-knowledge proofs in blockchain applications, addressing privacy and scalability concerns. We will highlight how blockchain technology has spurred significant advancements in zero-knowledge proof research, fostering collaboration between academia and industry. Finally, I will present my own contributions to the field, including the optimization of mathematical building blocks for zero-knowledge proofs and their concrete applications within blockchain systems. This presentation aims to provide a comprehensive understanding of the critical role zero-knowledge proofs play in enhancing blockchain technology and to share insights from cutting-edge research in this dynamic area.&lt;/p&gt;
 </description>
     </item>
     
