@@ -5,12 +5,21 @@
     <link>/talk/</link>
       <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Talks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 15 Jan 2026 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Talks</title>
       <link>/talk/</link>
     </image>
+    
+    <item>
+      <title>Zero-Knowledge Proofs — The Bridge Between Cryptographic Theory and Blockchain Scalability</title>
+      <link>/talk/inpt26/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>/talk/inpt26/</guid>
+      <description>&lt;p&gt;In this presentation, we will explore the fascinating intersection of zero-knowledge proofs and blockchain technology. We will begin by demystifying zero-knowledge proofs, explaining their fundamental principles and tracing their evolution from theoretical primitives to practical tools in cryptography. Following this, we will delve into the world of blockchain, discussing its reliance on cryptographic techniques to ensure security and integrity. The core of the talk will focus on the necessity of zero-knowledge proofs in blockchain applications, addressing privacy and scalability concerns. We will highlight some applications of zero-knowledge proofs in the world of Blockchains.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Fast Elliptic Curve Scalar Multiplications in SN(T)ARK Circuits</title>
