@@ -258,7 +258,8 @@ Next we compare this scalar multiplication with our fake GLV in a PLONKish vanil
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Note here that the old ECDSA verification uses Strauss-Shamir trick for computing $[s]P+[t]Q$ while the new version is merely two fake GLV multiplications and an addition.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Note here that the old ECDSA verification uses Strauss-Shamir trick for computing $[s]P+[t]Q$ while the new version is merely two fake GLV multiplications and an addition.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h4 id=&#34;comparison&#34;&gt;Comparison&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.p256wallet.org/&#34;&gt;p256wallet.org&lt;/a&gt; is an ERC-4337 smart contract wallet that leverages zk-SNARKs for WebAuthn and P-256 signature verification. It uses &lt;a href=&#34;https://github.com/privacy-scaling-explorations/circom-ecdsa-p256&#34;&gt;PSE/circom-ecdsa-p256&lt;/a&gt; to generate the webAuthn proof, and underneath &lt;a href=&#34;https://github.com/privacy-scaling-explorations/circom-ecdsa-p256&#34;&gt;PSE/circom-ecdsa-p256&lt;/a&gt; to generate the ECDSA proof on P-256 curve. The github README reports &lt;code&gt;1,972,905 R1CS&lt;/code&gt;. Compiling our circuit in R1CS results in &lt;strong&gt;&lt;code&gt;195,266 R1CS&lt;/code&gt;&lt;/strong&gt;. This is more than a &lt;strong&gt;10x&lt;/strong&gt; reduction, which is not only due to the fake GLV algorithm but also to optimized non-native field arithmetic in gnark.&lt;/p&gt;
 &lt;h4 id=&#34;other-curves&#34;&gt;Other curves&lt;/h4&gt;
@@ -339,7 +340,8 @@ Next we compare this scalar multiplication with our fake GLV in a PLONKish vanil
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;blockquote&gt;
-&lt;p&gt;EDIT: Thanks to Ben Smith for reporting that a similar idea was proposed in [SAC05:ABGL+] for ECDSA verification. We note that, in our context, the trick applies to a single scalar multiplication and that the half GCD is free through the hint.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;EDIT: Thanks to Ben Smith for reporting that a similar idea was proposed in [SAC05:ABGL+] for ECDSA verification. We note that, in our context, the trick applies to a single scalar multiplication and that the half GCD is free through the hint.&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     
@@ -350,11 +352,13 @@ Next we compare this scalar multiplication with our fake GLV in a PLONKish vanil
       <guid>/post/zprize/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Zero-knowledge cryptography is a groundbreaking new technology enabling privacy, interoperability, and scalability for Web 3.0 protocols and applications. Like the DARPA Grand Challenge, select teams will compete for monetary prizes spanning a range of categories. Over $7M in prize money has been committed, along with token grants from sponsoring projects.&lt;/p&gt;
-&lt;p&gt;All winning submissions will become open-source libraries for the benefit of all. We hope this foundation can support the next generation of decentralized protocols and applications to enable secure, interoperable, and scalable applications for the next-generation web.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;All winning submissions will become open-source libraries for the benefit of all. We hope this foundation can support the next generation of decentralized protocols and applications to enable secure, interoperable, and scalable applications for the next-generation web.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;With Gautam Botrel from Consensys, we participated in the inaugural edition of ZPrize (2022) in the open division: &amp;ldquo;ACCELERATING MSM ON MOBILE&amp;rdquo; as the gnark team. Our submission resulted in a &lt;strong&gt;4.2x speedup&lt;/strong&gt; over the baseline and won the &lt;strong&gt;first place&lt;/strong&gt;. The prize was &lt;strong&gt;$259,147&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;accelerating-msm-on-mobile&#34;&gt;ACCELERATING MSM ON MOBILE&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Proving on mobile devices is a transformative technology for applications including private transactions, self-sovereign identity, and scalable computation. Multi-scalar multiplication (MSM) is a core operation for producing zkSNARKs, and it is the primary bottleneck and barrier for deployment of proving on mobile. This prize will focus on minimizing latency of computing MSM in native mobile applications.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Proving on mobile devices is a transformative technology for applications including private transactions, self-sovereign identity, and scalable computation. Multi-scalar multiplication (MSM) is a core operation for producing zkSNARKs, and it is the primary bottleneck and barrier for deployment of proving on mobile. This prize will focus on minimizing latency of computing MSM in native mobile applications.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;The goal was to write the fastest MSM over BLS12-377 curve on a mobile device (Samsung Galaxy A13 5G). The specification details can be found &lt;a href=&#34;https://assets.website-files.com/625a083eef681031e135cc99/6305a48d25fb8f385a8da446_mobile-msm.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Our submission was written in Go, and derived from the &lt;a href=&#34;https://github.com/Consensys/gnark-crypto&#34;&gt;gnark-crypto&lt;/a&gt; project.
 On the target device, for a random BLS12-377 G1 MSM ($n = 2^{16}$), we measured:&lt;/p&gt;
@@ -520,7 +524,8 @@ On the target device, for a random BLS12-377 G1 MSM ($n = 2^{16}$), we measured:
       <guid>/post/sss/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;“There are no more Horcruxes. It’s just you and me. Neither can live while the other survives, and one of us is about to leave for good…”
-—Harry Potter and the Deathly Hallows, Chapter 36: The Flaw in the Plan.&lt;/p&gt;&lt;/blockquote&gt;
+—Harry Potter and the Deathly Hallows, Chapter 36: The Flaw in the Plan.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;The Horcrux hunt was a mission started by Albus Dumbeldore and given to Harry Potter to find all of Lord Voldemort’s remaining Horcruxes and destroy them. Obsessed with immortality from a young age, Lord Voldemort created a series of Horcruxes in an effort to prevent his death. A Horcrux is a vessel into which one places a piece of one’s soul to protect one from mortal death. Voldemort split his soul into 7 secret parts in a way that reconstruction is possible. It is widely believed that the process for Horcrux splitting involves a spell and a horrific act is performed after a murder has been committed, but this is not true. Voldemort invented this cover story to keep secret the very simple spell he used (a wizard patent for the technical term) — it is called the 3S spell.&lt;/p&gt;
 &lt;p&gt;The 3S spell is nothing but a Shamir secret sharing scheme. In this scheme, a dealer (Voldemort) splits a secret (his soul) into multiple shares (Horcruxes) in a way that reconstruction is only possible when combining all of the shares or some sufficient fixed number of them. The spell uses some basic polynomial algebra magic (1st year at Hogwarts) and some finite field wizardry.&lt;/p&gt;
 &lt;h2 id=&#34;basic-scheme&#34;&gt;Basic scheme&lt;/h2&gt;

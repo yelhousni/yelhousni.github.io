@@ -652,7 +652,8 @@ Next we compare this scalar multiplication with our fake GLV in a PLONKish vanil
   </tbody>
 </table>
 <blockquote>
-<p>Note here that the old ECDSA verification uses Strauss-Shamir trick for computing $[s]P+[t]Q$ while the new version is merely two fake GLV multiplications and an addition.</p></blockquote>
+<p>Note here that the old ECDSA verification uses Strauss-Shamir trick for computing $[s]P+[t]Q$ while the new version is merely two fake GLV multiplications and an addition.</p>
+</blockquote>
 <h4 id="comparison">Comparison</h4>
 <p><a href="https://www.p256wallet.org/">p256wallet.org</a> is an ERC-4337 smart contract wallet that leverages zk-SNARKs for WebAuthn and P-256 signature verification. It uses <a href="https://github.com/privacy-scaling-explorations/circom-ecdsa-p256">PSE/circom-ecdsa-p256</a> to generate the webAuthn proof, and underneath <a href="https://github.com/privacy-scaling-explorations/circom-ecdsa-p256">PSE/circom-ecdsa-p256</a> to generate the ECDSA proof on P-256 curve. The github README reports <code>1,972,905 R1CS</code>. Compiling our circuit in R1CS results in <strong><code>195,266 R1CS</code></strong>. This is more than a <strong>10x</strong> reduction, which is not only due to the fake GLV algorithm but also to optimized non-native field arithmetic in gnark.</p>
 <h4 id="other-curves">Other curves</h4>
@@ -733,7 +734,8 @@ Next we compare this scalar multiplication with our fake GLV in a PLONKish vanil
   </tbody>
 </table>
 <blockquote>
-<p>EDIT: Thanks to Ben Smith for reporting that a similar idea was proposed in [SAC05:ABGL+] for ECDSA verification. We note that, in our context, the trick applies to a single scalar multiplication and that the half GCD is free through the hint.</p></blockquote>
+<p>EDIT: Thanks to Ben Smith for reporting that a similar idea was proposed in [SAC05:ABGL+] for ECDSA verification. We note that, in our context, the trick applies to a single scalar multiplication and that the half GCD is free through the hint.</p>
+</blockquote>
 
     </div>
 
@@ -928,7 +930,7 @@ Next we compare this scalar multiplication with our fake GLV in a PLONKish vanil
     
     
     
-    <script src="../../js/academic.min.01f68d44d80310e669a1731b68a35481.js"></script>
+    <script src="../../js/academic.min.2aa4c034593508cdbd74f28ff6c19844.js"></script>
 
     
 
