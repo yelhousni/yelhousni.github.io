@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Benedikt Bünz | يوسف</title>
+    <link>/authors/benedikt-bunz/</link>
+      <atom:link href="/authors/benedikt-bunz/index.xml" rel="self" type="application/rss+xml" />
+    <description>Benedikt Bünz</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 25 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Benedikt Bünz</title>
+      <link>/authors/benedikt-bunz/</link>
+    </image>
+    
+    <item>
+      <title>On the Security of Constraint-Friendly Map-to-Curve Relations</title>
+      <link>/publication/preprint/preprint26-590/</link>
+      <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>/publication/preprint/preprint26-590/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
