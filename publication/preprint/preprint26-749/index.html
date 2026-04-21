@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Cryptographer at Consensys (NYC, USA)">
+  <meta name="description" content="PRE-PRINT 2026 ([ePrint 2026/749](https://ia.cr/2026/749))">
 
   
-  <link rel="alternate" hreflang="en-us" href="../../../authors/">
+  <link rel="alternate" hreflang="en-us" href="../../../publication/preprint/preprint26-749/">
 
   
 
@@ -95,14 +95,12 @@
 
 
   
-  <link rel="alternate" href="../../../authors/index.xml" type="application/rss+xml" title="يوسف">
-  
 
   <link rel="manifest" href="../../../index.webmanifest">
   <link rel="icon" type="image/png" href="../../../img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../img/icon-192.png">
 
-  <link rel="canonical" href="../../../authors/">
+  <link rel="canonical" href="../../../publication/preprint/preprint26-749/">
 
   
   
@@ -115,18 +113,63 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="يوسف">
-  <meta property="og:url" content="/authors/">
-  <meta property="og:title" content="Authors | يوسف">
-  <meta property="og:description" content="Cryptographer at Consensys (NYC, USA)"><meta property="og:image" content="/img/icon-192.png">
+  <meta property="og:url" content="/publication/preprint/preprint26-749/">
+  <meta property="og:title" content="Divide-and-Pair: Faster subgroup membership testing for elliptic curves | يوسف">
+  <meta property="og:description" content="PRE-PRINT 2026 ([ePrint 2026/749](https://ia.cr/2026/749))"><meta property="og:image" content="/img/icon-192.png">
   <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2026-04-21T00:00:00&#43;00:00">
+    
+      <meta property="article:published_time" content="2026-04-21T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2026-04-21T00:00:00&#43;00:00">
   
 
   
 
 
+    
 
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/publication/preprint/preprint26-749/"
+  },
+  "headline": "Divide-and-Pair: Faster subgroup membership testing for elliptic curves",
+  
+  "datePublished": "2026-04-21T00:00:00Z",
+  "dateModified": "2026-04-21T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Yu Dai"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "يوسف",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/img/icon-512.png"
+    }
+  },
+  "description": "PRE-PRINT 2026 ([ePrint 2026/749](https://ia.cr/2026/749))"
+}
+</script>
+
+  
 
   
 
@@ -134,10 +177,13 @@
   
 
 
+  
 
 
 
-  <title>Authors | يوسف</title>
+
+
+  <title>Divide-and-Pair: Faster subgroup membership testing for elliptic curves | يوسف</title>
 
 </head>
 
@@ -398,6 +444,92 @@
 </nav>
 
 
+  <div class="pub">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Divide-and-Pair: Faster subgroup membership testing for elliptic curves</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span><a href="../../../authors/yu-dai/">Yu Dai</a></span>, <span><a href="../../../authors/admin/">Youssef El Housni</a></span>, <span><a href="../../../authors/dimitri-koshelev/">Dimitri Koshelev</a></span>, <span><a href="../../../authors/krijn-reijnders/">Krijn Reijnders</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    April 2026
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
   
 
 
@@ -407,78 +539,193 @@
 
 
 
-
-
-
-
-  
-
-  
-  
   
     
   
-<div class="universal-wrapper pt-3">
-  <h1>Authors</h1>
 
-  
+
+
+<a class="btn btn-outline-primary my-1 mr-1" href="https://eprint.iacr.org/2026/749.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
 
   
 </div>
 
 
 
-<div class="universal-wrapper">
-  
+  <div class="article-container">
 
-  <ul>
     
+    <h3>Abstract</h3>
+    <p class="pub-abstract">Subgroup membership testing (SMT) on an elliptic curve with non-trivial cofactor is essential to prevent small-subgroup attacks in cryptographic protocols. In the existing literature, there exist two non-trivial methods for SMT on elliptic curves with modest cofactor (typically a power of 2). Pornin&rsquo;s approach tests membership by repeatedly dividing by prime divisors of the cofactor (mostly halving), finishing with Legendre symbols; Koshelev&rsquo;s approach replaces all divisions with Tate pairings (possibly in the quadratic extension of the base field), but requires non-degeneracy conditions that are not always met. In this paper, we observe that both approaches sit at the extremes of a single division-pairing trade-off. The resulting method, Divide-and-Pair, is always at least as fast as either Pornin&rsquo;s or Koshelev&rsquo;s method and strictly faster in many cases. We instantiate Divide-and-Pair on five curves in widespread use, including Curve25519, Curve448, GC256A, FourQ and JubJub. Our Go implementation, built on the open-source gnark-crypto library, achieves significant speedups over state-of-the-art tests, namely of 2.4x on Curve25519, 1.6x on Curve448, 1.7x on GC256A, 8.2x on FourQ and 7.5x on JubJub.</p>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Type</div>
+          <div class="col-12 col-md-9">
+            
+            
+            <a href="../../../publication/#3">
+              Preprint
+            </a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9">Pre-print</div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    <div class="space-below"></div>
+
+    <div class="article-style"></div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
     
       
-      <li><a href="../../../authors/gautam-botrel/">Gautam Botrel</a></li>
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=../../../publication/preprint/preprint26-749/&amp;text=Divide-and-Pair:%20Faster%20subgroup%20membership%20testing%20for%20elliptic%20curves" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
     
       
-      <li><a href="../../../authors/aurore-guillevic/">Aurore Guillevic</a></li>
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/publication/preprint/preprint26-749/&amp;t=Divide-and-Pair:%20Faster%20subgroup%20membership%20testing%20for%20elliptic%20curves" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
     
       
-      <li><a href="../../../authors/diego-f.-aranha/">Diego F. Aranha</a></li>
-    
       
-      <li><a href="../../../authors/adrien-facon/">Adrien Facon</a></li>
-    
       
-      <li><a href="../../../authors/alexander-schaub/">Alexander Schaub</a></li>
-    
+        
       
-      <li><a href="../../../authors/cheikh-t.-gueye/">Cheikh T. Gueye</a></li>
-    
       
-      <li><a href="../../../authors/edoardo-persichetti/">Edoardo Persichetti</a></li>
-    
       
-      <li><a href="../../../authors/jean-luc-danger/">Jean-Luc Danger</a></li>
-    
-      
-      <li><a href="../../../authors/ousmane-ndiaye/">Ousmane Ndiaye</a></li>
-    
-      
-      <li><a href="../../../authors/sylvain-guilley/">Sylvain Guilley</a></li>
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=../../../publication/preprint/preprint26-749/&amp;title=Divide-and-Pair:%20Faster%20subgroup%20membership%20testing%20for%20elliptic%20curves" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
     
   </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
   
-<nav>
-  <ul class="pagination justify-content-center">
+  
     
-    <li class="page-item"><a class="page-link" href="../../../authors/">&laquo;</a></li>
-    
-    
-    <li class="page-item"><a class="page-link" href="../../../authors/page/3/">&raquo;</a></li>
-    
-  </ul>
-</nav>
+  
+  
 
 
+
+
+
+
+  
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="../../../authors/yu-dai/"></a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
 </div>
 
       
