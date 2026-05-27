@@ -5,12 +5,44 @@
     <link>/talk/</link>
       <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Talks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 15 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 May 2026 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Talks</title>
       <link>/talk/</link>
     </image>
+    
+    <item>
+      <title>On the Security of Constraint-Friendly Map-to-Curve Relations</title>
+      <link>/talk/zksecurity_map2curve26/</link>
+      <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
+      <guid>/talk/zksecurity_map2curve26/</guid>
+      <description>&lt;p&gt;Standard hash-to-curve constructions first hash the message to a field
+element through a cryptographic hash-to-field step, then map this field
+element to an elliptic-curve point.  Inside constraint systems, this inner
+cryptographic hash is often the dominant cost.  Groth, Malvai, Miller and
+Zhang (Asiacrypt 2025) introduced constraint-friendly
+map-to-elliptic-curve-group relations that bypass this step, achieving
+substantial reductions in circuit size.
+Their security proof works in the Elliptic Curve Generic Group Model
+(EC-GGM).&lt;/p&gt;
+&lt;p&gt;We identify three gaps.  First, the security bound in terms of the message
+space size $M$ and tweak bound $T$ is not explicitly analyzed, and the
+bounds stated for the concrete instantiations are loose.
+Second, the EC-GGM does not capture the algebraic structure of most
+deployed curves; we exhibit a concrete signature forgery using the
+parameters claimed secure.  Third, the construction requires a congruence
+condition on the field that is not satisfied by all deployed curves; we
+extend it to any field.&lt;/p&gt;
+&lt;p&gt;As a countermeasure we propose a $y$-increment variant that
+neutralizes the algebraic attack, removes the field restriction, and
+preserves a comparable constraint count.  We implement and benchmark both
+constructions in the open-source gnark (Go) library; the attack is
+additionally demonstrated via a self-contained SageMath simulation and
+confirmed at the circuit level against the authors&amp;rsquo; own Noir
+(Rust) implementation.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Zero-Knowledge Proofs — The Bridge Between Cryptographic Theory and Blockchain Scalability</title>
