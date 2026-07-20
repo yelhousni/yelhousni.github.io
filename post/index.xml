@@ -14,6 +14,252 @@
     
     <item>
       <title>Divide-and-Pair SMT for gnark-crypto Twisted Edwards Curves</title>
+      <link>/post/fp2bug/</link>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>/post/fp2bug/</guid>
+      <description>&lt;h2 id=&#34;tldr&#34;&gt;TL;DR&lt;/h2&gt;
+&lt;p&gt;Three widely-deployed $F_{p^2}$ square-root algorithms — the Adj–Rodríguez &amp;ldquo;complex method&amp;rdquo; (ePrint 2012/685, §V-A / Algorithm 8), Scott&amp;rsquo;s &lt;em&gt;Tricks of the Trade&lt;/em&gt; §6.3 (ePrint 2020/1497), and the SQIsign-optimized variant of Aardal et al. (ePrint 2024/1563, Algorithm 3) — silently return $(0, 0)$ on inputs of shape $(a, 0)$ where $a \in F_p$ is a quadratic non-residue. The input is, in fact, &lt;em&gt;always&lt;/em&gt; a square in $F_{p^2}$ for any nonzero $a \in F_p$ (Euler&amp;rsquo;s criterion: $a^{(q^2 - 1)/2} = (a^{q-1})^{(q+1)/2} = 1$), and the correct root is $(0, \sqrt{a/\beta})$ where $\beta = u^2$ is the QNR defining $F_{p^2}$. The algorithms just don&amp;rsquo;t find it.&lt;/p&gt;
+&lt;p&gt;The omission is at the &lt;em&gt;paper&lt;/em&gt; level, not in any particular library: the proofs in §V-A of Adj–Rodríguez carry an unstated precondition $b \neq 0$. Scott&amp;rsquo;s exposition inherits it. Aardal et al.&amp;rsquo;s further optimization fuses away the explicit $\alpha = -1$ branch from a &lt;em&gt;different&lt;/em&gt;, correct algorithm in the same Adj–Rodríguez paper (Algorithm 9), losing the protection.&lt;/p&gt;
+&lt;p&gt;Any library implementing any of the three algorithms verbatim inherits the bug.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-square-roots-in-f_p&#34;&gt;1. Square roots in $F_p$&lt;/h2&gt;
+&lt;p&gt;Let $p$ be a large odd prime and $F_p = \mathbb{Z}/p\mathbb{Z}$. For $a \in F_p^*$, computing $\sqrt{a}$ reduces to a single exponentiation in $F_p$ plus an $O(1)$ correction, with the exact form depending on $p \bmod 4$ (or $\bmod 8$, $\bmod 16$):&lt;/p&gt;
+&lt;h3 id=&#34;11-the-easy-case-p-equiv-3-pmod-4&#34;&gt;1.1. The easy case: $p \equiv 3 \pmod 4$&lt;/h3&gt;
+&lt;p&gt;$$
+y = a^{(p+1)/4}
+$$&lt;/p&gt;
+&lt;p&gt;Check:&lt;/p&gt;
+&lt;p&gt;$$
+y^2 = a^{(p+1)/2} = a \cdot a^{(p-1)/2} = a \cdot \left(\tfrac{a}{p}\right).
+$$&lt;/p&gt;
+&lt;p&gt;If $a$ is a QR, $\left(\frac{a}{p}\right) = 1$ and $y^2 = a$. If $a$ is a QNR, $y^2 = -a$ (so the function &amp;ldquo;computes a sqrt of $-a$ instead&amp;rdquo;; the caller must check by squaring).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cost:&lt;/strong&gt; one $F_p$ exponentiation of bitlength roughly $\log_2 p$, i.e. about $1.5 \log_2 p$ $F_p$ multiplications via square-and-multiply, or fewer via addition chains.&lt;/p&gt;
+&lt;h3 id=&#34;12-the-general-case-tonellishanks&#34;&gt;1.2. The general case: Tonelli–Shanks&lt;/h3&gt;
+&lt;p&gt;For $p \equiv 1 \pmod 4$, write $p - 1 = 2^s \cdot q$ with $q$ odd. Tonelli–Shanks finds $\sqrt{a}$ via a precomputed non-residue and $O(s^2)$ $F_p$ multiplications on top of one $F_p$ exponentiation. It&amp;rsquo;s still dominated by the exp, just with a $(\log_2 p)$-bit exponent and a small bookkeeping tail.&lt;/p&gt;
+&lt;p&gt;Variants: Atkin&amp;rsquo;s algorithm (for $p \equiv 5 \pmod 8$), Müller&amp;rsquo;s algorithm, and Cipolla–Lehmer (variable time). All amount to &amp;ldquo;one $F_p$ exp + bookkeeping&amp;rdquo;.&lt;/p&gt;
+&lt;h3 id=&#34;13-cost-summary&#34;&gt;1.3. Cost summary&lt;/h3&gt;
+&lt;p&gt;For any of these algorithms, the dominant cost is &lt;strong&gt;one $F_p$ exponentiation&lt;/strong&gt; with an exponent the size of $p$. We&amp;rsquo;ll write this as a single unit $M_q$ (one exponentiation in the field of order $q$). Everything else is in the noise. Note the algorithm also tells us whether $a$ is a QR — either by inspecting the post-exp Legendre symbol or by squaring the result and comparing.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2-square-roots-in-f_p2--the-naive-approach&#34;&gt;2. Square roots in $F_{p^2}$ — the naive approach&lt;/h2&gt;
+&lt;p&gt;The same algorithms transfer directly: if $q = p^2$ is the order of $F_{p^2}$, then for $a \in F_{p^2}^*$, $\sqrt{a}$ is a single $F_{p^2}$ exponentiation away (with the same $\bmod 4 / \bmod 8 / \bmod 16$ casework on $q$, which depends on $p \bmod \cdot$).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Naive cost:&lt;/strong&gt; one $F_{p^2}$ exponentiation $\approx \log_2(q^2) \cdot 3 = 6 \log_2 p$ $F_p$ multiplications (square-and-multiply with Karatsuba $F_{p^2}$ mul costing 3 $F_p$ muls). That&amp;rsquo;s a &lt;strong&gt;$\sim 3\times$ slowdown vs. $F_p$ Sqrt&lt;/strong&gt;, because the exponent doubled in bitlength ($\log_2 q^2 = 2 \log_2 p$) and each step cost $\sim 3\times$ more (each $F_{p^2}$ mul $\approx 3$ $F_p$ muls).&lt;/p&gt;
+&lt;p&gt;So $F_{p^2}$ Sqrt by the naive method is feasible but costly — and pairing libraries do it a lot (G2 point decompression, hash-to-curve, twist arithmetic).&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;3-the-descent-adjrodríguezs-complex-method-eprint-2012685-v-a&#34;&gt;3. The descent: Adj–Rodríguez&amp;rsquo;s complex method (ePrint 2012/685, §V-A)&lt;/h2&gt;
+&lt;p&gt;Adj and Rodríguez-Henríquez (2012) observed that $\sqrt{a}$ in $F_{p^2}$ can be reduced to &lt;strong&gt;two square roots in $F_p$&lt;/strong&gt; plus a handful of $F_p$ operations, by exploiting the structure of $F_{p^2} = F_p[u]/(u^2 - \beta)$ for a fixed QNR $\beta \in F_p$. The construction is the &amp;ldquo;complex method&amp;rdquo;, named because it generalizes the classical&lt;/p&gt;
+&lt;p&gt;$$
+\sqrt{a + bi} = \sqrt{\frac{a + \sqrt{a^2 + b^2}}{2}} ;+; i \cdot \frac{b}{2 \sqrt{(a + \sqrt{a^2 + b^2})/2}}
+$$&lt;/p&gt;
+&lt;p&gt;formula from $\mathbb{C} = \mathbb{R}[i]/(i^2 + 1)$.&lt;/p&gt;
+&lt;h3 id=&#34;31-the-setup&#34;&gt;3.1. The setup&lt;/h3&gt;
+&lt;p&gt;Let $x = a + b u \in F_{p^2}$ with $a, b \in F_p$ and $u^2 = \beta$ (the defining QNR). Suppose $y = c + d u$ is a square root of $x$, i.e. $y^2 = x$. Expanding:&lt;/p&gt;
+&lt;p&gt;$$
+y^2 = (c + du)^2 = c^2 + 2cd,u + d^2 u^2 = (c^2 + \beta d^2) + (2cd),u.
+$$&lt;/p&gt;
+&lt;p&gt;Matching coefficients with $x$:&lt;/p&gt;
+&lt;p&gt;$$
+c^2 + \beta d^2 = a, \qquad 2cd = b. \tag{$\star$}
+$$&lt;/p&gt;
+&lt;h3 id=&#34;32-the-norm-trick&#34;&gt;3.2. The norm trick&lt;/h3&gt;
+&lt;p&gt;Take the &lt;strong&gt;field norm&lt;/strong&gt; of both sides of $y^2 = x$:&lt;/p&gt;
+&lt;p&gt;$$
+N(y^2) = N(y)^2 = N(x),
+$$&lt;/p&gt;
+&lt;p&gt;where $N(z) = z \cdot z^p = z \cdot \bar z = (\Re z)^2 - \beta (\Im z)^2 \in F_p$ is the $F_p$-valued norm map. So if we compute&lt;/p&gt;
+&lt;p&gt;$$
+s := \sqrt{N(x)} \quad \text{(a single $F_p$ Sqrt — one $F_p$ exp)}
+$$&lt;/p&gt;
+&lt;p&gt;then $s = \pm N(y) = \pm(c^2 - \beta d^2)$ (note the sign — minus $\beta$, not plus $\beta$; this is the norm of $y$, not of $y^2$).&lt;/p&gt;
+&lt;h3 id=&#34;33-recovering-c-and-d&#34;&gt;3.3. Recovering $c$ and $d$&lt;/h3&gt;
+&lt;p&gt;Now we have two equations involving $c$, $d$:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+c^2 + \beta d^2 &amp;amp;= a       \quad \text{(from $\Re$ of $y^2 = x$)} \
+c^2 - \beta d^2 &amp;amp;= \pm s   \quad \text{(from $N(y) = \pm s$)}
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;Adding: $2c^2 = a \pm s$, so $c^2 = (a \pm s)/2$. Subtracting: $2\beta d^2 = a \mp s$, so $d^2 = (a \mp s)/(2\beta)$.&lt;/p&gt;
+&lt;p&gt;Either of $c$ or $d$ can be recovered with &lt;strong&gt;one more $F_p$ Sqrt&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;$$
+c = \sqrt{(a + s)/2} \quad \text{(one $F_p$ Sqrt — the second $F_p$ exp)}, \qquad d = \frac{b}{2c} \quad \text{(one $F_p$ inv + one $F_p$ mul, from $2cd = b$).}
+$$&lt;/p&gt;
+&lt;p&gt;The sign of $s$ is resolved by checking which of $(a + s)/2$ or $(a - s)/2$ is a QR in $F_p$ — one of them is guaranteed to be, by a parity argument: their product is&lt;/p&gt;
+&lt;p&gt;$$
+\frac{(a + s)(a - s)}{4} = \frac{a^2 - s^2}{4} = \frac{a^2 - N(x)}{4} = \frac{a^2 - (a^2 - \beta b^2)}{4} = \frac{\beta b^2}{4},
+$$&lt;/p&gt;
+&lt;p&gt;and $\beta$ is a QNR so $\beta b^2 / 4$ is (QNR)$\cdot$(square) = QNR. Hence one of the two factors must be QR and the other QNR.&lt;/p&gt;
+&lt;h3 id=&#34;34-the-algorithm-adjrodríguez-v-a-algorithm-8&#34;&gt;3.4. The algorithm (Adj–Rodríguez §V-A &amp;ldquo;Algorithm 8&amp;rdquo;)&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Algorithm 8 (Adj-Rodríguez &amp;#34;Complex Method&amp;#34;):
+Input:  x = a + b·u ∈ Fp²*
+Output: y ∈ Fp² s.t. y² = x, or ⊥
+
+  1: if b = 0:
+  2:    return (√a, 0)                         ← the bug lives here
+  3: end if
+  4: α ← a² − β·b²                              (= N(x))
+  5: γ ← χ(α)                                   (Legendre symbol of α in Fp)
+  6: if γ = −1:
+  7:    return ⊥                                (x is not a square in Fp²)
+  8: end if
+  9: s ← √α                                     (1st Fp Sqrt)
+ 10: δ ← (a + s) / 2
+ 11: if δ is QNR in Fp: δ ← (a − s) / 2
+ 12: c ← √δ                                     (2nd Fp Sqrt)
+ 13: d ← b / (2c)                               (1 Fp inv, 1 Fp mul)
+ 14: return (c, d)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Cost:&lt;/strong&gt; $2 M_q + O(1)$ $F_p$ muls/inverses $\approx 2$ $F_p$ Sqrts. That&amp;rsquo;s a &lt;strong&gt;$\sim 3\times$ speedup vs. naive $F_{p^2}$ Sqrt&lt;/strong&gt; (which costs $\sim 6$ $F_p$ exps&amp;rsquo; worth).&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;4-the-bug-lines-12&#34;&gt;4. The bug: lines 1–2&lt;/h2&gt;
+&lt;p&gt;The purely-real shortcut &amp;ldquo;if $b = 0$: return $(\sqrt{a}, 0)$&amp;rdquo; is &lt;strong&gt;wrong&lt;/strong&gt; when $a$ is a non-residue in $F_p$.&lt;/p&gt;
+&lt;h3 id=&#34;41-the-math&#34;&gt;4.1. The math&lt;/h3&gt;
+&lt;p&gt;Why $(a, 0)$ is always a square in $F_{p^2}$ for any nonzero $a \in F_p$:&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+(a, 0)^{(q^2 - 1)/2}
+&amp;amp;= a^{(q^2 - 1)/2} \
+&amp;amp;= a^{(q - 1)(q + 1)/2} \
+&amp;amp;= \bigl(a^{q - 1}\bigr)^{(q + 1)/2} \
+&amp;amp;= 1^{(q + 1)/2} \
+&amp;amp;= 1 \qquad \text{(Fermat: $a^{q - 1} = 1$ in $F_p^*$).}
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;So $(a, 0)$ &lt;em&gt;must&lt;/em&gt; have a square root in $F_{p^2}$ — and we even know where it lives. From the equations $(\star)$ of §3.1 with $b = 0$:&lt;/p&gt;
+&lt;p&gt;$$
+c^2 + \beta d^2 = a, \qquad 2cd = 0 ;\Longrightarrow; c = 0 \text{ or } d = 0.
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;$d = 0$ branch:&lt;/strong&gt; $c^2 = a$. Works iff $a$ is a QR in $F_p$. Yields $(\sqrt{a}, 0)$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;$c = 0$ branch:&lt;/strong&gt; $\beta d^2 = a$, so $d^2 = a/\beta$. Works iff $a/\beta$ is a QR in $F_p$. Yields $(0, \sqrt{a/\beta})$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The two branches are &lt;em&gt;complementary&lt;/em&gt; by Euler:&lt;/p&gt;
+&lt;p&gt;$$
+\left(\tfrac{a/\beta}{p}\right) = \left(\tfrac{a}{p}\right) \cdot \left(\tfrac{1/\beta}{p}\right) = \left(\tfrac{a}{p}\right) \cdot \left(\tfrac{\beta}{p}\right) = \left(\tfrac{a}{p}\right) \cdot (-1) = -\left(\tfrac{a}{p}\right)
+$$&lt;/p&gt;
+&lt;p&gt;(since $\beta$ is QNR by construction). So exactly one of ${a, a/\beta}$ is a QR. If $a$ is QR, the $d = 0$ branch gives the real root. If $a$ is QNR, the $c = 0$ branch gives the &lt;em&gt;purely imaginary&lt;/em&gt; root $(0, \sqrt{a/\beta})$. &lt;strong&gt;The output is always nonzero.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;42-why-algorithm-8-misses-it&#34;&gt;4.2. Why Algorithm 8 misses it&lt;/h3&gt;
+&lt;p&gt;Line 2 unconditionally returns $(\sqrt{a}, 0)$. When $a$ is QNR, $\sqrt{a}$ &lt;em&gt;doesn&amp;rsquo;t exist in $F_p$&lt;/em&gt;. What the $F_p$ Sqrt routine actually returns depends on the implementation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Some return $\bot$ / &lt;code&gt;None&lt;/code&gt;, in which case the call site propagates $\bot$, claiming $x$ is not a square — wrong, since it is.&lt;/li&gt;
+&lt;li&gt;Most pairing libraries&amp;rsquo; $F_p$ Sqrt returns the exponentiation $a^{(p+1)/4}$ (for $p \equiv 3 \pmod 4$) without checking, yielding a value $r$ such that $r^2 = -a$ rather than $r^2 = a$. The caller sees $(r, 0)$ and may treat it as a sqrt, which it isn&amp;rsquo;t.&lt;/li&gt;
+&lt;li&gt;Constant-time variants using &lt;code&gt;ccopy&lt;/code&gt; / &lt;code&gt;fp_select&lt;/code&gt; cascades based on &lt;code&gt;is_zero&lt;/code&gt; silently produce $(0, 0)$, also wrong.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &amp;ldquo;proof&amp;rdquo; given on page 15 of Adj–Rodríguez — that one of $(a + s)/2$, $(a - s)/2$ is a QR because their product is the QNR $\beta b^2 / 4$ — &lt;strong&gt;fails when $b = 0$&lt;/strong&gt;: the product collapses to $0$, which is neither QR nor QNR. The proof has an unstated precondition $b \neq 0$ that the algorithm&amp;rsquo;s &amp;ldquo;if $b = 0$&amp;rdquo; shortcut acknowledges in form but mishandles in substance.&lt;/p&gt;
+&lt;h3 id=&#34;43-the-right-way-to-handle-b--0&#34;&gt;4.3. The right way to handle $b = 0$&lt;/h3&gt;
+&lt;p&gt;The correct branch dispatches on $\left(\frac{a}{p}\right)$:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;if b = 0:
+    if Legendre(a) = +1: return (√_Fp(a), 0)            ← purely-real root
+    else:                return (0, √_Fp(a/β))          ← purely-imaginary root
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Three $F_p$ operations more than the buggy version (one Legendre symbol, one $F_p$ inv, one $F_p$ Sqrt that runs on a known-QR input). Adding this branch is the fix that gnark-crypto kb8, SQIsign, relic, and (in this writeup&amp;rsquo;s companion PR) constantine apply.&lt;/p&gt;
+&lt;p&gt;Adj–Rodríguez &lt;strong&gt;had this branch&lt;/strong&gt; in their own paper — in &lt;em&gt;Algorithm 9&lt;/em&gt;, the novel $q \equiv 3 \pmod 4$ algorithm (see §7) — but their &lt;em&gt;Algorithm 8&lt;/em&gt; in §V-A doesn&amp;rsquo;t, and that&amp;rsquo;s the one downstream libraries copy.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;5-scotts-inverse-sqrt-optimization-eprint-20201497-63&#34;&gt;5. Scott&amp;rsquo;s inverse-sqrt optimization (ePrint 2020/1497, §6.3)&lt;/h2&gt;
+&lt;p&gt;Michael Scott&amp;rsquo;s 2020 &lt;em&gt;Tricks of the Trade&lt;/em&gt; expands on Adj–Rodríguez&amp;rsquo;s complex method by fusing the final $F_p$ inversion $d = b/(2c)$ into the second $F_p$ Sqrt via the &lt;strong&gt;inverse-square-root trick&lt;/strong&gt;. Concretely, replace lines 12-13 of Algorithm 8 with:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;12&amp;#39;: r ← invsqrt(δ)            (= 1/√δ; computed via a single Fp exp)
+13&amp;#39;: c ← r · δ                  (= √δ)
+14&amp;#39;: d ← b · r / 2              (= b/(2·√δ) = b/(2c))
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The trick: $\mathrm{invsqrt}(\delta) = \delta^{(p-3)/4}$ for $p \equiv 3 \pmod 4$. Computing both $c$ and $d$ from $r$ saves the standalone inversion. Combined with progenitor tricks (Scott&amp;rsquo;s other contribution), the total cost drops from $\sim 2 M_q + 1$ inv to &lt;strong&gt;$\sim 1.5 M_q$&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;scott-inherits-the-bug&#34;&gt;Scott inherits the bug&lt;/h3&gt;
+&lt;p&gt;Scott&amp;rsquo;s exposition reads:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If $a + i b$ is a quadratic residue, then one of $(a + \sqrt{a^2 - \beta b^2})/2$ or $(a - \sqrt{a^2 - \beta b^2})/2$ will be a quadratic residue in $F_p$. &lt;strong&gt;And indeed this must be the case since their product is equal to $\beta b^2/4$. This is a QNR times a perfect square, and hence a QNR. If a QNR is the product of two other field elements then one of them must be a QR, and the other a QNR.&lt;/strong&gt; Therefore $\ldots$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Same reasoning, same gap: the &amp;ldquo;their product is $\beta b^2 / 4$, a QNR&amp;rdquo; argument &lt;strong&gt;requires $b \neq 0$&lt;/strong&gt;. With $b = 0$ the product is $0$, neither QR nor QNR, and the QNR-times-square argument collapses. Scott §6.3 doesn&amp;rsquo;t discuss the case at all.&lt;/p&gt;
+&lt;p&gt;The resulting algorithm has the &lt;strong&gt;same shape as Algorithm 8&lt;/strong&gt; — same &amp;ldquo;if $b = 0$&amp;rdquo; shortcut, same lack of $\left(\frac{a}{p}\right)$-conditional handling. The Scott optimization speeds up the &lt;em&gt;body&lt;/em&gt; of Algorithm 8 without revisiting the precondition Algorithm 8 was tacitly resting on.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt; every library that ports Scott §6.3 has the bug. This includes &lt;code&gt;arkworks-algebra&lt;/code&gt; (which patched it locally with an explicit &lt;code&gt;if self.c1.is_zero() { ... }&lt;/code&gt; branch citing the Adj–Rodríguez paper&amp;rsquo;s Algorithm 8), relic&amp;rsquo;s $p \not\equiv 3 \pmod 4$ branch (which has an explicit purely-real handler), and historically gnark-crypto&amp;rsquo;s main &lt;code&gt;internal/fptower/e2.go&lt;/code&gt; for all six pairing curves (which still has the bug at the time of writing).&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;6-aardal-et-als-sqisign-optimization-eprint-20241563-algorithm-3&#34;&gt;6. Aardal et al.&amp;rsquo;s SQIsign optimization (ePrint 2024/1563, Algorithm 3)&lt;/h2&gt;
+&lt;p&gt;Aardal, Adj, Alblooshi, Aranha, Canales-Martínez, Chávez-Saab, Filho, Reijnders and Rodríguez-Henríquez (2024) further specialized the Scott-optimized algorithm for the SQIsign post-quantum signature scheme, where $p \equiv 3 \pmod 4$. Their Algorithm 3 inlines the $q \equiv 3 \pmod 4$ casework, replaces the final inversion with a partial exponentiation, and reduces the entire computation to &lt;strong&gt;two $F_p$ exponentiations&lt;/strong&gt; with no standalone inversions:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Algorithm 3 (Aardal et al., q ≡ 3 mod 4):
+Input:  a = (a₀, a₁) ∈ Fp²*
+Output: x s.t. x² = a, deterministic and constant-time
+
+  1: δ ← (a₀² + a₁²)^((p+1)/4)                      (one Fp exp)
+  2: x₀ ← a₀ + δ
+  3: t₀ ← 2 · x₀
+  4: x₁ ← t₀^((p−3)/4)                              (second Fp exp; inverse-sqrt of t₀)
+  5: x₀ ← x₀ · x₁                                   (= √x₀ · scale)
+  6: x₁ ← a₁ · x₁
+  7: t₁ ← (2 · x₀)²
+  8: if t₁ = t₀: return (x₀, x₁)
+  9: else:        return (x₁, −x₀)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Steps 8-9 are a clever sign-correction trick: only one of the two pairs $(x_0, x_1)$ or $(x_1, -x_0)$ is the true sqrt, and the test $t_1 = t_0$ picks the right one without an extra exponentiation. With $\beta = -1$ (the SQIsign / BN254 / BLS12-381 setting), the algorithm runs entirely in $F_p$ with two $F_p$ exponentiations and a handful of $F_p$ muls. Beautifully tight.&lt;/p&gt;
+&lt;h3 id=&#34;61-where-the-bug-returns&#34;&gt;6.1. Where the bug returns&lt;/h3&gt;
+&lt;p&gt;Algorithm 3 has &lt;strong&gt;no &amp;ldquo;if $b = 0$&amp;rdquo; shortcut at all&lt;/strong&gt; — Aardal et al. fused the case-split into the generic path. The intent is to make the algorithm branchless and constant-time. The effect is to remove the only check that &lt;em&gt;might&lt;/em&gt; have stopped the bug at the front door.&lt;/p&gt;
+&lt;p&gt;Trace Algorithm 3 with $a = (a_0, 0)$, $a_0$ non-QR in $F_p$, $p \equiv 3 \pmod 4$:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Step 1.&lt;/strong&gt; Compute $\delta$:&lt;/p&gt;
+&lt;p&gt;$$
+\delta = (a_0^2 + 0)^{(p+1)/4} = a_0^{(p+1)/2} = a_0 \cdot a_0^{(p-1)/2} = a_0 \cdot \left(\tfrac{a_0}{p}\right) = a_0 \cdot (-1) = -a_0.
+$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 2.&lt;/strong&gt; Compute $x_0 = a_0 + \delta = a_0 + (-a_0) = 0$. &lt;strong&gt;This is where the bug fires.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Steps 3–7.&lt;/strong&gt; Cascade through zero:&lt;/p&gt;
+&lt;p&gt;$$
+t_0 = 0, \quad x_1 = 0^{(p-3)/4} = 0, \quad x_0 \leftarrow x_0 \cdot x_1 = 0, \quad x_1 \leftarrow a_1 \cdot x_1 = 0, \quad t_1 = (2 \cdot 0)^2 = 0.
+$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 8.&lt;/strong&gt; $t_1 = t_0$ (both zero), so return $(x_0, x_1) = (0, 0)$.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The output is $(0, 0)$, but the correct answer is $(0, \sqrt{a_0/\beta}) = (0, \sqrt{-a_0})$ (for $\beta = -1$), which exists in $F_p$ because $-1$ is QNR (so $-a_0 = (-1) \cdot \text{non-QR} = \text{QR}$) and is in the SQIsign codomain.&lt;/p&gt;
+&lt;h3 id=&#34;62-why-fusing-broke-things&#34;&gt;6.2. Why fusing broke things&lt;/h3&gt;
+&lt;p&gt;Adj–Rodríguez 2012/685 actually has a &lt;em&gt;bug-free&lt;/em&gt; algorithm for $q \equiv 3 \pmod 4$ — their &lt;strong&gt;Algorithm 9&lt;/strong&gt;, presented in §V-B. It explicitly tests $\alpha = \left(\frac{x}{F_{p^2}}\right)$ (computed cheaply as $\alpha = a^{(q-1)/2}$) and handles the $\alpha = -1$ case via $x \leftarrow i \cdot x_0$ where $i = \sqrt{-1} \in F_{p^2}$ (which exists because $q \equiv 3 \pmod 4 \Rightarrow -1$ is QNR in $F_p \Rightarrow i \notin F_p$ but $i \in F_{p^2}$).&lt;/p&gt;
+&lt;p&gt;The $\alpha = -1$ branch is &lt;strong&gt;exactly&lt;/strong&gt; the case where the input has its $F_{p^2}$-Legendre symbol equal to $-1$ only because the imaginary root is in $F_{p^2} \setminus F_p$ — i.e., the purely-real-non-QR-input case. Algorithm 9 catches it; Algorithm 3 fuses it away.&lt;/p&gt;
+&lt;p&gt;Aardal et al. mention that they&amp;rsquo;re building on Adj–Rodríguez §V (Algorithms 8, 9, 10), but the &amp;ldquo;fusion&amp;rdquo; pattern they pursue ends up moving from the structure of Algorithm 9 (which has the $\alpha = -1$ branch) back toward the structure of Algorithm 8 (which doesn&amp;rsquo;t). The optimization&amp;rsquo;s appeal is the absence of branches — but the absent branch is the one keeping correctness.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt; every library that ports Aardal Algorithm 3 verbatim has the bug. The fix is to add a guard that detects the collapse (e.g., &amp;ldquo;if $a_1 = 0$ then $\delta \leftarrow a_0$&amp;rdquo; overrides the bad $\delta = -a_0$) or to switch back to Algorithm 9&amp;rsquo;s $\alpha = -1$ test. SQIsign&amp;rsquo;s own reference C implementation does the guard (&lt;code&gt;fp_select(&amp;amp;x0, &amp;amp;x0, &amp;amp;(a-&amp;gt;re), fp_is_zero(&amp;amp;(a-&amp;gt;im)))&lt;/code&gt; at &lt;code&gt;src/gf/ref/lvlx/fp2.c:162&lt;/code&gt;). Relic does the same (&lt;code&gt;fp_copy_sec(t[0], a[0], fp_is_zero(a[1]))&lt;/code&gt;). gnark-crypto and constantine&amp;rsquo;s BLS12-377 path inherited the bug raw, and were patched only after independent rediscovery.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;7-the-fix-adjrodríguezs-own-algorithm-9&#34;&gt;7. The fix: Adj–Rodríguez&amp;rsquo;s own Algorithm 9&lt;/h2&gt;
+&lt;p&gt;The bug-free recipe has been in the same 2012 paper the whole time. Algorithm 9 (Adj–Rodríguez §V-B):&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Algorithm 9 (Adj-Rodríguez, q ≡ 3 mod 4):
+Input:  a ∈ Fp²*, i ∈ Fp² with i² = −1
+Output: x s.t. x² = a, or ⊥
+
+  1: a₁ ← a^((q − 3)/4)              (one Fp² exp)
+  2: α  ← a₁ · (a₁ · a)               (= a^((q−1)/2) ∈ Fp²)
+  3: a₀ ← α · α^q                     (= α^(q+1); Legendre check)
+  4: if a₀ = −1: return ⊥             (a is not a square in Fp²)
+  5: x₀ ← a₁ · a                      (= a^((q+1)/4))
+  6: if α = −1:                       ★ KEY BRANCH
+  7:    return i · x₀                  (purely-imaginary root)
+  8: else:
+  9:    b ← (1 + α)^((q − 1)/2)        (Tonelli-style correction)
+ 10:    return b · x₀
+ 11: end if
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The $\alpha = -1$ branch is the structural fix the optimization layers fuse away. Adj–Rodríguez Algorithm 9 is the only one of the algorithms discussed here that handles the purely-real non-QR input correctly &lt;em&gt;without&lt;/em&gt; an explicit &amp;ldquo;if $b = 0$&amp;rdquo; guard — because the guard is implicit in the $\alpha = -1$ test.&lt;/p&gt;
+&lt;p&gt;The Rust implementation &lt;code&gt;zkcrypto/bls12_381&lt;/code&gt;&amp;rsquo;s &lt;code&gt;Fp2::sqrt&lt;/code&gt; ports Algorithm 9 directly (citing it by name in the source comment: &lt;code&gt;// Algorithm 9, https://eprint.iacr.org/2012/685.pdf, with constant time modifications.&lt;/code&gt;). It has been bug-free since the crate&amp;rsquo;s first release in $\sim 2020$. &lt;code&gt;blst&lt;/code&gt; uses a different but equivalent rotation-alignment trick that also catches the case structurally. &lt;code&gt;arkworks-algebra&lt;/code&gt; ports Algorithm 8 but adds the &lt;code&gt;if c1.is_zero()&lt;/code&gt; branch with explicit Legendre dispatch (the §4.3 fix above).&lt;/p&gt;
+&lt;p&gt;For libraries that ship Algorithm 8 / Scott §6.3 / Aardal Algorithm 3 in their pristine published form, the bug is silent until a caller happens to ask for $\sqrt{(\text{non-QR}, 0)}$. That hardly ever happens in mainstream pairing protocols (curve constants block it), so the bug has lain dormant. But it&amp;rsquo;s directly reachable from any code that constructs primitive cube roots of unity in $F_{p^2}$ (via $(\sqrt{-3} - 1)/2$), Frobenius endomorphism constants, or post-quantum isogeny intermediates — that&amp;rsquo;s how it got rediscovered three times in the last three years.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;8-provenance-summary&#34;&gt;8. Provenance summary&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Adj-Rodríguez 2012/685 Algorithm 8  ──► buggy (purely-real shortcut)
+                                       │
+                                       ▼
+                       Scott 2020/1497 §6.3  ──► buggy (inherits the §V-A proof gap)
+                                       │
+                                       ▼ (fused via Aardal optimization)
+              Aardal 2024/1563 Algorithm 3  ──► buggy (re-introduces by absorbing α-detection)
+
+
+Adj-Rodríguez 2012/685 Algorithm 9  ──► CORRECT (q ≡ 3 mod 4, has the α = −1 branch)
+                                       │
+                                       └─► zkcrypto/bls12_381 Fp2::sqrt  ──► clean (since ~2020)
+
+
+Adj-Rodríguez 2012/685 Algorithm 10 ──► CORRECT (q ≡ 1 mod 4)
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;9-impact&#34;&gt;9. Impact&lt;/h2&gt;
+&lt;p&gt;It turns out that libraries that implement the faster algorithms are the ones impacted:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;gnark-crypto: &lt;a href=&#34;https://github.com/Consensys/gnark-crypto/pull/845&#34;&gt;https://github.com/Consensys/gnark-crypto/pull/845&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Constantine: &lt;a href=&#34;https://github.com/mratsim/constantine/pull/620&#34;&gt;https://github.com/mratsim/constantine/pull/620&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Relic: &lt;a href=&#34;https://github.com/relic-toolkit/relic/commit/3129300ebdd638efca549dcd406076cf37d61a3f&#34;&gt;commit1&lt;/a&gt;, &lt;a href=&#34;https://github.com/relic-toolkit/relic/commit/a358dbcb133022246e8e781ce862c3b54d3b0fed&#34;&gt;commit2&lt;/a&gt;, &lt;a href=&#34;https://github.com/relic-toolkit/relic/commit/c2085f44e823d1607cf228f4bbb874a09177523c&#34;&gt;commit3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;10-references&#34;&gt;10. References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Gora Adj, Francisco Rodríguez-Henríquez. &lt;em&gt;Square root computation over even extension fields&lt;/em&gt;. IACR ePrint 2012/685. &lt;a href=&#34;https://eprint.iacr.org/2012/685&#34;&gt;https://eprint.iacr.org/2012/685&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Michael Scott. &lt;em&gt;A note on the calculation of some functions in finite fields: Tricks of the Trade&lt;/em&gt;. IACR ePrint 2020/1497, §6.3. &lt;a href=&#34;https://eprint.iacr.org/2020/1497&#34;&gt;https://eprint.iacr.org/2020/1497&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Aardal et al. &lt;em&gt;Optimized One-Dimensional SQIsign Verification on Intel and Cortex-M4&lt;/em&gt;. IACR ePrint 2024/1563, Algorithm 3. &lt;a href=&#34;https://eprint.iacr.org/2024/1563&#34;&gt;https://eprint.iacr.org/2024/1563&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Divide-and-Pair SMT for gnark-crypto Twisted Edwards Curves</title>
       <link>/post/subgroup2/</link>
       <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
       <guid>/post/subgroup2/</guid>

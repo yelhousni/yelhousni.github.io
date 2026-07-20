@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.5.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Youssef El Housni">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="From my Hackmd - hackmd.io/@yelhousni">
+
+  
+  <link rel="alternate" hreflang="en-us" href="../../post/fp2bug/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="../../css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="../../index.webmanifest">
+  <link rel="icon" type="image/png" href="../../img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="../../img/icon-192.png">
+
+  <link rel="canonical" href="../../post/fp2bug/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="يوسف">
+  <meta property="og:url" content="/post/fp2bug/">
+  <meta property="og:title" content="Divide-and-Pair SMT for gnark-crypto Twisted Edwards Curves | يوسف">
+  <meta property="og:description" content="From my Hackmd - hackmd.io/@yelhousni"><meta property="og:image" content="/img/icon-192.png">
+  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2026-07-20T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2026-07-20T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/fp2bug/"
+  },
+  "headline": "Divide-and-Pair SMT for gnark-crypto Twisted Edwards Curves",
+  
+  "datePublished": "2026-07-20T00:00:00Z",
+  "dateModified": "2026-07-20T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "يوسف"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "يوسف",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/img/icon-512.png"
+    }
+  },
+  "description": "From my Hackmd - hackmd.io/@yelhousni"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Divide-and-Pair SMT for gnark-crypto Twisted Edwards Curves | يوسف</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="../../">يوسف</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#experience"><span>Work</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#talks"><span>Talks</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Divide-and-Pair SMT for gnark-crypto Twisted Edwards Curves</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jul 20, 2026
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    16 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="tldr">TL;DR</h2>
+<p>Three widely-deployed $F_{p^2}$ square-root algorithms — the Adj–Rodríguez &ldquo;complex method&rdquo; (ePrint 2012/685, §V-A / Algorithm 8), Scott&rsquo;s <em>Tricks of the Trade</em> §6.3 (ePrint 2020/1497), and the SQIsign-optimized variant of Aardal et al. (ePrint 2024/1563, Algorithm 3) — silently return $(0, 0)$ on inputs of shape $(a, 0)$ where $a \in F_p$ is a quadratic non-residue. The input is, in fact, <em>always</em> a square in $F_{p^2}$ for any nonzero $a \in F_p$ (Euler&rsquo;s criterion: $a^{(q^2 - 1)/2} = (a^{q-1})^{(q+1)/2} = 1$), and the correct root is $(0, \sqrt{a/\beta})$ where $\beta = u^2$ is the QNR defining $F_{p^2}$. The algorithms just don&rsquo;t find it.</p>
+<p>The omission is at the <em>paper</em> level, not in any particular library: the proofs in §V-A of Adj–Rodríguez carry an unstated precondition $b \neq 0$. Scott&rsquo;s exposition inherits it. Aardal et al.&rsquo;s further optimization fuses away the explicit $\alpha = -1$ branch from a <em>different</em>, correct algorithm in the same Adj–Rodríguez paper (Algorithm 9), losing the protection.</p>
+<p>Any library implementing any of the three algorithms verbatim inherits the bug.</p>
+<hr>
+<h2 id="1-square-roots-in-f_p">1. Square roots in $F_p$</h2>
+<p>Let $p$ be a large odd prime and $F_p = \mathbb{Z}/p\mathbb{Z}$. For $a \in F_p^*$, computing $\sqrt{a}$ reduces to a single exponentiation in $F_p$ plus an $O(1)$ correction, with the exact form depending on $p \bmod 4$ (or $\bmod 8$, $\bmod 16$):</p>
+<h3 id="11-the-easy-case-p-equiv-3-pmod-4">1.1. The easy case: $p \equiv 3 \pmod 4$</h3>
+<p>$$
+y = a^{(p+1)/4}
+$$</p>
+<p>Check:</p>
+<p>$$
+y^2 = a^{(p+1)/2} = a \cdot a^{(p-1)/2} = a \cdot \left(\tfrac{a}{p}\right).
+$$</p>
+<p>If $a$ is a QR, $\left(\frac{a}{p}\right) = 1$ and $y^2 = a$. If $a$ is a QNR, $y^2 = -a$ (so the function &ldquo;computes a sqrt of $-a$ instead&rdquo;; the caller must check by squaring).</p>
+<p><strong>Cost:</strong> one $F_p$ exponentiation of bitlength roughly $\log_2 p$, i.e. about $1.5 \log_2 p$ $F_p$ multiplications via square-and-multiply, or fewer via addition chains.</p>
+<h3 id="12-the-general-case-tonellishanks">1.2. The general case: Tonelli–Shanks</h3>
+<p>For $p \equiv 1 \pmod 4$, write $p - 1 = 2^s \cdot q$ with $q$ odd. Tonelli–Shanks finds $\sqrt{a}$ via a precomputed non-residue and $O(s^2)$ $F_p$ multiplications on top of one $F_p$ exponentiation. It&rsquo;s still dominated by the exp, just with a $(\log_2 p)$-bit exponent and a small bookkeeping tail.</p>
+<p>Variants: Atkin&rsquo;s algorithm (for $p \equiv 5 \pmod 8$), Müller&rsquo;s algorithm, and Cipolla–Lehmer (variable time). All amount to &ldquo;one $F_p$ exp + bookkeeping&rdquo;.</p>
+<h3 id="13-cost-summary">1.3. Cost summary</h3>
+<p>For any of these algorithms, the dominant cost is <strong>one $F_p$ exponentiation</strong> with an exponent the size of $p$. We&rsquo;ll write this as a single unit $M_q$ (one exponentiation in the field of order $q$). Everything else is in the noise. Note the algorithm also tells us whether $a$ is a QR — either by inspecting the post-exp Legendre symbol or by squaring the result and comparing.</p>
+<hr>
+<h2 id="2-square-roots-in-f_p2--the-naive-approach">2. Square roots in $F_{p^2}$ — the naive approach</h2>
+<p>The same algorithms transfer directly: if $q = p^2$ is the order of $F_{p^2}$, then for $a \in F_{p^2}^*$, $\sqrt{a}$ is a single $F_{p^2}$ exponentiation away (with the same $\bmod 4 / \bmod 8 / \bmod 16$ casework on $q$, which depends on $p \bmod \cdot$).</p>
+<p><strong>Naive cost:</strong> one $F_{p^2}$ exponentiation $\approx \log_2(q^2) \cdot 3 = 6 \log_2 p$ $F_p$ multiplications (square-and-multiply with Karatsuba $F_{p^2}$ mul costing 3 $F_p$ muls). That&rsquo;s a <strong>$\sim 3\times$ slowdown vs. $F_p$ Sqrt</strong>, because the exponent doubled in bitlength ($\log_2 q^2 = 2 \log_2 p$) and each step cost $\sim 3\times$ more (each $F_{p^2}$ mul $\approx 3$ $F_p$ muls).</p>
+<p>So $F_{p^2}$ Sqrt by the naive method is feasible but costly — and pairing libraries do it a lot (G2 point decompression, hash-to-curve, twist arithmetic).</p>
+<hr>
+<h2 id="3-the-descent-adjrodríguezs-complex-method-eprint-2012685-v-a">3. The descent: Adj–Rodríguez&rsquo;s complex method (ePrint 2012/685, §V-A)</h2>
+<p>Adj and Rodríguez-Henríquez (2012) observed that $\sqrt{a}$ in $F_{p^2}$ can be reduced to <strong>two square roots in $F_p$</strong> plus a handful of $F_p$ operations, by exploiting the structure of $F_{p^2} = F_p[u]/(u^2 - \beta)$ for a fixed QNR $\beta \in F_p$. The construction is the &ldquo;complex method&rdquo;, named because it generalizes the classical</p>
+<p>$$
+\sqrt{a + bi} = \sqrt{\frac{a + \sqrt{a^2 + b^2}}{2}} ;+; i \cdot \frac{b}{2 \sqrt{(a + \sqrt{a^2 + b^2})/2}}
+$$</p>
+<p>formula from $\mathbb{C} = \mathbb{R}[i]/(i^2 + 1)$.</p>
+<h3 id="31-the-setup">3.1. The setup</h3>
+<p>Let $x = a + b u \in F_{p^2}$ with $a, b \in F_p$ and $u^2 = \beta$ (the defining QNR). Suppose $y = c + d u$ is a square root of $x$, i.e. $y^2 = x$. Expanding:</p>
+<p>$$
+y^2 = (c + du)^2 = c^2 + 2cd,u + d^2 u^2 = (c^2 + \beta d^2) + (2cd),u.
+$$</p>
+<p>Matching coefficients with $x$:</p>
+<p>$$
+c^2 + \beta d^2 = a, \qquad 2cd = b. \tag{$\star$}
+$$</p>
+<h3 id="32-the-norm-trick">3.2. The norm trick</h3>
+<p>Take the <strong>field norm</strong> of both sides of $y^2 = x$:</p>
+<p>$$
+N(y^2) = N(y)^2 = N(x),
+$$</p>
+<p>where $N(z) = z \cdot z^p = z \cdot \bar z = (\Re z)^2 - \beta (\Im z)^2 \in F_p$ is the $F_p$-valued norm map. So if we compute</p>
+<p>$$
+s := \sqrt{N(x)} \quad \text{(a single $F_p$ Sqrt — one $F_p$ exp)}
+$$</p>
+<p>then $s = \pm N(y) = \pm(c^2 - \beta d^2)$ (note the sign — minus $\beta$, not plus $\beta$; this is the norm of $y$, not of $y^2$).</p>
+<h3 id="33-recovering-c-and-d">3.3. Recovering $c$ and $d$</h3>
+<p>Now we have two equations involving $c$, $d$:</p>
+<p>$$
+\begin{aligned}
+c^2 + \beta d^2 &amp;= a       \quad \text{(from $\Re$ of $y^2 = x$)} \
+c^2 - \beta d^2 &amp;= \pm s   \quad \text{(from $N(y) = \pm s$)}
+\end{aligned}
+$$</p>
+<p>Adding: $2c^2 = a \pm s$, so $c^2 = (a \pm s)/2$. Subtracting: $2\beta d^2 = a \mp s$, so $d^2 = (a \mp s)/(2\beta)$.</p>
+<p>Either of $c$ or $d$ can be recovered with <strong>one more $F_p$ Sqrt</strong>:</p>
+<p>$$
+c = \sqrt{(a + s)/2} \quad \text{(one $F_p$ Sqrt — the second $F_p$ exp)}, \qquad d = \frac{b}{2c} \quad \text{(one $F_p$ inv + one $F_p$ mul, from $2cd = b$).}
+$$</p>
+<p>The sign of $s$ is resolved by checking which of $(a + s)/2$ or $(a - s)/2$ is a QR in $F_p$ — one of them is guaranteed to be, by a parity argument: their product is</p>
+<p>$$
+\frac{(a + s)(a - s)}{4} = \frac{a^2 - s^2}{4} = \frac{a^2 - N(x)}{4} = \frac{a^2 - (a^2 - \beta b^2)}{4} = \frac{\beta b^2}{4},
+$$</p>
+<p>and $\beta$ is a QNR so $\beta b^2 / 4$ is (QNR)$\cdot$(square) = QNR. Hence one of the two factors must be QR and the other QNR.</p>
+<h3 id="34-the-algorithm-adjrodríguez-v-a-algorithm-8">3.4. The algorithm (Adj–Rodríguez §V-A &ldquo;Algorithm 8&rdquo;)</h3>
+<pre tabindex="0"><code>Algorithm 8 (Adj-Rodríguez &#34;Complex Method&#34;):
+Input:  x = a + b·u ∈ Fp²*
+Output: y ∈ Fp² s.t. y² = x, or ⊥
+
+  1: if b = 0:
+  2:    return (√a, 0)                         ← the bug lives here
+  3: end if
+  4: α ← a² − β·b²                              (= N(x))
+  5: γ ← χ(α)                                   (Legendre symbol of α in Fp)
+  6: if γ = −1:
+  7:    return ⊥                                (x is not a square in Fp²)
+  8: end if
+  9: s ← √α                                     (1st Fp Sqrt)
+ 10: δ ← (a + s) / 2
+ 11: if δ is QNR in Fp: δ ← (a − s) / 2
+ 12: c ← √δ                                     (2nd Fp Sqrt)
+ 13: d ← b / (2c)                               (1 Fp inv, 1 Fp mul)
+ 14: return (c, d)
+</code></pre><p><strong>Cost:</strong> $2 M_q + O(1)$ $F_p$ muls/inverses $\approx 2$ $F_p$ Sqrts. That&rsquo;s a <strong>$\sim 3\times$ speedup vs. naive $F_{p^2}$ Sqrt</strong> (which costs $\sim 6$ $F_p$ exps&rsquo; worth).</p>
+<hr>
+<h2 id="4-the-bug-lines-12">4. The bug: lines 1–2</h2>
+<p>The purely-real shortcut &ldquo;if $b = 0$: return $(\sqrt{a}, 0)$&rdquo; is <strong>wrong</strong> when $a$ is a non-residue in $F_p$.</p>
+<h3 id="41-the-math">4.1. The math</h3>
+<p>Why $(a, 0)$ is always a square in $F_{p^2}$ for any nonzero $a \in F_p$:</p>
+<p>$$
+\begin{aligned}
+(a, 0)^{(q^2 - 1)/2}
+&amp;= a^{(q^2 - 1)/2} \
+&amp;= a^{(q - 1)(q + 1)/2} \
+&amp;= \bigl(a^{q - 1}\bigr)^{(q + 1)/2} \
+&amp;= 1^{(q + 1)/2} \
+&amp;= 1 \qquad \text{(Fermat: $a^{q - 1} = 1$ in $F_p^*$).}
+\end{aligned}
+$$</p>
+<p>So $(a, 0)$ <em>must</em> have a square root in $F_{p^2}$ — and we even know where it lives. From the equations $(\star)$ of §3.1 with $b = 0$:</p>
+<p>$$
+c^2 + \beta d^2 = a, \qquad 2cd = 0 ;\Longrightarrow; c = 0 \text{ or } d = 0.
+$$</p>
+<ul>
+<li><strong>$d = 0$ branch:</strong> $c^2 = a$. Works iff $a$ is a QR in $F_p$. Yields $(\sqrt{a}, 0)$.</li>
+<li><strong>$c = 0$ branch:</strong> $\beta d^2 = a$, so $d^2 = a/\beta$. Works iff $a/\beta$ is a QR in $F_p$. Yields $(0, \sqrt{a/\beta})$.</li>
+</ul>
+<p>The two branches are <em>complementary</em> by Euler:</p>
+<p>$$
+\left(\tfrac{a/\beta}{p}\right) = \left(\tfrac{a}{p}\right) \cdot \left(\tfrac{1/\beta}{p}\right) = \left(\tfrac{a}{p}\right) \cdot \left(\tfrac{\beta}{p}\right) = \left(\tfrac{a}{p}\right) \cdot (-1) = -\left(\tfrac{a}{p}\right)
+$$</p>
+<p>(since $\beta$ is QNR by construction). So exactly one of ${a, a/\beta}$ is a QR. If $a$ is QR, the $d = 0$ branch gives the real root. If $a$ is QNR, the $c = 0$ branch gives the <em>purely imaginary</em> root $(0, \sqrt{a/\beta})$. <strong>The output is always nonzero.</strong></p>
+<h3 id="42-why-algorithm-8-misses-it">4.2. Why Algorithm 8 misses it</h3>
+<p>Line 2 unconditionally returns $(\sqrt{a}, 0)$. When $a$ is QNR, $\sqrt{a}$ <em>doesn&rsquo;t exist in $F_p$</em>. What the $F_p$ Sqrt routine actually returns depends on the implementation:</p>
+<ul>
+<li>Some return $\bot$ / <code>None</code>, in which case the call site propagates $\bot$, claiming $x$ is not a square — wrong, since it is.</li>
+<li>Most pairing libraries&rsquo; $F_p$ Sqrt returns the exponentiation $a^{(p+1)/4}$ (for $p \equiv 3 \pmod 4$) without checking, yielding a value $r$ such that $r^2 = -a$ rather than $r^2 = a$. The caller sees $(r, 0)$ and may treat it as a sqrt, which it isn&rsquo;t.</li>
+<li>Constant-time variants using <code>ccopy</code> / <code>fp_select</code> cascades based on <code>is_zero</code> silently produce $(0, 0)$, also wrong.</li>
+</ul>
+<p>The &ldquo;proof&rdquo; given on page 15 of Adj–Rodríguez — that one of $(a + s)/2$, $(a - s)/2$ is a QR because their product is the QNR $\beta b^2 / 4$ — <strong>fails when $b = 0$</strong>: the product collapses to $0$, which is neither QR nor QNR. The proof has an unstated precondition $b \neq 0$ that the algorithm&rsquo;s &ldquo;if $b = 0$&rdquo; shortcut acknowledges in form but mishandles in substance.</p>
+<h3 id="43-the-right-way-to-handle-b--0">4.3. The right way to handle $b = 0$</h3>
+<p>The correct branch dispatches on $\left(\frac{a}{p}\right)$:</p>
+<pre tabindex="0"><code>if b = 0:
+    if Legendre(a) = +1: return (√_Fp(a), 0)            ← purely-real root
+    else:                return (0, √_Fp(a/β))          ← purely-imaginary root
+</code></pre><p>Three $F_p$ operations more than the buggy version (one Legendre symbol, one $F_p$ inv, one $F_p$ Sqrt that runs on a known-QR input). Adding this branch is the fix that gnark-crypto kb8, SQIsign, relic, and (in this writeup&rsquo;s companion PR) constantine apply.</p>
+<p>Adj–Rodríguez <strong>had this branch</strong> in their own paper — in <em>Algorithm 9</em>, the novel $q \equiv 3 \pmod 4$ algorithm (see §7) — but their <em>Algorithm 8</em> in §V-A doesn&rsquo;t, and that&rsquo;s the one downstream libraries copy.</p>
+<hr>
+<h2 id="5-scotts-inverse-sqrt-optimization-eprint-20201497-63">5. Scott&rsquo;s inverse-sqrt optimization (ePrint 2020/1497, §6.3)</h2>
+<p>Michael Scott&rsquo;s 2020 <em>Tricks of the Trade</em> expands on Adj–Rodríguez&rsquo;s complex method by fusing the final $F_p$ inversion $d = b/(2c)$ into the second $F_p$ Sqrt via the <strong>inverse-square-root trick</strong>. Concretely, replace lines 12-13 of Algorithm 8 with:</p>
+<pre tabindex="0"><code>12&#39;: r ← invsqrt(δ)            (= 1/√δ; computed via a single Fp exp)
+13&#39;: c ← r · δ                  (= √δ)
+14&#39;: d ← b · r / 2              (= b/(2·√δ) = b/(2c))
+</code></pre><p>The trick: $\mathrm{invsqrt}(\delta) = \delta^{(p-3)/4}$ for $p \equiv 3 \pmod 4$. Computing both $c$ and $d$ from $r$ saves the standalone inversion. Combined with progenitor tricks (Scott&rsquo;s other contribution), the total cost drops from $\sim 2 M_q + 1$ inv to <strong>$\sim 1.5 M_q$</strong>.</p>
+<h3 id="scott-inherits-the-bug">Scott inherits the bug</h3>
+<p>Scott&rsquo;s exposition reads:</p>
+<blockquote>
+<p>If $a + i b$ is a quadratic residue, then one of $(a + \sqrt{a^2 - \beta b^2})/2$ or $(a - \sqrt{a^2 - \beta b^2})/2$ will be a quadratic residue in $F_p$. <strong>And indeed this must be the case since their product is equal to $\beta b^2/4$. This is a QNR times a perfect square, and hence a QNR. If a QNR is the product of two other field elements then one of them must be a QR, and the other a QNR.</strong> Therefore $\ldots$</p>
+</blockquote>
+<p>Same reasoning, same gap: the &ldquo;their product is $\beta b^2 / 4$, a QNR&rdquo; argument <strong>requires $b \neq 0$</strong>. With $b = 0$ the product is $0$, neither QR nor QNR, and the QNR-times-square argument collapses. Scott §6.3 doesn&rsquo;t discuss the case at all.</p>
+<p>The resulting algorithm has the <strong>same shape as Algorithm 8</strong> — same &ldquo;if $b = 0$&rdquo; shortcut, same lack of $\left(\frac{a}{p}\right)$-conditional handling. The Scott optimization speeds up the <em>body</em> of Algorithm 8 without revisiting the precondition Algorithm 8 was tacitly resting on.</p>
+<p><strong>Result:</strong> every library that ports Scott §6.3 has the bug. This includes <code>arkworks-algebra</code> (which patched it locally with an explicit <code>if self.c1.is_zero() { ... }</code> branch citing the Adj–Rodríguez paper&rsquo;s Algorithm 8), relic&rsquo;s $p \not\equiv 3 \pmod 4$ branch (which has an explicit purely-real handler), and historically gnark-crypto&rsquo;s main <code>internal/fptower/e2.go</code> for all six pairing curves (which still has the bug at the time of writing).</p>
+<hr>
+<h2 id="6-aardal-et-als-sqisign-optimization-eprint-20241563-algorithm-3">6. Aardal et al.&rsquo;s SQIsign optimization (ePrint 2024/1563, Algorithm 3)</h2>
+<p>Aardal, Adj, Alblooshi, Aranha, Canales-Martínez, Chávez-Saab, Filho, Reijnders and Rodríguez-Henríquez (2024) further specialized the Scott-optimized algorithm for the SQIsign post-quantum signature scheme, where $p \equiv 3 \pmod 4$. Their Algorithm 3 inlines the $q \equiv 3 \pmod 4$ casework, replaces the final inversion with a partial exponentiation, and reduces the entire computation to <strong>two $F_p$ exponentiations</strong> with no standalone inversions:</p>
+<pre tabindex="0"><code>Algorithm 3 (Aardal et al., q ≡ 3 mod 4):
+Input:  a = (a₀, a₁) ∈ Fp²*
+Output: x s.t. x² = a, deterministic and constant-time
+
+  1: δ ← (a₀² + a₁²)^((p+1)/4)                      (one Fp exp)
+  2: x₀ ← a₀ + δ
+  3: t₀ ← 2 · x₀
+  4: x₁ ← t₀^((p−3)/4)                              (second Fp exp; inverse-sqrt of t₀)
+  5: x₀ ← x₀ · x₁                                   (= √x₀ · scale)
+  6: x₁ ← a₁ · x₁
+  7: t₁ ← (2 · x₀)²
+  8: if t₁ = t₀: return (x₀, x₁)
+  9: else:        return (x₁, −x₀)
+</code></pre><p>Steps 8-9 are a clever sign-correction trick: only one of the two pairs $(x_0, x_1)$ or $(x_1, -x_0)$ is the true sqrt, and the test $t_1 = t_0$ picks the right one without an extra exponentiation. With $\beta = -1$ (the SQIsign / BN254 / BLS12-381 setting), the algorithm runs entirely in $F_p$ with two $F_p$ exponentiations and a handful of $F_p$ muls. Beautifully tight.</p>
+<h3 id="61-where-the-bug-returns">6.1. Where the bug returns</h3>
+<p>Algorithm 3 has <strong>no &ldquo;if $b = 0$&rdquo; shortcut at all</strong> — Aardal et al. fused the case-split into the generic path. The intent is to make the algorithm branchless and constant-time. The effect is to remove the only check that <em>might</em> have stopped the bug at the front door.</p>
+<p>Trace Algorithm 3 with $a = (a_0, 0)$, $a_0$ non-QR in $F_p$, $p \equiv 3 \pmod 4$:</p>
+<blockquote>
+<p><strong>Step 1.</strong> Compute $\delta$:</p>
+<p>$$
+\delta = (a_0^2 + 0)^{(p+1)/4} = a_0^{(p+1)/2} = a_0 \cdot a_0^{(p-1)/2} = a_0 \cdot \left(\tfrac{a_0}{p}\right) = a_0 \cdot (-1) = -a_0.
+$$</p>
+<p><strong>Step 2.</strong> Compute $x_0 = a_0 + \delta = a_0 + (-a_0) = 0$. <strong>This is where the bug fires.</strong></p>
+<p><strong>Steps 3–7.</strong> Cascade through zero:</p>
+<p>$$
+t_0 = 0, \quad x_1 = 0^{(p-3)/4} = 0, \quad x_0 \leftarrow x_0 \cdot x_1 = 0, \quad x_1 \leftarrow a_1 \cdot x_1 = 0, \quad t_1 = (2 \cdot 0)^2 = 0.
+$$</p>
+<p><strong>Step 8.</strong> $t_1 = t_0$ (both zero), so return $(x_0, x_1) = (0, 0)$.</p>
+</blockquote>
+<p>The output is $(0, 0)$, but the correct answer is $(0, \sqrt{a_0/\beta}) = (0, \sqrt{-a_0})$ (for $\beta = -1$), which exists in $F_p$ because $-1$ is QNR (so $-a_0 = (-1) \cdot \text{non-QR} = \text{QR}$) and is in the SQIsign codomain.</p>
+<h3 id="62-why-fusing-broke-things">6.2. Why fusing broke things</h3>
+<p>Adj–Rodríguez 2012/685 actually has a <em>bug-free</em> algorithm for $q \equiv 3 \pmod 4$ — their <strong>Algorithm 9</strong>, presented in §V-B. It explicitly tests $\alpha = \left(\frac{x}{F_{p^2}}\right)$ (computed cheaply as $\alpha = a^{(q-1)/2}$) and handles the $\alpha = -1$ case via $x \leftarrow i \cdot x_0$ where $i = \sqrt{-1} \in F_{p^2}$ (which exists because $q \equiv 3 \pmod 4 \Rightarrow -1$ is QNR in $F_p \Rightarrow i \notin F_p$ but $i \in F_{p^2}$).</p>
+<p>The $\alpha = -1$ branch is <strong>exactly</strong> the case where the input has its $F_{p^2}$-Legendre symbol equal to $-1$ only because the imaginary root is in $F_{p^2} \setminus F_p$ — i.e., the purely-real-non-QR-input case. Algorithm 9 catches it; Algorithm 3 fuses it away.</p>
+<p>Aardal et al. mention that they&rsquo;re building on Adj–Rodríguez §V (Algorithms 8, 9, 10), but the &ldquo;fusion&rdquo; pattern they pursue ends up moving from the structure of Algorithm 9 (which has the $\alpha = -1$ branch) back toward the structure of Algorithm 8 (which doesn&rsquo;t). The optimization&rsquo;s appeal is the absence of branches — but the absent branch is the one keeping correctness.</p>
+<p><strong>Result:</strong> every library that ports Aardal Algorithm 3 verbatim has the bug. The fix is to add a guard that detects the collapse (e.g., &ldquo;if $a_1 = 0$ then $\delta \leftarrow a_0$&rdquo; overrides the bad $\delta = -a_0$) or to switch back to Algorithm 9&rsquo;s $\alpha = -1$ test. SQIsign&rsquo;s own reference C implementation does the guard (<code>fp_select(&amp;x0, &amp;x0, &amp;(a-&gt;re), fp_is_zero(&amp;(a-&gt;im)))</code> at <code>src/gf/ref/lvlx/fp2.c:162</code>). Relic does the same (<code>fp_copy_sec(t[0], a[0], fp_is_zero(a[1]))</code>). gnark-crypto and constantine&rsquo;s BLS12-377 path inherited the bug raw, and were patched only after independent rediscovery.</p>
+<hr>
+<h2 id="7-the-fix-adjrodríguezs-own-algorithm-9">7. The fix: Adj–Rodríguez&rsquo;s own Algorithm 9</h2>
+<p>The bug-free recipe has been in the same 2012 paper the whole time. Algorithm 9 (Adj–Rodríguez §V-B):</p>
+<pre tabindex="0"><code>Algorithm 9 (Adj-Rodríguez, q ≡ 3 mod 4):
+Input:  a ∈ Fp²*, i ∈ Fp² with i² = −1
+Output: x s.t. x² = a, or ⊥
+
+  1: a₁ ← a^((q − 3)/4)              (one Fp² exp)
+  2: α  ← a₁ · (a₁ · a)               (= a^((q−1)/2) ∈ Fp²)
+  3: a₀ ← α · α^q                     (= α^(q+1); Legendre check)
+  4: if a₀ = −1: return ⊥             (a is not a square in Fp²)
+  5: x₀ ← a₁ · a                      (= a^((q+1)/4))
+  6: if α = −1:                       ★ KEY BRANCH
+  7:    return i · x₀                  (purely-imaginary root)
+  8: else:
+  9:    b ← (1 + α)^((q − 1)/2)        (Tonelli-style correction)
+ 10:    return b · x₀
+ 11: end if
+</code></pre><p>The $\alpha = -1$ branch is the structural fix the optimization layers fuse away. Adj–Rodríguez Algorithm 9 is the only one of the algorithms discussed here that handles the purely-real non-QR input correctly <em>without</em> an explicit &ldquo;if $b = 0$&rdquo; guard — because the guard is implicit in the $\alpha = -1$ test.</p>
+<p>The Rust implementation <code>zkcrypto/bls12_381</code>&rsquo;s <code>Fp2::sqrt</code> ports Algorithm 9 directly (citing it by name in the source comment: <code>// Algorithm 9, https://eprint.iacr.org/2012/685.pdf, with constant time modifications.</code>). It has been bug-free since the crate&rsquo;s first release in $\sim 2020$. <code>blst</code> uses a different but equivalent rotation-alignment trick that also catches the case structurally. <code>arkworks-algebra</code> ports Algorithm 8 but adds the <code>if c1.is_zero()</code> branch with explicit Legendre dispatch (the §4.3 fix above).</p>
+<p>For libraries that ship Algorithm 8 / Scott §6.3 / Aardal Algorithm 3 in their pristine published form, the bug is silent until a caller happens to ask for $\sqrt{(\text{non-QR}, 0)}$. That hardly ever happens in mainstream pairing protocols (curve constants block it), so the bug has lain dormant. But it&rsquo;s directly reachable from any code that constructs primitive cube roots of unity in $F_{p^2}$ (via $(\sqrt{-3} - 1)/2$), Frobenius endomorphism constants, or post-quantum isogeny intermediates — that&rsquo;s how it got rediscovered three times in the last three years.</p>
+<hr>
+<h2 id="8-provenance-summary">8. Provenance summary</h2>
+<pre tabindex="0"><code>Adj-Rodríguez 2012/685 Algorithm 8  ──► buggy (purely-real shortcut)
+                                       │
+                                       ▼
+                       Scott 2020/1497 §6.3  ──► buggy (inherits the §V-A proof gap)
+                                       │
+                                       ▼ (fused via Aardal optimization)
+              Aardal 2024/1563 Algorithm 3  ──► buggy (re-introduces by absorbing α-detection)
+
+
+Adj-Rodríguez 2012/685 Algorithm 9  ──► CORRECT (q ≡ 3 mod 4, has the α = −1 branch)
+                                       │
+                                       └─► zkcrypto/bls12_381 Fp2::sqrt  ──► clean (since ~2020)
+
+
+Adj-Rodríguez 2012/685 Algorithm 10 ──► CORRECT (q ≡ 1 mod 4)
+</code></pre><h2 id="9-impact">9. Impact</h2>
+<p>It turns out that libraries that implement the faster algorithms are the ones impacted:</p>
+<ul>
+<li>gnark-crypto: <a href="https://github.com/Consensys/gnark-crypto/pull/845">https://github.com/Consensys/gnark-crypto/pull/845</a></li>
+<li>Constantine: <a href="https://github.com/mratsim/constantine/pull/620">https://github.com/mratsim/constantine/pull/620</a></li>
+<li>Relic: <a href="https://github.com/relic-toolkit/relic/commit/3129300ebdd638efca549dcd406076cf37d61a3f">commit1</a>, <a href="https://github.com/relic-toolkit/relic/commit/a358dbcb133022246e8e781ce862c3b54d3b0fed">commit2</a>, <a href="https://github.com/relic-toolkit/relic/commit/c2085f44e823d1607cf228f4bbb874a09177523c">commit3</a></li>
+</ul>
+<h2 id="10-references">10. References</h2>
+<ul>
+<li>Gora Adj, Francisco Rodríguez-Henríquez. <em>Square root computation over even extension fields</em>. IACR ePrint 2012/685. <a href="https://eprint.iacr.org/2012/685">https://eprint.iacr.org/2012/685</a></li>
+<li>Michael Scott. <em>A note on the calculation of some functions in finite fields: Tricks of the Trade</em>. IACR ePrint 2020/1497, §6.3. <a href="https://eprint.iacr.org/2020/1497">https://eprint.iacr.org/2020/1497</a></li>
+<li>Aardal et al. <em>Optimized One-Dimensional SQIsign Verification on Intel and Cortex-M4</em>. IACR ePrint 2024/1563, Algorithm 3. <a href="https://eprint.iacr.org/2024/1563">https://eprint.iacr.org/2024/1563</a></li>
+</ul>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=../../post/fp2bug/&amp;text=Divide-and-Pair%20SMT%20for%20gnark-crypto%20Twisted%20Edwards%20Curves" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/fp2bug/&amp;t=Divide-and-Pair%20SMT%20for%20gnark-crypto%20Twisted%20Edwards%20Curves" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=../../post/fp2bug/&amp;title=Divide-and-Pair%20SMT%20for%20gnark-crypto%20Twisted%20Edwards%20Curves" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+    <script src="../../js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="../../js/academic.min.2aa4c034593508cdbd74f28ff6c19844.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    2025 Youssef El Housni ©
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
