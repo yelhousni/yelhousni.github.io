@@ -5,12 +5,143 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>يوسف</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 May 2026 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 20 Jul 2026 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>يوسف</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Divide-and-Pair SMT for gnark-crypto Twisted Edwards Curves</title>
+      <link>/post/subgroup2/</link>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>/post/subgroup2/</guid>
+      <description>&lt;p&gt;This note summarizes the subgroup-membership test (SMT) induced by the divide-and-pair framework (&lt;a href=&#34;https://eprint.iacr.org/2026/749&#34;&gt;https://eprint.iacr.org/2026/749&lt;/a&gt;) for the twisted Edwards curves currently present in &lt;code&gt;gnark-crypto&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;main-rule&#34;&gt;Main rule&lt;/h2&gt;
+&lt;p&gt;Let $E/\mathbb{F}_p$ be a twisted Edwards curve with group order $h \cdot r$, where $r$ is prime and $h$ is a small power of $2$.&lt;/p&gt;
+&lt;p&gt;The divide-and-pair SMT depends on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;whether $h \mid (p - 1)$, which determines whether the relevant Tate pairing is already non-degenerate over $\mathbb{F}_p$;&lt;/li&gt;
+&lt;li&gt;whether the rational small torsion is cyclic or split.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For $E/\mathbb{F}_p: ax^2+y^2=1+dx^2y^2$, the rational $2$-torsion is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;cyclic if $\text{Legendre}(ad) = -1$;&lt;/li&gt;
+&lt;li&gt;split if $\text{Legendre}(ad) = +1$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Why this works:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$E$ is birational over $\mathbb{F}_p$ to the Montgomery curve $B y^2 = x^3 + A x^2 + x$
+with $A = \frac{2(a+d)}{a-d}, \qquad B = \frac{4}{a-d}.$&lt;/li&gt;
+&lt;li&gt;The rational $2$-torsion on the Montgomery model is determined by the roots of $x^3 + A x^2 + x = x(x^2 + A x + 1).$&lt;/li&gt;
+&lt;li&gt;One $2$-torsion point is always rational, namely $x = 0$.&lt;/li&gt;
+&lt;li&gt;The other two $2$-torsion points are rational iff $x^2 + A x + 1$ splits over $\mathbb{F}_p$, i.e. iff its discriminant $A^2 - 4$ is a square in $\mathbb{F}_p$.&lt;/li&gt;
+&lt;li&gt;Using $A = 2(a+d)/(a-d)$, we get $A^2 - 4 = \frac{16ad}{(a-d)^2}.$&lt;/li&gt;
+&lt;li&gt;Since $16$ and $(a-d)^2$ are squares, $A^2 - 4$ is a square iff $ad$ is a square.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Therefore:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\text{Legendre}(ad) = -1$ means there is only one rational nonzero $2$-torsion point, so the rational $2$-primary torsion is cyclic;&lt;/li&gt;
+&lt;li&gt;$\text{Legendre}(ad) = +1$ means the full rational $2$-torsion is split, so the rational $2$-primary torsion has rank $2$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Equivalently:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if $\text{Legendre}(ad) = -1$ and $h = 8$, then $E(\mathbb{F}_p) \cong \mathbb{Z}/(8r)$;&lt;/li&gt;
+&lt;li&gt;if $\text{Legendre}(ad) = -1$ and $h = 4$, then $E(\mathbb{F}_p) \cong \mathbb{Z}/(4r)$;&lt;/li&gt;
+&lt;li&gt;if $\text{Legendre}(ad) = +1$ and $h = 4$, then $E(\mathbb{F}_p) \cong \mathbb{Z}/(2r) \times \mathbb{Z}/2$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In all &lt;code&gt;gnark-crypto&lt;/code&gt; twisted Edwards companion curves, $h \mid (p - 1)$ always because $p$ is the subgroup order $r$ of the SNARK curve chosen s.t. a high power of $2$ divides $r-1$, so no $\mathbb{F}_{p^2}$ extension is needed.&lt;/p&gt;
+&lt;h2 id=&#34;curves&#34;&gt;Curves&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Curve&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;Cofactor&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;$v_2(p-1)$&lt;/th&gt;
+          &lt;th style=&#34;text-align: right&#34;&gt;$\text{Legendre}(ad)$&lt;/th&gt;
+          &lt;th&gt;Rational structure&lt;/th&gt;
+          &lt;th&gt;Divide-and-pair SMT&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;BN254      (baby-jubjub)&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;8&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;28&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$-1$&lt;/td&gt;
+          &lt;td&gt;$\mathbb{Z}/(8r)$&lt;/td&gt;
+          &lt;td&gt;$0$ halvings, $1$ degree-$8$ pairing&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;bls12-377&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;47&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$-1$&lt;/td&gt;
+          &lt;td&gt;$\mathbb{Z}/(4r)$&lt;/td&gt;
+          &lt;td&gt;$0$ halvings, $1$ degree-$4$ pairing&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;bls12-381 (Jubjub)&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;8&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;32&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$-1$&lt;/td&gt;
+          &lt;td&gt;$\mathbb{Z}/(8r)$&lt;/td&gt;
+          &lt;td&gt;$0$ halvings, $1$ degree-$8$ pairing&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;bls12-381 (bandersnatch)&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;4&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;32&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$+1$&lt;/td&gt;
+          &lt;td&gt;$\mathbb{Z}/(2r) \times \mathbb{Z}/2$&lt;/td&gt;
+          &lt;td&gt;$0$ halvings, $2$ degree-$2$ pairings&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;bls24-315&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;8&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;22&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$-1$&lt;/td&gt;
+          &lt;td&gt;$\mathbb{Z}/(8r)$&lt;/td&gt;
+          &lt;td&gt;$0$ halvings, $1$ degree-$8$ pairing&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;bls24-317&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;8&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;60&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$-1$&lt;/td&gt;
+          &lt;td&gt;$\mathbb{Z}/(8r)$&lt;/td&gt;
+          &lt;td&gt;$0$ halvings, $1$ degree-$8$ pairing&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;bw6-633&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;8&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;20&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$-1$&lt;/td&gt;
+          &lt;td&gt;$\mathbb{Z}/(8r)$&lt;/td&gt;
+          &lt;td&gt;$0$ halvings, $1$ degree-$8$ pairing&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;bw6-761&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;8&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;46&lt;/td&gt;
+          &lt;td style=&#34;text-align: right&#34;&gt;$-1$&lt;/td&gt;
+          &lt;td&gt;$\mathbb{Z}/(8r)$&lt;/td&gt;
+          &lt;td&gt;$0$ halvings, $1$ degree-$8$ pairing&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;consequences&#34;&gt;Consequences&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;All cofactor-$8$ companion Edwards curves in &lt;code&gt;gnark-crypto&lt;/code&gt; admit the most favorable base-field divide-and-pair SMT: a single degree-$8$ Tate pairing, equivalently an octic residuosity check on a precomputed Miller value.&lt;/li&gt;
+&lt;li&gt;BLS12-377 similarly admits a single degree-$4$ pairing check.&lt;/li&gt;
+&lt;li&gt;Bandersnatch is different: its rational $2$-torsion is split, so SMT requires two independent degree-$2$ checks. This matches the existing &lt;code&gt;gnark-crypto&lt;/code&gt; implementation, which uses two Legendre-symbol tests: &lt;a href=&#34;https://hackmd.io/@yelhousni/tate-subgroup&#34;&gt;https://hackmd.io/@yelhousni/tate-subgroup&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Since the base field already gives non-degeneracy for the relevant $2$-power torsion, extending to $\mathbb{F}_{p^2}$ would not simplify SMT for any of these curves.&lt;/li&gt;
+&lt;li&gt;In all cases present in &lt;code&gt;gnark-crypto&lt;/code&gt; the Divide-and-Pair SMT reduces to the Koshelev test.&lt;/li&gt;
+&lt;li&gt;Code in: &lt;a href=&#34;https://github.com/Consensys/gnark-crypto/pull/833&#34;&gt;https://github.com/Consensys/gnark-crypto/pull/833&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>On the Security of Constraint-Friendly Map-to-Curve Relations</title>
