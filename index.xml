@@ -13,7 +13,7 @@
     </image>
     
     <item>
-      <title>Divide-and-Pair SMT for gnark-crypto Twisted Edwards Curves</title>
+      <title>A latent bug in optimized Fp2 square-root algorithms</title>
       <link>/post/fp2bug/</link>
       <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
       <guid>/post/fp2bug/</guid>
