@@ -53,7 +53,10 @@
     <loc>/publication/preprint/preprint26-590/</loc>
     <lastmod>2026-03-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/publication/preprint/preprint26-392/</loc>
+    <loc>/publication_types/1/</loc>
+    <lastmod>2026-02-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/conference/cans26/</loc>
     <lastmod>2026-02-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/inpt26/</loc>
@@ -70,9 +73,6 @@
   </url><url>
     <loc>/talk/google25/</loc>
     <lastmod>2025-07-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/publication_types/1/</loc>
-    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/publication/conference/africacrypt26/</loc>
     <lastmod>2025-07-19T00:00:00+00:00</lastmod>
