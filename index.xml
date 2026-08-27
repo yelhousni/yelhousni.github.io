@@ -5,12 +5,20 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>يوسف</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 20 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 24 Aug 2026 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>يوسف</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Cofactor-torsion attacks on hinted scalar multiplications in SNARK circuits</title>
+      <link>/publication/preprint/preprint26-1776/</link>
+      <pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>/publication/preprint/preprint26-1776/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>A latent bug in optimized Fp2 square-root algorithms</title>
