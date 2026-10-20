@@ -286,7 +286,23 @@ document.addEventListener(&#39;click&#39;, function (e) {
       <link>https://yelhousni.github.io/media/zkpodcast24/</link>
       <pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
       <guid>https://yelhousni.github.io/media/zkpodcast24/</guid>
-      <description>&lt;p&gt;In this podcast episode, Antonio Sanso (EF researcher) and myself discuss with Anna Rose (host) and Nico (co-host from Geometry research) our new work, Families of prime-order endomorphism-equipped embedded curves on pairing-friendly curves and dive into Elliptic Curve cryptography, Bandersnatch and Verkle Tries amongst much more, before dissecting what terms in the title of this paper truly mean. After getting into the weeds of cryptographic technicalities, the group explores where this work could be used and what it would enable.&lt;/p&gt;
+      <description>
+
+&lt;audio class=&#34;audio-player&#34; controls preload=&#34;none&#34; src=&#34;https://podcasts.captivate.fm/media/bdf88430-a76d-4e25-9e5d-462cca451723/05d49843-1bc4-4e4a-9fd1-2bc7b1302a80-converted.mp3&#34;&gt;
+  Your browser does not support the audio element.
+  &lt;a href=&#34;https://podcasts.captivate.fm/media/bdf88430-a76d-4e25-9e5d-462cca451723/05d49843-1bc4-4e4a-9fd1-2bc7b1302a80-converted.mp3&#34;&gt;Download the episode&lt;/a&gt;.
+&lt;/audio&gt;
+
+&lt;style&gt;
+.audio-player {
+  display: block;
+  width: 100%;
+  margin: 0 0 1.5rem;
+}
+&lt;/style&gt;
+
+
+&lt;p&gt;In this podcast episode, Antonio Sanso (EF researcher) and myself discuss with Anna Rose (host) and Nico (co-host from Geometry research) our new work, Families of prime-order endomorphism-equipped embedded curves on pairing-friendly curves and dive into Elliptic Curve cryptography, Bandersnatch and Verkle Tries amongst much more, before dissecting what terms in the title of this paper truly mean. After getting into the weeds of cryptographic technicalities, the group explores where this work could be used and what it would enable.&lt;/p&gt;
 </description>
     </item>
     

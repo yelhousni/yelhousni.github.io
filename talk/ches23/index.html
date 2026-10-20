@@ -639,6 +639,48 @@
 
     <div class="space-below"></div>
 
+    
+
+
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+    
+    
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/RD5pGzO71IE"
+              title="Faster Montgomery multiplication and Multi-Scalar-Multiplication for SNARKs"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+    <style>
+    .video-embed {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      margin-bottom: 1.5rem;
+    }
+    .video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    </style>
+  
+
+
+
+
     <div class="article-style">
       <p>This presentation is about the conference article that can be found online <a href="https://tches.iacr.org/index.php/TCHES/article/view/10972">here</a>.  The bottleneck in the proving algorithm of most of elliptic-curve-based SNARK proof systems is the Multi-Scalar-Multiplication (MSM) algorithm. In this paper we give an overview of a variant of the Pippenger MSM algorithm together with a set of optimizations tailored for curves that admit a twisted Edwards form. We prove that this is the case for SNARK-friendly chains and cycles of elliptic curves, which are useful for recursive constructions. Our contribution is twofold: first, we optimize the arithmetic of finite fields by improving on the well-known Coarsely Integrated Operand Scanning (CIOS) modular multiplication. This is a contribution of independent interest that applies to many different contexts. Second, we propose a new coordinate system for twisted Edwards curves tailored for the Pippenger MSM algorithm.Accelerating the MSM over these curves is critical for deployment of recursive proof systems applications such as proof-carrying-data, blockchain rollups and blockchain light clients. We implement our work in Go and benchmark it on two different CPU architectures (x86 and arm64). We show that our implementation achieves a 40-47% speedup over the state-of-the-art implementation (which was implemented in Rust). This MSM implementation won the first place in the ZPrize competition in the open division “Accelerating MSM on Mobile” and will be deployed in two real-world applications: Linea zkEVM by Consensys and probably Celo network.</p>
 
@@ -853,7 +895,7 @@
   <p class="powered-by">
     
 
-    2025 Youssef El Housni ©
+    2026 Youssef El Housni ©
 
     
     <span class="float-right" aria-hidden="true">
