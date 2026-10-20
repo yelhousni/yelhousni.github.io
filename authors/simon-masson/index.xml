@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simon Masson | يوسف</title>
-    <link>/authors/simon-masson/</link>
-      <atom:link href="/authors/simon-masson/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yelhousni.github.io/authors/simon-masson/</link>
+      <atom:link href="https://yelhousni.github.io/authors/simon-masson/index.xml" rel="self" type="application/rss+xml" />
     <description>Simon Masson</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 23 May 2025 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://yelhousni.github.io/img/sharing.png</url>
       <title>Simon Masson</title>
-      <link>/authors/simon-masson/</link>
+      <link>https://yelhousni.github.io/authors/simon-masson/</link>
     </image>
     
     <item>
       <title>Fast elliptic curve scalar multiplications in SN(T)ARK circuits</title>
-      <link>/publication/conference/latincrypt25/</link>
+      <link>https://yelhousni.github.io/publication/conference/latincrypt25/</link>
       <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/latincrypt25/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/latincrypt25/</guid>
       <description></description>
     </item>
     

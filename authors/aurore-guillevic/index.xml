@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aurore Guillevic | يوسف</title>
-    <link>/authors/aurore-guillevic/</link>
-      <atom:link href="/authors/aurore-guillevic/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yelhousni.github.io/authors/aurore-guillevic/</link>
+      <atom:link href="https://yelhousni.github.io/authors/aurore-guillevic/index.xml" rel="self" type="application/rss+xml" />
     <description>Aurore Guillevic</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 12 May 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://yelhousni.github.io/img/sharing.png</url>
       <title>Aurore Guillevic</title>
-      <link>/authors/aurore-guillevic/</link>
+      <link>https://yelhousni.github.io/authors/aurore-guillevic/</link>
     </image>
     
     <item>
       <title>A survey of elliptic curves for proof systems</title>
-      <link>/publication/journal/dcc22/</link>
+      <link>https://yelhousni.github.io/publication/journal/dcc22/</link>
       <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/journal/dcc22/</guid>
+      <guid>https://yelhousni.github.io/publication/journal/dcc22/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Co-factor clearing and subgroup membership testing on pairing-friendly curves</title>
-      <link>/publication/conference/africacrypt22/</link>
+      <link>https://yelhousni.github.io/publication/conference/africacrypt22/</link>
       <pubDate>Fri, 29 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/africacrypt22/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/africacrypt22/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Families of SNARK-friendly 2-chains of elliptic curves</title>
-      <link>/publication/conference/eurocrypt22/</link>
+      <link>https://yelhousni.github.io/publication/conference/eurocrypt22/</link>
       <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/eurocrypt22/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/eurocrypt22/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Optimized and secure pairing-friendly elliptic curves suitable for one layer proof composition</title>
-      <link>/publication/conference/cans20/</link>
+      <link>https://yelhousni.github.io/publication/conference/cans20/</link>
       <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/cans20/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/cans20/</guid>
       <description></description>
     </item>
     

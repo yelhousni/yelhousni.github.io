@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Antonio Sanso | يوسف</title>
-    <link>/authors/antonio-sanso/</link>
-      <atom:link href="/authors/antonio-sanso/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yelhousni.github.io/authors/antonio-sanso/</link>
+      <atom:link href="https://yelhousni.github.io/authors/antonio-sanso/index.xml" rel="self" type="application/rss+xml" />
     <description>Antonio Sanso</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 10 Oct 2023 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://yelhousni.github.io/img/sharing.png</url>
       <title>Antonio Sanso</title>
-      <link>/authors/antonio-sanso/</link>
+      <link>https://yelhousni.github.io/authors/antonio-sanso/</link>
     </image>
     
     <item>
       <title>Families of prime-order endomorphism-equipped embedded curves on pairing-friendly curves</title>
-      <link>/publication/journal/joc24/</link>
+      <link>https://yelhousni.github.io/publication/journal/joc24/</link>
       <pubDate>Tue, 10 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>/publication/journal/joc24/</guid>
+      <guid>https://yelhousni.github.io/publication/journal/joc24/</guid>
       <description></description>
     </item>
     

@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors | يوسف</title>
-    <link>/authors/</link>
-      <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yelhousni.github.io/authors/</link>
+      <atom:link href="https://yelhousni.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 24 Aug 2026 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://yelhousni.github.io/img/sharing.png</url>
       <title>Authors</title>
-      <link>/authors/</link>
+      <link>https://yelhousni.github.io/authors/</link>
     </image>
     
   </channel>

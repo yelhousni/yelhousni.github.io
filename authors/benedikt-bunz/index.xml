@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Benedikt Bunz | يوسف</title>
-    <link>/authors/benedikt-bunz/</link>
-      <atom:link href="/authors/benedikt-bunz/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yelhousni.github.io/authors/benedikt-bunz/</link>
+      <atom:link href="https://yelhousni.github.io/authors/benedikt-bunz/index.xml" rel="self" type="application/rss+xml" />
     <description>Benedikt Bunz</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 25 Mar 2026 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://yelhousni.github.io/img/sharing.png</url>
       <title>Benedikt Bunz</title>
-      <link>/authors/benedikt-bunz/</link>
+      <link>https://yelhousni.github.io/authors/benedikt-bunz/</link>
     </image>
     
     <item>
       <title>On the Security of Constraint-Friendly Map-to-Curve Relations</title>
-      <link>/publication/conference/asiacrypt26/</link>
+      <link>https://yelhousni.github.io/publication/conference/asiacrypt26/</link>
       <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/asiacrypt26/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/asiacrypt26/</guid>
       <description></description>
     </item>
     

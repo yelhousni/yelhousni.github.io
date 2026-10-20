@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Georgios Fotiadis | يوسف</title>
-    <link>/authors/georgios-fotiadis/</link>
-      <atom:link href="/authors/georgios-fotiadis/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yelhousni.github.io/authors/georgios-fotiadis/</link>
+      <atom:link href="https://yelhousni.github.io/authors/georgios-fotiadis/index.xml" rel="self" type="application/rss+xml" />
     <description>Georgios Fotiadis</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 19 Jul 2025 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://yelhousni.github.io/img/sharing.png</url>
       <title>Georgios Fotiadis</title>
-      <link>/authors/georgios-fotiadis/</link>
+      <link>https://yelhousni.github.io/authors/georgios-fotiadis/</link>
     </image>
     
     <item>
       <title>Batch subgroup membership testing on pairing-friendly curves</title>
-      <link>/publication/conference/africacrypt26/</link>
+      <link>https://yelhousni.github.io/publication/conference/africacrypt26/</link>
       <pubDate>Sat, 19 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/africacrypt26/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/africacrypt26/</guid>
       <description></description>
     </item>
     

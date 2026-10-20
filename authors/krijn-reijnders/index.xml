@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Krijn Reijnders | يوسف</title>
-    <link>/authors/krijn-reijnders/</link>
-      <atom:link href="/authors/krijn-reijnders/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yelhousni.github.io/authors/krijn-reijnders/</link>
+      <atom:link href="https://yelhousni.github.io/authors/krijn-reijnders/index.xml" rel="self" type="application/rss+xml" />
     <description>Krijn Reijnders</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 21 Apr 2026 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://yelhousni.github.io/img/sharing.png</url>
       <title>Krijn Reijnders</title>
-      <link>/authors/krijn-reijnders/</link>
+      <link>https://yelhousni.github.io/authors/krijn-reijnders/</link>
     </image>
     
     <item>
       <title>Divide-and-Pair: Faster subgroup membership testing for elliptic curves</title>
-      <link>/publication/journal/tches27/</link>
+      <link>https://yelhousni.github.io/publication/journal/tches27/</link>
       <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>/publication/journal/tches27/</guid>
+      <guid>https://yelhousni.github.io/publication/journal/tches27/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sylvie Herbel | يوسف</title>
-    <link>/authors/sylvie-herbel/</link>
-      <atom:link href="/authors/sylvie-herbel/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yelhousni.github.io/authors/sylvie-herbel/</link>
+      <atom:link href="https://yelhousni.github.io/authors/sylvie-herbel/index.xml" rel="self" type="application/rss+xml" />
     <description>Sylvie Herbel</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 18 Sep 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://yelhousni.github.io/img/sharing.png</url>
       <title>Sylvie Herbel</title>
-      <link>/authors/sylvie-herbel/</link>
+      <link>https://yelhousni.github.io/authors/sylvie-herbel/</link>
     </image>
     
     <item>
       <title>On the Performance and Security of Multiplication in $GF(2^N)$</title>
-      <link>/publication/journal/mdpi18/</link>
+      <link>https://yelhousni.github.io/publication/journal/mdpi18/</link>
       <pubDate>Tue, 18 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/journal/mdpi18/</guid>
+      <guid>https://yelhousni.github.io/publication/journal/mdpi18/</guid>
       <description></description>
     </item>
     

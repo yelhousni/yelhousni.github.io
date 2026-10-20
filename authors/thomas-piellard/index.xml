@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Thomas Piellard | يوسف</title>
-    <link>/authors/thomas-piellard/</link>
-      <atom:link href="/authors/thomas-piellard/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yelhousni.github.io/authors/thomas-piellard/</link>
+      <atom:link href="https://yelhousni.github.io/authors/thomas-piellard/index.xml" rel="self" type="application/rss+xml" />
     <description>Thomas Piellard</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 23 May 2025 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://yelhousni.github.io/img/sharing.png</url>
       <title>Thomas Piellard</title>
-      <link>/authors/thomas-piellard/</link>
+      <link>https://yelhousni.github.io/authors/thomas-piellard/</link>
     </image>
     
     <item>
       <title>Fast elliptic curve scalar multiplications in SN(T)ARK circuits</title>
-      <link>/publication/conference/latincrypt25/</link>
+      <link>https://yelhousni.github.io/publication/conference/latincrypt25/</link>
       <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/latincrypt25/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/latincrypt25/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Co-factor clearing and subgroup membership testing on pairing-friendly curves</title>
-      <link>/publication/conference/africacrypt22/</link>
+      <link>https://yelhousni.github.io/publication/conference/africacrypt22/</link>
       <pubDate>Fri, 29 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/africacrypt22/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/africacrypt22/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>3 | يوسف</title>
-    <link>/publication_types/3/</link>
-      <atom:link href="/publication_types/3/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yelhousni.github.io/publication_types/3/</link>
+      <atom:link href="https://yelhousni.github.io/publication_types/3/index.xml" rel="self" type="application/rss+xml" />
     <description>3</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 24 Aug 2026 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://yelhousni.github.io/img/sharing.png</url>
       <title>3</title>
-      <link>/publication_types/3/</link>
+      <link>https://yelhousni.github.io/publication_types/3/</link>
     </image>
     
     <item>
       <title>Cofactor-torsion attacks on hinted scalar multiplications in SNARK circuits</title>
-      <link>/publication/preprint/preprint26-1776/</link>
+      <link>https://yelhousni.github.io/publication/preprint/preprint26-1776/</link>
       <pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>/publication/preprint/preprint26-1776/</guid>
+      <guid>https://yelhousni.github.io/publication/preprint/preprint26-1776/</guid>
       <description></description>
     </item>
     

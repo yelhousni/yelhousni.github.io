@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Media | يوسف</title>
-    <link>/media/</link>
-      <atom:link href="/media/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yelhousni.github.io/media/</link>
+      <atom:link href="https://yelhousni.github.io/media/index.xml" rel="self" type="application/rss+xml" />
     <description>Media</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 07 Sep 2026 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://yelhousni.github.io/img/sharing.png</url>
       <title>Media</title>
-      <link>/media/</link>
+      <link>https://yelhousni.github.io/media/</link>
     </image>
     
     <item>
       <title>What is gnark? (video series)</title>
-      <link>/media/linea-insights-s2/</link>
+      <link>https://yelhousni.github.io/media/linea-insights-s2/</link>
       <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
-      <guid>/media/linea-insights-s2/</guid>
+      <guid>https://yelhousni.github.io/media/linea-insights-s2/</guid>
       <description>&lt;p&gt;Season 2 of &lt;em&gt;Linea Insights&lt;/em&gt; is a nine-episode series in which I answer one question
 per episode about &lt;a href=&#34;https://github.com/Consensys/gnark&#34;&gt;gnark&lt;/a&gt;, the zero-knowledge
 proof library we build at Consensys and that powers the Linea zkEVM.&lt;/p&gt;
@@ -283,9 +283,9 @@ document.addEventListener(&#39;click&#39;, function (e) {
     
     <item>
       <title>Discovering New Elliptic Curves (podcast)</title>
-      <link>/media/zkpodcast24/</link>
+      <link>https://yelhousni.github.io/media/zkpodcast24/</link>
       <pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
-      <guid>/media/zkpodcast24/</guid>
+      <guid>https://yelhousni.github.io/media/zkpodcast24/</guid>
       <description>&lt;p&gt;In this podcast episode, Antonio Sanso (EF researcher) and myself discuss with Anna Rose (host) and Nico (co-host from Geometry research) our new work, Families of prime-order endomorphism-equipped embedded curves on pairing-friendly curves and dive into Elliptic Curve cryptography, Bandersnatch and Verkle Tries amongst much more, before dissecting what terms in the title of this paper truly mean. After getting into the weeds of cryptographic technicalities, the group explores where this work could be used and what it would enable.&lt;/p&gt;
 </description>
     </item>

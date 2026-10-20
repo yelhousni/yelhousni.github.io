@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>يوسف</title>
-    <link>/authors/admin/</link>
-      <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yelhousni.github.io/authors/admin/</link>
+      <atom:link href="https://yelhousni.github.io/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>يوسف</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 24 Aug 2026 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://yelhousni.github.io/img/sharing.png</url>
       <title>يوسف</title>
-      <link>/authors/admin/</link>
+      <link>https://yelhousni.github.io/authors/admin/</link>
     </image>
     
     <item>
       <title></title>
-      <link>/authors/admin/</link>
+      <link>https://yelhousni.github.io/authors/admin/</link>
       <pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>/authors/admin/</guid>
+      <guid>https://yelhousni.github.io/authors/admin/</guid>
       <description>&lt;p&gt;I am a Staff Cryptography Researcher at &lt;a href=&#34;https://consensys.net/&#34;&gt;Consensys&lt;/a&gt;, where I work at the intersection of cryptographic research and high-performance engineering. I’m a developer and maintainer of &lt;a href=&#34;https://github.com/Consensys/gnark&#34;&gt;gnark&lt;/a&gt; and &lt;a href=&#34;https://github.com/Consensys/gnark-crypto&#34;&gt;gnark-crypto&lt;/a&gt;, an open-source Go ecosystem for zero-knowledge proofs and cryptographic primitives. I am also a founding member and developer of &lt;a href=&#34;https://linea.build/&#34;&gt;Linea&lt;/a&gt;, an Ethereum-equivalent Layer 2.&lt;/p&gt;
 &lt;p&gt;I received my PhD in Mathematics and Computer Science from &lt;a href=&#34;https://www.polytechnique.edu/&#34;&gt;École Polytechnique&lt;/a&gt; in France, where I was advised by &lt;a href=&#34;https://www.lix.polytechnique.fr/Labo/Francois.Morain/english-index.html&#34;&gt;François Morain&lt;/a&gt;, &lt;a href=&#34;https://pages.saclay.inria.fr/daniel.augot/&#34;&gt;Daniel Augot&lt;/a&gt;, and later &lt;a href=&#34;https://members.loria.fr/AGuillevic/&#34;&gt;Aurore Guillevic&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;My research sits at the intersection of algorithmic number theory and zero-knowledge proofs, with a particular interest in elliptic curves, finite fields, bilinear pairings, and the arithmetic underlying efficient SNARKs. I like turning mathematical ideas into cryptography that is fast enough to matter in practice.&lt;/p&gt;
@@ -25,129 +25,129 @@
     
     <item>
       <title>Cofactor-torsion attacks on hinted scalar multiplications in SNARK circuits</title>
-      <link>/publication/preprint/preprint26-1776/</link>
+      <link>https://yelhousni.github.io/publication/preprint/preprint26-1776/</link>
       <pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>/publication/preprint/preprint26-1776/</guid>
+      <guid>https://yelhousni.github.io/publication/preprint/preprint26-1776/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Divide-and-Pair: Faster subgroup membership testing for elliptic curves</title>
-      <link>/publication/journal/tches27/</link>
+      <link>https://yelhousni.github.io/publication/journal/tches27/</link>
       <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>/publication/journal/tches27/</guid>
+      <guid>https://yelhousni.github.io/publication/journal/tches27/</guid>
       <description></description>
     </item>
     
     <item>
       <title>On the Security of Constraint-Friendly Map-to-Curve Relations</title>
-      <link>/publication/conference/asiacrypt26/</link>
+      <link>https://yelhousni.github.io/publication/conference/asiacrypt26/</link>
       <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/asiacrypt26/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/asiacrypt26/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fast cube roots in Fp2 via the algebraic torus</title>
-      <link>/publication/conference/cans26/</link>
+      <link>https://yelhousni.github.io/publication/conference/cans26/</link>
       <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/cans26/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/cans26/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Batch subgroup membership testing on pairing-friendly curves</title>
-      <link>/publication/conference/africacrypt26/</link>
+      <link>https://yelhousni.github.io/publication/conference/africacrypt26/</link>
       <pubDate>Sat, 19 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/africacrypt26/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/africacrypt26/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fast elliptic curve scalar multiplications in SN(T)ARK circuits</title>
-      <link>/publication/conference/latincrypt25/</link>
+      <link>https://yelhousni.github.io/publication/conference/latincrypt25/</link>
       <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/latincrypt25/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/latincrypt25/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Families of prime-order endomorphism-equipped embedded curves on pairing-friendly curves</title>
-      <link>/publication/journal/joc24/</link>
+      <link>https://yelhousni.github.io/publication/journal/joc24/</link>
       <pubDate>Tue, 10 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>/publication/journal/joc24/</guid>
+      <guid>https://yelhousni.github.io/publication/journal/joc24/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The arithmetic of pairing-based proof systems</title>
-      <link>/publication/journal/phd/</link>
+      <link>https://yelhousni.github.io/publication/journal/phd/</link>
       <pubDate>Fri, 18 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/journal/phd/</guid>
+      <guid>https://yelhousni.github.io/publication/journal/phd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Faster Montgomery multiplication and Multi-Scalar-Multiplication for SNARKs</title>
-      <link>/publication/journal/tches23/</link>
+      <link>https://yelhousni.github.io/publication/journal/tches23/</link>
       <pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/journal/tches23/</guid>
+      <guid>https://yelhousni.github.io/publication/journal/tches23/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pairings in Rank-1 Constraint System</title>
-      <link>/publication/conference/acns23/</link>
+      <link>https://yelhousni.github.io/publication/conference/acns23/</link>
       <pubDate>Wed, 08 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/acns23/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/acns23/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A survey of elliptic curves for proof systems</title>
-      <link>/publication/journal/dcc22/</link>
+      <link>https://yelhousni.github.io/publication/journal/dcc22/</link>
       <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/journal/dcc22/</guid>
+      <guid>https://yelhousni.github.io/publication/journal/dcc22/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Co-factor clearing and subgroup membership testing on pairing-friendly curves</title>
-      <link>/publication/conference/africacrypt22/</link>
+      <link>https://yelhousni.github.io/publication/conference/africacrypt22/</link>
       <pubDate>Fri, 29 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/africacrypt22/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/africacrypt22/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Families of SNARK-friendly 2-chains of elliptic curves</title>
-      <link>/publication/conference/eurocrypt22/</link>
+      <link>https://yelhousni.github.io/publication/conference/eurocrypt22/</link>
       <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/eurocrypt22/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/eurocrypt22/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Optimized and secure pairing-friendly elliptic curves suitable for one layer proof composition</title>
-      <link>/publication/conference/cans20/</link>
+      <link>https://yelhousni.github.io/publication/conference/cans20/</link>
       <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/cans20/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/cans20/</guid>
       <description></description>
     </item>
     
     <item>
       <title>On the Performance and Security of Multiplication in $GF(2^N)$</title>
-      <link>/publication/journal/mdpi18/</link>
+      <link>https://yelhousni.github.io/publication/journal/mdpi18/</link>
       <pubDate>Tue, 18 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/journal/mdpi18/</guid>
+      <guid>https://yelhousni.github.io/publication/journal/mdpi18/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Random Numbers Generation: Tests and Attacks</title>
-      <link>/publication/conference/fdtc18/</link>
+      <link>https://yelhousni.github.io/publication/conference/fdtc18/</link>
       <pubDate>Thu, 13 Sep 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/conference/fdtc18/</guid>
+      <guid>https://yelhousni.github.io/publication/conference/fdtc18/</guid>
       <description></description>
     </item>
     

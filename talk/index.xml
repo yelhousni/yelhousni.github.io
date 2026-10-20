@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Talks | يوسف</title>
-    <link>/talk/</link>
-      <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://yelhousni.github.io/talk/</link>
+      <atom:link href="https://yelhousni.github.io/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Talks</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 May 2026 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://yelhousni.github.io/img/sharing.png</url>
       <title>Talks</title>
-      <link>/talk/</link>
+      <link>https://yelhousni.github.io/talk/</link>
     </image>
     
     <item>
       <title>On the Security of Constraint-Friendly Map-to-Curve Relations</title>
-      <link>/talk/zksecurity_map2curve26/</link>
+      <link>https://yelhousni.github.io/talk/zksecurity_map2curve26/</link>
       <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
-      <guid>/talk/zksecurity_map2curve26/</guid>
+      <guid>https://yelhousni.github.io/talk/zksecurity_map2curve26/</guid>
       <description>&lt;p&gt;Standard hash-to-curve constructions first hash the message to a field
 element through a cryptographic hash-to-field step, then map this field
 element to an elliptic-curve point.  Inside constraint systems, this inner
@@ -46,45 +46,45 @@ confirmed at the circuit level against the authors&amp;rsquo; own Noir
     
     <item>
       <title>Zero-Knowledge Proofs — The Bridge Between Cryptographic Theory and Blockchain Scalability</title>
-      <link>/talk/inpt26/</link>
+      <link>https://yelhousni.github.io/talk/inpt26/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>/talk/inpt26/</guid>
+      <guid>https://yelhousni.github.io/talk/inpt26/</guid>
       <description>&lt;p&gt;In this presentation, we will explore the fascinating intersection of zero-knowledge proofs and blockchain technology. We will begin by demystifying zero-knowledge proofs, explaining their fundamental principles and tracing their evolution from theoretical primitives to practical tools in cryptography. Following this, we will delve into the world of blockchain, discussing its reliance on cryptographic techniques to ensure security and integrity. The core of the talk will focus on the necessity of zero-knowledge proofs in blockchain applications, addressing privacy and scalability concerns. We will highlight some applications of zero-knowledge proofs in the world of Blockchains.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Fast Elliptic Curve Scalar Multiplications in SN(T)ARK Circuits</title>
-      <link>/talk/latincrypt25/</link>
+      <link>https://yelhousni.github.io/talk/latincrypt25/</link>
       <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>/talk/latincrypt25/</guid>
+      <guid>https://yelhousni.github.io/talk/latincrypt25/</guid>
       <description>&lt;p&gt;Proof systems of arbitrary computations have found many applications in recent years. However, the proving algorithm has a consequent complexity tied to the size of the computation being proved. Thus, proving large computations is quite inefficient. One of these large computations is the scalar multiplication over an elliptic curve. In this work, we provide new techniques for reducing the time corresponding to proving a scalar multiplication, using integer lattice reduction or a (half) extended Euclidean algorithm in a ring of integers. We investigate optimizations in the case of small (complex multiplication) discriminant curves, and its generalization for multi scalar multiplications as used in signature verification. We provide an optimized Golang implementation for different elliptic curves in different proof systems settings. The speed-up in proving time is between 22% and 53% compared to the previous state-of-the-art.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>On pairing implementation</title>
-      <link>/talk/google25/</link>
+      <link>https://yelhousni.github.io/talk/google25/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>/talk/google25/</guid>
+      <guid>https://yelhousni.github.io/talk/google25/</guid>
       <description>&lt;p&gt;This talk was about implementing bilinear pairings, with focus on gnark-crypto optimizations. It covers the mathematical foundations of pairings, their applications in cryptography, and practical considerations for efficient implementation. The talk also discusses challenges faced during the implementation process and how they were addressed, providing insights into the complexities of working with advanced cryptographic primitives.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Zero-knowedge proofs and blockchains</title>
-      <link>/talk/um6p_benguerir/</link>
+      <link>https://yelhousni.github.io/talk/um6p_benguerir/</link>
       <pubDate>Thu, 24 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>/talk/um6p_benguerir/</guid>
+      <guid>https://yelhousni.github.io/talk/um6p_benguerir/</guid>
       <description>&lt;p&gt;In this presentation, we will explore the fascinating intersection of zero-knowledge proofs and blockchain technology. We will begin by demystifying zero-knowledge proofs, explaining their fundamental principles and tracing their evolution from theoretical primitives to practical tools in cryptography. Following this, we will delve into the world of blockchain, discussing its reliance on cryptographic techniques to ensure security and integrity. The core of the talk will focus on the necessity of zero-knowledge proofs in blockchain applications, addressing privacy and scalability concerns. We will highlight how blockchain technology has spurred significant advancements in zero-knowledge proof research, fostering collaboration between academia and industry. Finally, I will present my own contributions to the field, including the optimization of mathematical building blocks for zero-knowledge proofs and their concrete applications within blockchain systems. This presentation aims to provide a comprehensive understanding of the critical role zero-knowledge proofs play in enhancing blockchain technology and to share insights from cutting-edge research in this dynamic area.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Modern Applications of Cryptography</title>
-      <link>/talk/um6p_cipherchallenge/</link>
+      <link>https://yelhousni.github.io/talk/um6p_cipherchallenge/</link>
       <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>/talk/um6p_cipherchallenge/</guid>
+      <guid>https://yelhousni.github.io/talk/um6p_cipherchallenge/</guid>
       <description>&lt;p&gt;I helped organize the Cipher Challenge at UM6P College of Computing, a
 competition that brings together students from all over Morocco. The material I
 contributed can be found at: &lt;a href=&#34;https://cipherchallenge.github.io/&#34;&gt;https://cipherchallenge.github.io/&lt;/a&gt;.
@@ -105,198 +105,198 @@ continues to evolve to meet new challenges.&lt;/p&gt;
     
     <item>
       <title>Elliptic curves and SNARKs — Past, present and future.</title>
-      <link>/talk/devcon7/</link>
+      <link>https://yelhousni.github.io/talk/devcon7/</link>
       <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>/talk/devcon7/</guid>
+      <guid>https://yelhousni.github.io/talk/devcon7/</guid>
       <description>&lt;p&gt;Elliptic curves are used in many proof systems. Some systems (e.g. Bulletproofs) use plain curves (e.g. ed25519). Some (e.g. Groth16, KZG-PLONK) use pairing-friendly curves (e.g. BLS12-381). Some recursive systems require pairing-friendly 2-cycle (e.g. MNT4/6) or 2-chains (e.g. BLS12-377/BW6-761). Some other recursive/folding systems require plain 2-cycle (e.g. Pasta). In this talk we will go through the difference between these curves and why there isn&amp;rsquo;t a silver bullet curve for all scenarios.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>On proving scalar multiplications in SNARKs</title>
-      <link>/talk/zkhub/</link>
+      <link>https://yelhousni.github.io/talk/zkhub/</link>
       <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>/talk/zkhub/</guid>
+      <guid>https://yelhousni.github.io/talk/zkhub/</guid>
       <description>&lt;p&gt;We show a way to implement GLV-like scalar multiplication in SNARK circuits in the absence of an efficient endomorphism. When this latter is available, we show how to turn proving a scalar multiplication into proving a 4 dimensional multi-scalar multiplication of small scalars.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>zkAggregation in Linea</title>
-      <link>/talk/zkbelgrade/</link>
+      <link>https://yelhousni.github.io/talk/zkbelgrade/</link>
       <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>/talk/zkbelgrade/</guid>
+      <guid>https://yelhousni.github.io/talk/zkbelgrade/</guid>
       <description>&lt;p&gt;This presentation is about the proof aggregation protocol in the Linea zkEVM. It uses the elliptic 2-chain of curves BLS12-377 and BW6-761 to aggregate PLONK-KZG proofs and reduce the verification cost.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>gnark and 2-chain aggregation for Linea</title>
-      <link>/talk/proofdaynyc/</link>
+      <link>https://yelhousni.github.io/talk/proofdaynyc/</link>
       <pubDate>Fri, 29 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>/talk/proofdaynyc/</guid>
+      <guid>https://yelhousni.github.io/talk/proofdaynyc/</guid>
       <description>&lt;p&gt;This presentation is about the gnark and gnark-crypto libraries and how they are used to aggregate proofs on the Linea zkEVM.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Faster Montgomery multiplication and Multi-Scalar-Multiplication for SNARKs</title>
-      <link>/talk/ches23/</link>
+      <link>https://yelhousni.github.io/talk/ches23/</link>
       <pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>/talk/ches23/</guid>
+      <guid>https://yelhousni.github.io/talk/ches23/</guid>
       <description>&lt;p&gt;This presentation is about the conference article that can be found online &lt;a href=&#34;https://tches.iacr.org/index.php/TCHES/article/view/10972&#34;&gt;here&lt;/a&gt;.  The bottleneck in the proving algorithm of most of elliptic-curve-based SNARK proof systems is the Multi-Scalar-Multiplication (MSM) algorithm. In this paper we give an overview of a variant of the Pippenger MSM algorithm together with a set of optimizations tailored for curves that admit a twisted Edwards form. We prove that this is the case for SNARK-friendly chains and cycles of elliptic curves, which are useful for recursive constructions. Our contribution is twofold: first, we optimize the arithmetic of finite fields by improving on the well-known Coarsely Integrated Operand Scanning (CIOS) modular multiplication. This is a contribution of independent interest that applies to many different contexts. Second, we propose a new coordinate system for twisted Edwards curves tailored for the Pippenger MSM algorithm.Accelerating the MSM over these curves is critical for deployment of recursive proof systems applications such as proof-carrying-data, blockchain rollups and blockchain light clients. We implement our work in Go and benchmark it on two different CPU architectures (x86 and arm64). We show that our implementation achieves a 40-47% speedup over the state-of-the-art implementation (which was implemented in Rust). This MSM implementation won the first place in the ZPrize competition in the open division “Accelerating MSM on Mobile” and will be deployed in two real-world applications: Linea zkEVM by Consensys and probably Celo network.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Pairings in Rank-1 Constraint System</title>
-      <link>/talk/siam-ag23/</link>
+      <link>https://yelhousni.github.io/talk/siam-ag23/</link>
       <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>/talk/siam-ag23/</guid>
+      <guid>https://yelhousni.github.io/talk/siam-ag23/</guid>
       <description>&lt;p&gt;This presentation is about the conference article that can be found online &lt;a href=&#34;https://eprint.iacr.org/2022/1162.pdf&#34;&gt;here&lt;/a&gt;. In this work, we consider efficiently implementing pairings in Rank-1 Constraint Systems (R1CS), a widely used model to express SNARK statements. We show that our techniques almost halve the arithmetic circuit depth of the previously best known pairing implementation on a Barreto&amp;ndash;Lynn&amp;ndash;Scott (BLS) curve of embedding degree 12, resulting in 70% faster proving time. We also investigate and implement the case of BLS curves of embedding degree 24.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Pairings in Rank-1 Constraint System</title>
-      <link>/talk/acns23/</link>
+      <link>https://yelhousni.github.io/talk/acns23/</link>
       <pubDate>Tue, 20 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>/talk/acns23/</guid>
+      <guid>https://yelhousni.github.io/talk/acns23/</guid>
       <description>&lt;p&gt;This presentation is about the conference article that can be found online &lt;a href=&#34;https://eprint.iacr.org/2022/1162.pdf&#34;&gt;here&lt;/a&gt;. In this work, we consider efficiently implementing pairings in Rank-1 Constraint Systems (R1CS), a widely used model to express SNARK statements. We show that our techniques almost halve the arithmetic circuit depth of the previously best known pairing implementation on a Barreto&amp;ndash;Lynn&amp;ndash;Scott (BLS) curve of embedding degree 12, resulting in 70% faster proving time. We also investigate and implement the case of BLS curves of embedding degree 24.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>The arithmetic of pairing-based proof systems</title>
-      <link>/talk/phd/</link>
+      <link>https://yelhousni.github.io/talk/phd/</link>
       <pubDate>Fri, 18 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>/talk/phd/</guid>
+      <guid>https://yelhousni.github.io/talk/phd/</guid>
       <description>&lt;p&gt;This is my PhD defense.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Optimizing cryptographic algorithms in gnark</title>
-      <link>/talk/devcon6/</link>
+      <link>https://yelhousni.github.io/talk/devcon6/</link>
       <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>/talk/devcon6/</guid>
+      <guid>https://yelhousni.github.io/talk/devcon6/</guid>
       <description>&lt;p&gt;This talk is about algorithmic optimizations techniques used in gnark. In particular, we show that the implementation of Multi-Scalar-Multiplication (MSM) is 45% faster compared to competitors libraries. We also explain optimizations in the pairing computations both out-circuit and in-circuit. To the best of our knowledge, these implementations are best-in-class.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Elliptic curves and zk-SNARKs</title>
-      <link>/talk/rennes_seminar/</link>
+      <link>https://yelhousni.github.io/talk/rennes_seminar/</link>
       <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>/talk/rennes_seminar/</guid>
+      <guid>https://yelhousni.github.io/talk/rennes_seminar/</guid>
       <description>&lt;p&gt;A proof system is a protocol where one party (called the prover) tries to convince another party (called the verifier) that a given statement is true. In the class of non-interactive proof systems, a particularly interesting concept for proving the computational integrity is the Succinct Non-interactive ARgument of Knowledge (SNARK). It provides a computationally sound proof, cheap to verify and small compared to the size of the statement or the witness. Bilinear pairings over elliptic curves have become key ingredients for instantiating such SNARKs. In this thesis we investigate tailored pairing-friendly elliptic curves to efficiently implement SNARKs. We present a study at three stages of the process: curves to instantiate a SNARK, curves to instantiate a recursive SNARK, and also curves to express an elliptic-curve related statement. We provide new constructions of curves for SNARKs and new families of 2-chain curves for recursive SNARKs. We derive and implement in open-source efficient algorithms to speed up the arithmetic on these curves: Co-factor clearing, subgroup membership testing, multi-scalar multiplication and pairings over 2-chains. We also study and optimize elliptic curves arithmetic and pairings as a SNARK statement, yielding to the fastest recursive proof generation in pairing-based settings.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Cofactor clearing and subgroup membership testing on pairing-friendly elliptic curves</title>
-      <link>/talk/africacrypt22/</link>
+      <link>https://yelhousni.github.io/talk/africacrypt22/</link>
       <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>/talk/africacrypt22/</guid>
+      <guid>https://yelhousni.github.io/talk/africacrypt22/</guid>
       <description>&lt;p&gt;An important cryptographic operation on elliptic curves is hashing to a point on the curve. When the curve is not of prime order, the point is multiplied by the cofactor so that the result has a prime order. This is important to avoid small subgroup attacks for example.  A second important operation, in the composite-order case, is testing whether a point belongs to the subgroup of prime order. A pairing is a bilinear map e: G1×G2 → GT where G1 and G2 are distinct subgroups of prime order r of an elliptic curve, and GT is a multiplicative subgroup of the same prime order r of a finite field extension.  Pairing-friendly curves are rarely of prime order. In this talk, we investigate cofactor clearing and subgroup membership testing on these composite-order curves. First, we generalize a result on faster cofactor clearing for BLS curves to other pairingfriendly families of a polynomial form from the taxonomy of Freeman, Scott and Teske. Second, we investigate subgroup membership testing for G1 and G2. We fix a proof argument for the G2 case that appeared in a preprint by Scott in late 2021 and has recently been implemented in different cryptographic libraries. We then generalize the result to both G1 and G2 and apply it to different pairing-friendly families of curves.  This gives a simple and shared framework to prove membership tests for both cryptographic subgroups.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Families of SNARK-friendly 2-chains of elliptic curves</title>
-      <link>/talk/eurocrypt22/</link>
+      <link>https://yelhousni.github.io/talk/eurocrypt22/</link>
       <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>/talk/eurocrypt22/</guid>
+      <guid>https://yelhousni.github.io/talk/eurocrypt22/</guid>
       <description>&lt;p&gt;In this talk, we first are interested in families of 2-chains in which the BW6-761 curve would fall. We present a family of BW6 curves from any BLS12 curve and derive generic formulas, in terms of the BLS12 curve seed u, and integer parameters ht,hy. We extend this work to a 2-chain family of BW6 curves from BLS24 curves. To achieve higher levels of security in the target finite field of the outer curves, we compare a larger field characteristic thanks to larger parameters ht,hy, to the larger embedding degrees 8 and 12 obtained with Cocks-Pinch curves. Finally, we argue that the BLS12 and BLS24 based families are respectively tailored for Groth’16 and KZG-based SNARKs recursive proof composition, and we present a short list of curves with an optimized implementation along with benchmarks.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Elliptic curves and SNARKs</title>
-      <link>/talk/aarhus_seminar/</link>
+      <link>https://yelhousni.github.io/talk/aarhus_seminar/</link>
       <pubDate>Wed, 11 May 2022 00:00:00 +0000</pubDate>
-      <guid>/talk/aarhus_seminar/</guid>
+      <guid>https://yelhousni.github.io/talk/aarhus_seminar/</guid>
       <description>&lt;p&gt;Elliptic curves have become key ingredients for instantiating zero-knowledge proofs and more generally proof systems. Recently, there have been many tailored constructions of these curves that aim at efficiently implementing different kinds of proof systems. In this talk we provide a comprehensive view on existing work. We present an overview at two stages of the process; curves to instantiate a SNARK and curves to instantiate a recursive SNARK.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Pairings in R1CS</title>
-      <link>/talk/zksummit7/</link>
+      <link>https://yelhousni.github.io/talk/zksummit7/</link>
       <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>/talk/zksummit7/</guid>
+      <guid>https://yelhousni.github.io/talk/zksummit7/</guid>
       <description>&lt;p&gt;This presentation is about how to efficiently express a pairing a Rank-1 Constraint System (R1CS) arithmetic circuit. The goal is to reduce the time complexity to SNARK prove a bilinear pairing. A corresponding research paper will be soon available on ePrint.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Families of SNARK-friendly 2-chains of elliptic curves</title>
-      <link>/talk/jc2-2022/</link>
+      <link>https://yelhousni.github.io/talk/jc2-2022/</link>
       <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>/talk/jc2-2022/</guid>
+      <guid>https://yelhousni.github.io/talk/jc2-2022/</guid>
       <description>&lt;p&gt;In this talk, we first are interested in families of 2-chains in which the BW6-761 curve would fall. We present a family of BW6 curves from any BLS12 curve and derive generic formulas, in terms of the BLS12 curve seed u, and integer parameters ht,hy. We extend this work to a 2-chain family of BW6 curves from BLS24 curves. To achieve higher levels of security in the target finite field of the outer curves, we compare a larger field characteristic thanks to larger parameters ht,hy, to the larger embedding degrees 8 and 12 obtained with Cocks-Pinch curves. Finally, we argue that the BLS12 and BLS24 based families are respectively tailored for Groth’16 and KZG-based SNARKs recursive proof composition, and we present a short list of curves with an optimized implementation along with benchmarks.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>On choosing suitable elliptic curves for zk-SNARK</title>
-      <link>/talk/caramba_seminar/</link>
+      <link>https://yelhousni.github.io/talk/caramba_seminar/</link>
       <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>/talk/caramba_seminar/</guid>
+      <guid>https://yelhousni.github.io/talk/caramba_seminar/</guid>
       <description>&lt;p&gt;This presentation is about requirements and methods to contruct tailored and optimized elliptic curves for zkSNARK applications.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>zk-SNARK 101</title>
-      <link>/talk/oisillons_gt/</link>
+      <link>https://yelhousni.github.io/talk/oisillons_gt/</link>
       <pubDate>Fri, 05 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>/talk/oisillons_gt/</guid>
+      <guid>https://yelhousni.github.io/talk/oisillons_gt/</guid>
       <description>&lt;p&gt;This presentation is an introduction to the concept of zkSNARKs alongside an step-by-step toy example of Pinocchio-ish zkSNARK protocol.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Optimized and secure pairing-friendly elliptic curve suitable for one layer proof composition</title>
-      <link>/talk/cans2020/</link>
+      <link>https://yelhousni.github.io/talk/cans2020/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>/talk/cans2020/</guid>
+      <guid>https://yelhousni.github.io/talk/cans2020/</guid>
       <description>&lt;p&gt;This presentation is about a joint paper with &lt;a href=&#34;https://members.loria.fr/AGuillevic/&#34;&gt;Aurore Guillevic&lt;/a&gt; that can be found online &lt;a href=&#34;https://eprint.iacr.org/2021/1359&#34;&gt;here&lt;/a&gt;. It proposes new families of elliptic curves that are tailored and optimized for recursive SNARKs.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Faster proof composition with the BW6-761 curve</title>
-      <link>/talk/ey_summit/</link>
+      <link>https://yelhousni.github.io/talk/ey_summit/</link>
       <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>/talk/ey_summit/</guid>
+      <guid>https://yelhousni.github.io/talk/ey_summit/</guid>
       <description>&lt;p&gt;This presentation is about using the BW6-761 curve to generate and verify faster composed Groth&#39;16 zk-SNARK proofs and its application in EY Blockchain effort to privacy-preserving blockchains.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Optimized and secure pairing-friendly elliptic curve suitable for one layer proof composition</title>
-      <link>/talk/zksummit5/</link>
+      <link>https://yelhousni.github.io/talk/zksummit5/</link>
       <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>/talk/zksummit5/</guid>
+      <guid>https://yelhousni.github.io/talk/zksummit5/</guid>
       <description>&lt;p&gt;This presentation is about a joint paper with &lt;a href=&#34;https://members.loria.fr/AGuillevic/&#34;&gt;Aurore Guillevic&lt;/a&gt; that can be found online &lt;a href=&#34;https://eprint.iacr.org/2020/351&#34;&gt;here&lt;/a&gt;. It introduced a new elliptic curve, namely &lt;strong&gt;BW6-761&lt;/strong&gt; that is very efficient for one-layer recursive SNARKs compared to the state-of-the-art.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Nightfall - The Open Source Privacy Solution for Ethereum</title>
-      <link>/talk/devcon5/</link>
+      <link>https://yelhousni.github.io/talk/devcon5/</link>
       <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>/talk/devcon5/</guid>
+      <guid>https://yelhousni.github.io/talk/devcon5/</guid>
       <description>&lt;p&gt;We believe that public blockchain is the future of business to business transactions. However, two issues - privacy and scalability - will need to be solved if this vision is to be fully realised. This talk will explain the motivations behind the open-source nightfall code and how it is intended to tackle the first of these issues. We cover the operation of the protocol, the method by which it provides complete privacy, and how developers can use it to build their own applications by making use of its smart contract infrastructure and the ZoKrates framework. We will also present our modelling of transaction costs, which shows that nightfall can already provide a cost-competitive alternative to private blockchains for many situations and how that will be true for a growing number of use cases in the near future.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Elliptic curves in cryptography</title>
-      <link>/talk/zk_par1/</link>
+      <link>https://yelhousni.github.io/talk/zk_par1/</link>
       <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>/talk/zk_par1/</guid>
+      <guid>https://yelhousni.github.io/talk/zk_par1/</guid>
       <description>&lt;p&gt;I this presentation the 4th of July in Paris during ZK-PAR 0x01, the first Zero Knowledge meetup in the french capital. The meetups started in Tel-Aviv and then London and now Paris. They are intended for anyone interested in applied cryptography for privacy-preserving technology. The presentations are usually focussed on technical and practical aspects of this technology, notably its relation to blockchain technology. You can find more information and community discussions in the &lt;a href=&#34;https://www.facebook.com/groups/800441673459620/&#34;&gt;Facebook group&lt;/a&gt; and the &lt;a href=&#34;https://www.youtube.com/channel/UCl6oyLa4CblZRurgwZwpgPQ&#34;&gt;Youtube channel&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;ZK-PAR 0x01 hosted two speakers, Bastien Teinturier and myself. Bastien talked about anonymous payments in Bitcoin’s Lightning network and I invite you to watch his &lt;a href=&#34;https://www.youtube.com/watch?v=NM6WQkdjvYw&#34;&gt;video&lt;/a&gt; and go through his &lt;a href=&#34;https://www.facebook.com/download/1117672475092357/ZK-PAR%200x01%20-%20Anonymous%20Payments%20in%20the%20Lightning%20Network%20-%20Bastien%20Teinturier.pdf?av=1151079687&amp;amp;eav=AfZveN272Vcrq3TdwQjKZQC-0UB7Q5NrjhkqP49rdEu0fBxPOFQZ55mNASEgwNbfSFI&amp;amp;hash=AcruoDF8Elw9chP1&#34;&gt;slides&lt;/a&gt;.&lt;/p&gt;
 </description>
