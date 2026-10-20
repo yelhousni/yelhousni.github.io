@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.5.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Youssef El Housni">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Linea Insights Season 2 — a nine-episode series about gnark, the zero-knowledge proof library behind Linea.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="../../media/linea-insights-s2/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="../../css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="../../index.webmanifest">
+  <link rel="icon" type="image/png" href="../../img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="../../img/icon-192.png">
+
+  <link rel="canonical" href="../../media/linea-insights-s2/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="يوسف">
+  <meta property="og:url" content="/media/linea-insights-s2/">
+  <meta property="og:title" content="What is gnark? (video series) | يوسف">
+  <meta property="og:description" content="Linea Insights Season 2 — a nine-episode series about gnark, the zero-knowledge proof library behind Linea."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2026-09-07T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2026-09-07T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>What is gnark? (video series) | يوسف</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="../../">يوسف</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#experience"><span>Work</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#talks"><span>Talks</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#media"><span>Media</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <div class="pub">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>What is gnark? (video series)</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary my-1 mr-1" href="https://www.youtube.com/watch?v=T57U-I2a09M" target="_blank" rel="noopener">
+  Video
+</a>
+
+
+
+
+
+</div>
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    
+      <br>
+    
+
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Date</div>
+          <div class="col-12 col-md-9">
+            Sep 7, 2026 
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Event</div>
+          <div class="col-12 col-md-9">
+            <a href="https://www.youtube.com/@LineaBuild/videos" target="_blank" rel="noopener">
+            Linea Insights — Season 2
+            </a>
+          </div>
+        </div> 
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Location</div>
+          <div class="col-12 col-md-9">online</div>
+          
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    <div class="space-below"></div>
+
+    <div class="article-style">
+      <p>Season 2 of <em>Linea Insights</em> is a nine-episode series in which I answer one question
+per episode about <a href="https://github.com/Consensys/gnark">gnark</a>, the zero-knowledge
+proof library we build at Consensys and that powers the Linea zkEVM.</p>
+
+
+
+
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+    
+  
+
+
+<div class="ytplaylist" id="ytpl-f1ab19d973e1cc9b9a670eb05daa49c7-0">
+  
+  <div class="ytplaylist-player">
+    <iframe
+      data-ytplaylist-player
+      src="https://www.youtube.com/embed/T57U-I2a09M"
+      title="What is gnark?"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+  
+
+  <ol class="ytplaylist-list">
+    
+    <li>
+      <button type="button"
+              class="ytplaylist-item active"
+              data-ytplaylist-vid="T57U-I2a09M"
+              data-ytplaylist-title="What is gnark?">
+        <span class="ytplaylist-num">1</span>
+        <span class="ytplaylist-title">What is gnark?</span>
+        <span class="ytplaylist-date">2026-07-09</span>
+      </button>
+    </li>
+    
+    <li>
+      <button type="button"
+              class="ytplaylist-item"
+              data-ytplaylist-vid="70tXPfXho7I"
+              data-ytplaylist-title="Why create gnark?">
+        <span class="ytplaylist-num">2</span>
+        <span class="ytplaylist-title">Why create gnark?</span>
+        <span class="ytplaylist-date">2026-07-14</span>
+      </button>
+    </li>
+    
+    <li>
+      <button type="button"
+              class="ytplaylist-item"
+              data-ytplaylist-vid="G7V4ydHR6dU"
+              data-ytplaylist-title="How is gnark impacting the ZK cryptography landscape?">
+        <span class="ytplaylist-num">3</span>
+        <span class="ytplaylist-title">How is gnark impacting the ZK cryptography landscape?</span>
+        <span class="ytplaylist-date">2026-07-20</span>
+      </button>
+    </li>
+    
+    <li>
+      <button type="button"
+              class="ytplaylist-item"
+              data-ytplaylist-vid="u26JlAN6UeE"
+              data-ytplaylist-title="Why is gnark important for Linea?">
+        <span class="ytplaylist-num">4</span>
+        <span class="ytplaylist-title">Why is gnark important for Linea?</span>
+        <span class="ytplaylist-date">2026-07-24</span>
+      </button>
+    </li>
+    
+    <li>
+      <button type="button"
+              class="ytplaylist-item"
+              data-ytplaylist-vid="5XZ0E0wTRRo"
+              data-ytplaylist-title="Who else uses gnark?">
+        <span class="ytplaylist-num">5</span>
+        <span class="ytplaylist-title">Who else uses gnark?</span>
+        <span class="ytplaylist-date">2026-08-03</span>
+      </button>
+    </li>
+    
+    <li>
+      <button type="button"
+              class="ytplaylist-item"
+              data-ytplaylist-vid="HAKtTNpryCU"
+              data-ytplaylist-title="Why is gnark so performant?">
+        <span class="ytplaylist-num">6</span>
+        <span class="ytplaylist-title">Why is gnark so performant?</span>
+        <span class="ytplaylist-date">2026-08-11</span>
+      </button>
+    </li>
+    
+    <li>
+      <button type="button"
+              class="ytplaylist-item"
+              data-ytplaylist-vid="AeCvocnfdNU"
+              data-ytplaylist-title="How does gnark compare to other libraries?">
+        <span class="ytplaylist-num">7</span>
+        <span class="ytplaylist-title">How does gnark compare to other libraries?</span>
+        <span class="ytplaylist-date">2026-08-21</span>
+      </button>
+    </li>
+    
+    <li>
+      <button type="button"
+              class="ytplaylist-item"
+              data-ytplaylist-vid="YZqmjo3nxgM"
+              data-ytplaylist-title="Why should you use gnark?">
+        <span class="ytplaylist-num">8</span>
+        <span class="ytplaylist-title">Why should you use gnark?</span>
+        <span class="ytplaylist-date">2026-08-31</span>
+      </button>
+    </li>
+    
+    <li>
+      <button type="button"
+              class="ytplaylist-item"
+              data-ytplaylist-vid="i29JQeRe-Aw"
+              data-ytplaylist-title="What&#39;s the feedback from users?">
+        <span class="ytplaylist-num">9</span>
+        <span class="ytplaylist-title">What&rsquo;s the feedback from users?</span>
+        <span class="ytplaylist-date">2026-09-07</span>
+      </button>
+    </li>
+    
+  </ol>
+</div>
+
+
+<style>
+.ytplaylist-player {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  margin-bottom: 1rem;
+}
+.ytplaylist-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.ytplaylist-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.ytplaylist-list li + li {
+  border-top: 1px solid rgba(128, 128, 128, 0.3);
+}
+.ytplaylist-item {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.ytplaylist-item:hover,
+.ytplaylist-item:focus {
+  background: rgba(128, 128, 128, 0.12);
+}
+.ytplaylist-item.active {
+  background: rgba(128, 128, 128, 0.18);
+  font-weight: 600;
+}
+.ytplaylist-num {
+  flex: 0 0 1.75rem;
+  opacity: 0.6;
+}
+.ytplaylist-title {
+  flex: 1 1 auto;
+}
+.ytplaylist-date {
+  flex: 0 0 auto;
+  margin-left: 0.75rem;
+  font-size: 0.85em;
+  opacity: 0.6;
+  white-space: nowrap;
+}
+</style>
+<script>
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('[data-ytplaylist-vid]');
+  if (!btn) return;
+  var root = btn.closest('.ytplaylist');
+  var player = root.querySelector('[data-ytplaylist-player]');
+  if (!player) return;
+  var url = new URL(player.src);
+  url.pathname = '/embed/' + btn.dataset.ytplaylistVid;
+  url.search = '?autoplay=1';
+  player.src = url.toString();
+  player.title = btn.dataset.ytplaylistTitle;
+  root.querySelectorAll('[data-ytplaylist-vid]').forEach(function (b) {
+    b.classList.toggle('active', b === btn);
+  });
+});
+</script>
+
+
+<p>The full playlist is on the <a href="https://www.youtube.com/@LineaBuild/videos">Linea YouTube channel</a>.</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=../../media/linea-insights-s2/&amp;text=What%20is%20gnark?%20%28video%20series%29" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/media/linea-insights-s2/&amp;t=What%20is%20gnark?%20%28video%20series%29" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=../../media/linea-insights-s2/&amp;title=What%20is%20gnark?%20%28video%20series%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
+</div>
+
+      
+
+    
+    
+    
+    <script src="../../js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="../../js/academic.min.2aa4c034593508cdbd74f28ff6c19844.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    2025 Youssef El Housni ©
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

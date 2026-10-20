@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/media/</loc>
+    <lastmod>2026-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/media/linea-insights-s2/</loc>
+    <lastmod>2026-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2026-09-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/authors/admin/</loc>
     <lastmod>2026-08-24T00:00:00+00:00</lastmod>
   </url><url>
@@ -18,9 +27,6 @@
     <lastmod>2026-08-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/publication/</loc>
-    <lastmod>2026-08-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/</loc>
     <lastmod>2026-08-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/post/fp2bug/</loc>
@@ -119,7 +125,7 @@
     <loc>/talk/zkbelgrade/</loc>
     <lastmod>2024-06-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/talk/zkpodcast24/</loc>
+    <loc>/media/zkpodcast24/</loc>
     <lastmod>2024-05-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/talk/proofdaynyc/</loc>
