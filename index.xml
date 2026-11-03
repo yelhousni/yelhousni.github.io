@@ -5,8 +5,10 @@ proof library we build at Consensys and that powers the Linea zkEVM.&lt;/p&gt;
 &lt;div class="ytplaylist-player"&gt;
 &lt;iframe
 data-ytplaylist-player
-src="https://www.youtube.com/embed/T57U-I2a09M"
+src="https://www.youtube.com/embed/T57U-I2a09M?playsinline=1"
 title="What is gnark?"
+loading="lazy"
+referrerpolicy="strict-origin-when-cross-origin"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen&gt;&lt;/iframe&gt;
 &lt;/div&gt;
@@ -107,7 +109,8 @@ data-ytplaylist-title="What&amp;#39;s the feedback from users?"&gt;
 .ytplaylist-player {
 position: relative;
 width: 100%;
-padding-top: 56.25%;
+aspect-ratio: 16 / 9;
+min-height: 200px;
 margin-bottom: 1rem;
 }
 .ytplaylist-player iframe {
@@ -173,7 +176,7 @@ var player = root.querySelector('[data-ytplaylist-player]');
 if (!player) return;
 var url = new URL(player.src);
 url.pathname = '/embed/' + btn.dataset.ytplaylistVid;
-url.search = '?autoplay=1';
+url.search = '?autoplay=1&amp;playsinline=1';
 player.src = url.toString();
 player.title = btn.dataset.ytplaylistTitle;
 root.querySelectorAll('[data-ytplaylist-vid]').forEach(function (b) {

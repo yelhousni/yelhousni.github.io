@@ -1,0 +1,16 @@
+.rss-dialog { width: 450px; max-width: calc(100vw - 24px); max-height: calc(100dvh - 48px); margin: auto; border: 0; color: var(--ink); overflow-y: auto; }
+.rss-dialog:not([open]) { display: none; }
+.rss-dialog::backdrop { background: #0006; }
+.rss-body { padding: 20px; margin-top: 6px; }
+.rss-body label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 12px; }
+.rss-body input { display: block; width: 100%; min-width: 0; border: 0; border-radius: 0; padding: 9px; background: transparent; color: inherit; box-shadow: var(--sunken); font: 12px/1.5 monospace; }
+.rss-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.rss-actions .button { min-height: 36px; }
+.rss-note { color: var(--muted); font-size: 11px; margin: 0; }
+.rss-status { min-height: 1.55em; color: var(--navy); font-size: 12px; margin: 10px 0 0; }
+@media (max-width: 600px) {
+  .rss-body { padding: 16px; }
+  .rss-actions .button { min-height: 44px; }
+  .rss-body input { font-size: 16px; }
+}
+@media print { .rss-dialog { display: none !important; } }

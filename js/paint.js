@@ -90,7 +90,6 @@
   const setToolsOpen = (open) => {
     tools.hidden = !open;
     toggle.setAttribute("aria-expanded", String(open));
-    if (!open) restoreWindows();
   };
 
   canvas.addEventListener("pointerdown", (event) => {

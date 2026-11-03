@@ -1,0 +1,88 @@
+.theme-switcher { flex: none; }
+.theme-toggle { min-height: 28px; padding: 3px 7px; }
+.theme-toggle[aria-expanded="true"] { box-shadow: var(--pressed); }
+.theme-toggle img, .theme-panel img { image-rendering: pixelated; }
+.theme-panel { position: fixed; right: 12px; bottom: 44px; width: 340px; max-width: calc(100vw - 16px); max-height: calc(100dvh - 60px); overflow-y: auto; }
+.theme-options { margin: 12px 10px 0; padding: 0; border: 0; min-width: 0; }
+.theme-options legend { padding: 0 0 8px; font-weight: bold; font-size: 12px; }
+.theme-option { display: flex; align-items: center; gap: 9px; padding: 10px 5px; cursor: pointer; }
+.theme-option:has(input:checked) { outline: 1px dotted var(--navy); outline-offset: -1px; }
+.theme-option:focus-within { outline: 2px dotted var(--navy); outline-offset: -2px; }
+.theme-option input { margin: 0; accent-color: var(--navy); flex: none; }
+.theme-option strong { display: block; font-size: 12px; }
+.theme-option small { display: block; color: var(--muted); font-size: 11px; }
+.theme-preview { width: 52px; height: 38px; flex: none; padding: 7px 6px; background: #008080; box-shadow: inset 1px 1px #333, inset -1px -1px #fff; }
+.theme-preview > span { display: block; height: 24px; background: #fff; border: 2px solid #c0c0c0; border-top: 6px solid #000080; }
+.theme-preview-sand { background: #8a6041; }
+.theme-preview-sand > span { border-color: #dfceb3; border-top-color: #87512b; background: #fff8e8; }
+.theme-preview-terminal { background: #08110c; }
+.theme-preview-terminal > span { border-color: #3a5742; border-top-color: #75cc91; background: #101b14; }
+.theme-note { margin: 12px 15px; font-size: 11px; color: var(--muted); }
+@media (max-width: 600px) {
+  .theme-toggle span { display: none; }
+  .theme-toggle { width: 32px; padding: 3px; }
+  .theme-panel { right: 8px; }
+  .theme-option { min-height: 60px; }
+}
+/* Palette overrides are screen-only so printing retains the light layout. */
+@media screen {
+  :root[data-theme="sand"] { --desktop: #8a6041; --face: #dfceb3; --navy: #734523; --muted: #625544; }
+  :root[data-theme="sand"] .window-title { background: linear-gradient(90deg, #653c24, #a66c37); }
+  :root[data-theme="sand"] .start-band { background: linear-gradient(0deg, #653c24, #a66c37); }
+  :root[data-theme="sand"] :is(.paper, .skip-link, .archive-search input, .about-tab[aria-selected="true"], .portrait-go) { background: #fff8e8; }
+  :root[data-theme="sand"] :is(.list-heading, .article-body blockquote, .article-body pre, .memory-proof) { background: #f2e6cf; }
+  :root[data-theme="sand"] :is(.button:hover, .game-choice[aria-pressed="true"]) { background: #ecdcc2; }
+  :root[data-theme="sand"] .task-current { background: repeating-conic-gradient(#fff8e8 0 25%, #dfceb3 0 50%) 0 0/2px 2px; }
+  :root[data-theme="sand"] :is(.ms-instructions h3, .snake-instructions h3, .memory-instructions h3, .memory-proof summary) { color: var(--navy); }
+  :root[data-theme="sand"] :is(.desktop-caption, .desktop-footer, .desktop-footer a) { color: #fff8e8; }
+  :root[data-theme="sand"] .article-body blockquote { border-left-color: #a66c37; }
+
+  :root[data-theme="terminal"] {
+    color-scheme: dark;
+    --desktop: #08110c;
+    --face: #263b2d;
+    --navy: #8de6a8;
+    --ink: #d4eed9;
+    --muted: #a4bda9;
+    --raised: inset -1px -1px #020704, inset 1px 1px #65806c, inset -2px -2px #15231a, inset 2px 2px #3b5644;
+    --sunken: inset -1px -1px #65806c, inset 1px 1px #15231a, inset -2px -2px #3b5644, inset 2px 2px #020704;
+    --pressed: inset -1px -1px #65806c, inset 1px 1px #020704, inset -2px -2px #3b5644, inset 2px 2px #15231a;
+  }
+  :root[data-theme="terminal"] :is(.paper, .skip-link, .archive-search input, .about-tab[aria-selected="true"]) { background: #101b14; color: var(--ink); }
+  :root[data-theme="terminal"] .window-title { background: linear-gradient(90deg, #163b22, #285438); color: #c6f8d2; }
+  :root[data-theme="terminal"] .start-band { background: linear-gradient(0deg, #163b22, #285438); color: #c6f8d2; }
+  :root[data-theme="terminal"] :is(.button, .tab, .window-control, .window-menu a, .entry h3 a, .project, .start-links a, .task-current) { color: var(--ink); }
+  :root[data-theme="terminal"] .button:hover { background: #36523f; }
+  :root[data-theme="terminal"] .tab { box-shadow: inset 1px 1px #65806c, inset -1px 0 #020704, inset -2px 0 #15231a; }
+  :root[data-theme="terminal"] :is(.eyebrow, .profile-location, .statusbar, .list-heading > span, .entry-meta, .authors, .entry-summary, .project small, .project > span:last-child, .experience summary span span, .experience time, .education > div > span, .education > span, .taskbar-note, .archive-toolbar > span, .window-menu > span:first-child, .paint-hint) { color: var(--muted); }
+  :root[data-theme="terminal"] .entry-meta > span { color: #83cfb4; }
+  :root[data-theme="terminal"] :is(.entry h3 a:hover, .ms-instructions h3, .snake-instructions h3, .memory-instructions h3, .memory-proof summary) { color: var(--navy); }
+  :root[data-theme="terminal"] :is(.list-heading, .article-body blockquote, .article-body pre, .memory-proof) { background: #1a2a20; }
+  :root[data-theme="terminal"] :is(.entry, .list-heading, .more, .project + .project, .experience, .taxonomy-item, .article-heading, .article-back, .article-body pre, .article-body td, .article-body th, .game-picker, .ms-status, .snake-status, .memory-status, .memory-proof) { border-color: #3b5644; }
+  :root[data-theme="terminal"] .article-body blockquote { border-left-color: #8de6a8; }
+  :root[data-theme="terminal"] :is(.desktop-brand, .desktop-icon, .desktop-caption, .desktop-footer, .desktop-footer a) { color: #b7e7c4; }
+  :root[data-theme="terminal"] :is(.desktop-icon:hover span, .desktop-icon[aria-current="page"] span, .start-links a:hover, .start-links a:focus-visible) { color: #08110c; }
+  :root[data-theme="terminal"] .task-current { background: repeating-conic-gradient(#314b39 0 25%, #263b2d 0 50%) 0 0/2px 2px; }
+  :root[data-theme="terminal"] .taskbar { box-shadow: inset 0 1px #3b5644, inset 0 2px #65806c; }
+  :root[data-theme="terminal"] :is(.statusbar span, .clock) { box-shadow: inset 1px 1px #15231a, inset -1px -1px #65806c; }
+  :root[data-theme="terminal"] .portrait { border-color: #3b5644; outline-color: #65806c; }
+  :root[data-theme="terminal"] .portrait-go { background: #101b14; color: #8de6a8; }
+  :root[data-theme="terminal"] .curve-art { background-color: #e0ede4; }
+  :root[data-theme="terminal"] .project-art small { color: inherit; }
+  :root[data-theme="terminal"] :is(.ms-instructions, .snake-instructions, .memory-instructions, .ms-status, .snake-status, .memory-status) { color: var(--muted); }
+  :root[data-theme="terminal"] :is(.ms-keyboard kbd, .snake-instructions kbd, .memory-instructions kbd, .paint-size select) { background: #1a2a20; border-color: #65806c; color: var(--ink); }
+  :root[data-theme="terminal"] .game-choice[aria-pressed="true"] { background: #36523f; }
+  :root[data-theme="terminal"] .paint-actions .button:disabled { color: #a4bda9; }
+  /* Preserve the classic game surfaces, colored clues, and symbol contrast. */
+  :root:is([data-theme="terminal"], [data-theme="sand"]) :is(.ms-console, .snake-console, .memory-console) {
+    color-scheme: light;
+    color: #161616;
+    --face: #c0c0c0;
+    --ink: #161616;
+    --navy: #000080;
+    --raised: inset -1px -1px #000, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+    --sunken: inset -1px -1px #fff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #000;
+    --pressed: inset -1px -1px #fff, inset 1px 1px #000, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+  }
+  :root:is([data-theme="terminal"], [data-theme="sand"]) :is(.ms-console, .snake-console, .memory-console) .button:hover { background: #d5d5d5; }
+}
