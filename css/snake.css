@@ -1,0 +1,32 @@
+.snake-layout { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+.snake-console { width: 262px; max-width: 100%; flex: none; }
+.snake-scoreboard { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: var(--face); box-shadow: var(--sunken); padding: 8px; margin-bottom: 9px; }
+.snake-meter { display: grid; gap: 2px; text-align: center; }
+.snake-meter > span { color: #333; font-size: 10px; line-height: 1.3; }
+.snake-meter output { min-width: 58px; padding: 3px 4px; background: #180000; color: #ff4b4b; box-shadow: inset 1px 1px #808080, inset -1px -1px #fff; font: 600 29px/1 var(--pixel); font-variant-numeric: tabular-nums; }
+.snake-badge { font: 600 17px/1 var(--pixel); color: #000080; }
+.snake-screen { position: relative; padding: 3px; box-shadow: var(--sunken); background: var(--face); }
+#snake-board { display: block; width: 100%; height: auto; aspect-ratio: 1; background: #c0c0c0; image-rendering: pixelated; touch-action: none; }
+#snake-board:focus-visible { outline: 2px dotted #000080; outline-offset: -5px; }
+.snake-overlay { position: absolute; inset: 3px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: #c0c0c0e6; color: #000080; pointer-events: none; }
+.snake-overlay strong { font: 600 32px/1 var(--pixel); }
+.snake-overlay span { font-size: 12px; color: #222; }
+.snake-actions { display: flex; gap: 7px; margin-top: 9px; }
+.snake-actions .button { flex: 1; }
+.snake-dpad { display: grid; grid-template-columns: repeat(3, 44px); gap: 4px; width: max-content; margin: 12px auto 0; }
+.snake-dpad .button { min-height: 36px; padding: 0; font-size: 21px; touch-action: manipulation; }
+.snake-dpad [data-snake-direction="up"] { grid-column: 2; }
+.snake-dpad [data-snake-direction="left"] { grid-row: 2; grid-column: 1; }
+.snake-dpad [data-snake-direction="down"] { grid-row: 2; grid-column: 2; }
+.snake-dpad [data-snake-direction="right"] { grid-row: 2; grid-column: 3; }
+.snake-instructions { flex: 1 1 170px; min-width: 0; color: #333; font-size: 12px; }
+.snake-instructions h3 { color: #000080; font: 600 21px/1.2 var(--pixel); margin: 0 0 10px; }
+.snake-instructions p { margin: 0 0 10px; }
+.snake-instructions kbd { border: 1px solid #808080; padding: 0 3px; background: #dfdfdf; font: inherit; }
+.snake-tip { font-size: 11px; }
+.snake-status { margin: 14px 0 0; padding-top: 10px; border-top: 1px solid #d4d4d4; color: #555; font-size: 11px; }
+@media (max-width: 600px) {
+  .snake-layout { justify-content: center; gap: 14px; }
+  .snake-instructions { flex-basis: 100%; }
+  .snake-actions .button, .snake-dpad .button { min-height: 44px; }
+}

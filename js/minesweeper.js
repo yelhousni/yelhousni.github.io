@@ -3,8 +3,7 @@
 
   const game = document.querySelector("#minesweeper");
   if (!game) return;
-  const profile = document.querySelector("#about-profile");
-  const tabs = [...document.querySelectorAll("[data-about-tab]")];
+  const games = document.querySelector("#about-games");
   const board = game.querySelector("#ms-board");
   const reset = game.querySelector(".ms-reset");
   const flagModeButton = game.querySelector(".ms-flag-mode");
@@ -48,7 +47,7 @@
   };
 
   const syncClock = () => {
-    const running = phase === "playing" && !game.hidden && !about.hidden &&
+    const running = phase === "playing" && !game.hidden && !games.hidden && !about.hidden &&
       !document.hidden && !document.body.classList.contains("paint-desktop-only");
     if (running && startedAt === null) {
       startedAt = performance.now();
@@ -67,6 +66,10 @@
     flagModeButton.disabled = finished;
     flagsDisplay.textContent = String(MINES - flags).padStart(3, "0");
     reset.dataset.face = phase;
+    const lockState = phase === "won" ? "Secret reconstructed; padlock unlocked" :
+      phase === "lost" ? "Reconstruction failed" : "Secret locked";
+    reset.setAttribute("aria-label", `${lockState}. New Secret Sweeper game`);
+    reset.title = `${lockState}. Start a new game`;
     cells.forEach((cell, index) => {
       const button = buttons[index];
       const mineVisible = phase === "lost" && cell.mine;
@@ -80,11 +83,11 @@
       button.textContent = cell.open && !cell.mine && cell.count ? String(cell.count) : "";
       button.dataset.count = cell.open && !cell.mine ? String(cell.count) : "";
       button.setAttribute("aria-disabled", String(finished));
-      let description = "covered";
-      if (mineVisible) description = index === exploded ? "exploded mine" : "mine";
-      else if (wrongFlag) description = "incorrect flag";
-      else if (cell.flagged) description = "flagged";
-      else if (cell.open) description = cell.count ? `${cell.count} adjacent mines` : "empty";
+      let description = "sealed share";
+      if (mineVisible) description = index === exploded ? "corrupted share selected" : "corrupted share";
+      else if (wrongFlag) description = "intact share incorrectly marked as untrusted";
+      else if (cell.flagged) description = "marked as untrusted";
+      else if (cell.open) description = cell.count ? `intact share, ${cell.count} nearby corrupted ${cell.count === 1 ? "share" : "shares"}` : "intact share, no nearby corrupted shares";
       button.setAttribute("aria-label", `Row ${Math.floor(index / SIDE) + 1}, column ${index % SIDE + 1}: ${description}`);
     });
   };
@@ -115,7 +118,7 @@
       if (cell.mine) {
         exploded = index;
         phase = "lost";
-        status.textContent = "Boom! You found a mine. Click the smiley to try again.";
+        status.textContent = "Reconstruction failed. You opened a corrupted share. Click the padlock to try again.";
         break;
       }
       revealed++;
@@ -125,9 +128,9 @@
       phase = "won";
       cells.forEach((cell) => { if (cell.mine) cell.flagged = true; });
       flags = MINES;
-      status.textContent = "All safe squares cleared. You win!";
+      status.textContent = "Secret reconstructed! All intact shares recovered and corrupted shares isolated.";
     } else if (phase === "playing") {
-      status.textContent = `${SIDE * SIDE - MINES - revealed} safe squares left. Keep going!`;
+      status.textContent = `${SIDE * SIDE - MINES - revealed} intact shares left to recover. Keep going!`;
     }
     syncClock();
     render();
@@ -149,12 +152,12 @@
     const cell = cells[index];
     if (phase === "lost" || phase === "won" || cell.open) return;
     if (!cell.flagged && flags === MINES) {
-      status.textContent = "All 10 flags are in use. Remove one to place another.";
+      status.textContent = "All 10 warning seals are in use. Remove one to place another.";
       return;
     }
     cell.flagged = !cell.flagged;
     flags += cell.flagged ? 1 : -1;
-    status.textContent = `${MINES - flags} flags available.`;
+    status.textContent = `${MINES - flags} warning ${MINES - flags === 1 ? "seal" : "seals"} available.`;
     render();
   };
 
@@ -219,56 +222,20 @@
       cells.push({ mine: false, open: false, flagged: false, count: 0 });
     }
     moveFocus(0, false);
-    status.textContent = "Choose a square to start.";
+    status.textContent = "Choose a sealed share to start.";
     updateClock();
     render();
   };
 
-  const setView = (name, focusTab = false) => {
-    const playing = name === "minesweeper";
-    game.hidden = !playing;
-    profile.hidden = playing;
-    tabs.forEach((tab) => {
-      const selected = tab.dataset.aboutTab === name;
-      tab.setAttribute("aria-selected", String(selected));
-      tab.tabIndex = selected ? 0 : -1;
-      if (selected && focusTab) tab.focus({ preventScroll: true });
-    });
-    syncClock();
-  };
-  tabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => setView(tab.dataset.aboutTab));
-    tab.addEventListener("keydown", (event) => {
-      let next;
-      if (event.key === "ArrowLeft") next = (index - 1 + tabs.length) % tabs.length;
-      if (event.key === "ArrowRight") next = (index + 1) % tabs.length;
-      if (event.key === "Home") next = 0;
-      if (event.key === "End") next = tabs.length - 1;
-      if (next !== undefined) {
-        event.preventDefault();
-        setView(tabs[next].dataset.aboutTab, true);
-      }
-    });
-  });
-  game.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      event.preventDefault();
-      setView("profile", true);
-    }
-  });
   reset.addEventListener("click", newGame);
   flagModeButton.addEventListener("click", () => {
     flagMode = !flagMode;
     flagModeButton.setAttribute("aria-pressed", String(flagMode));
-    status.textContent = flagMode ? "Flag mode: tap a covered square to place or remove a flag." : "Reveal mode: tap a square to open it.";
+    status.textContent = flagMode ? "Seal mode: tap a sealed share to mark or unmark it as untrusted." : "Reveal mode: tap a sealed share to open it.";
   });
+  document.addEventListener("aboutgamechange", syncClock);
   document.addEventListener("visibilitychange", syncClock);
   new MutationObserver(syncClock).observe(about, { attributes: true, attributeFilter: ["hidden"] });
   new MutationObserver(syncClock).observe(document.body, { attributes: true, attributeFilter: ["class"] });
   newGame();
-  profile.setAttribute("role", "tabpanel");
-  profile.setAttribute("aria-labelledby", "about-tab-profile");
-  game.setAttribute("role", "tabpanel");
-  game.setAttribute("aria-labelledby", "about-tab-minesweeper");
-  document.querySelector(".about-tabs").hidden = false;
 })();

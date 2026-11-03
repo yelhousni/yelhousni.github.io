@@ -1,13 +1,3 @@
-.about-tabs { padding-top: 3px; }
-.about-tab {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border: 0;
-  font-family: inherit;
-}
-.about-tab img { flex: none; image-rendering: pixelated; }
-.about-tab[aria-selected="true"] { background: #fff; }
 .ms-layout { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
 .ms-console { width: 238px; max-width: 100%; flex: none; }
 .ms-scoreboard {
@@ -32,12 +22,13 @@
 }
 .ms-reset { padding: 5px; min-width: 36px; min-height: 36px; }
 .ms-reset svg { display: block; }
-.ms-sunglasses, .ms-sad { display: none; }
-.ms-reset[data-face="won"] .ms-sunglasses,
-.ms-reset[data-face="lost"] .ms-sad { display: block; }
-.ms-reset[data-face="won"] .ms-eyes,
-.ms-reset[data-face="lost"] .ms-eyes,
-.ms-reset[data-face="lost"] .ms-smile { display: none; }
+.ms-lock-open, .ms-lock-error { display: none; }
+.ms-reset[data-face="won"] .ms-lock-open,
+.ms-reset[data-face="lost"] .ms-lock-error { display: block; }
+.ms-reset[data-face="won"] .ms-lock-closed,
+.ms-reset[data-face="lost"] .ms-lock-keyhole { display: none; }
+.ms-reset[data-face="won"] .ms-lock-body { fill: #a0df90; }
+.ms-reset[data-face="lost"] .ms-lock-body { fill: #ffa0a0; }
 .ms-board { background: var(--face); box-shadow: var(--sunken); padding: 3px; user-select: none; }
 .ms-row { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); }
 .ms-cell {
@@ -53,16 +44,19 @@
   font: 700 19px/1 var(--pixel);
   touch-action: manipulation;
   background-position: center;
-  background-size: 20px 20px;
+  background-image: url("../img/sealed-share.svg");
+  background-size: 14px 14px;
   background-repeat: no-repeat;
 }
 .ms-cell:not(.is-open):not([aria-disabled="true"]):active { box-shadow: var(--pressed); }
 .ms-cell.is-open {
   box-shadow: inset 1px 1px #909090;
   background-color: #c0c0c0;
+  background-image: none;
 }
-.ms-cell.is-flagged { background-image: url("../img/mine-flag.svg"); }
-.ms-cell.is-mine { background-image: url("../img/mine.svg"); }
+.ms-cell.is-flagged { background-image: url("../img/warning-seal.svg"); background-size: 20px 20px; }
+.ms-cell.is-mine { background-image: url("../img/broken-key.svg"); background-size: 20px 20px; }
+.ms-cell.is-wrong { background-image: none; }
 .ms-cell.is-exploded { background-color: #ff5555; }
 .ms-cell.is-wrong::after { content: "×"; color: #a00000; font: bold 26px/1 Tahoma, sans-serif; }
 .ms-cell[data-count="1"] { color: #0000ff; }
@@ -92,8 +86,4 @@
   .ms-layout { justify-content: center; gap: 14px; }
   .ms-instructions { flex-basis: 100%; }
   .ms-flag-mode { min-height: 36px; }
-}
-@media print {
-  .minesweeper, .about-tabs { display: none !important; }
-  #about-profile[hidden] { display: block !important; }
 }
