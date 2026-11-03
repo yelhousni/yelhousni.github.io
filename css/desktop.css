@@ -258,6 +258,12 @@ img {
   margin: 0 0 7px;
   letter-spacing: -0.5px;
 }
+.profile-name-ar {
+  width: fit-content;
+  margin: -2px 0 8px;
+  color: var(--navy);
+  font: 20px/1.4 Tahoma, Arial, sans-serif;
+}
 .profile-role {
   font-weight: 700;
   margin: 0 0 2px;
